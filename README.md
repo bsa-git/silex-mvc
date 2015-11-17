@@ -32,7 +32,7 @@ Main features of the framework:
 
 ### Deploying
 
-1. Clone [Silex Enhanced](https://github.com/bsa-git/silex-mvc) project with git.
+1. Clone [silex-mvc](https://github.com/bsa-git/silex-mvc) project with git.
 2. Run `composer update`.
 3. Run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
    pre-editing the path to` php.exe` and `app\Console\index.php`;
