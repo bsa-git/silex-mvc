@@ -6,9 +6,10 @@ Online (http://silex.sensiolabs.org). Examples of installation of the framework 
 and web server Nginx.
 
 Main features of the framework:
-    - Framework implements a simple application management blog;
-    - Expands with configuration files located in the `app/Resources/Сonfig`;
-    - It works as a web or as a console application;
+
+* Framework implements a simple application management blog
+* Expands with configuration files located in the `app/Resources/Сonfig`
+* It works as a web or as a console application
     - Console application can perform various tasks (e.g. Creation of a database `app/Console/scripts/orm/schema_create.bat`);
     - As an example, the work of the console application implemented to work with the service UBKI (http://ubki.ua/ru);
     - Realized the localization of two languages: English and Russian;
