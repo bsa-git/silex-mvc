@@ -32,7 +32,7 @@ Main features of the framework:
 
 ### Deploying
 
-1. Clone [Silex Enhanced](https://github.com/alvk4r/silex-enhanced) project with git.
+1. Clone [Silex Enhanced](https://github.com/bsa-git/silex-mvc) project with git.
 2. Run `composer update`.
 3. Run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
    pre-editing the path to` php.exe` and `app\Console\index.php`;
@@ -69,7 +69,7 @@ the config will be merged recursively allows partial specific configs.
 
 ### parameters.yml
 Values for config parameters substitution. On application code parameters are 
-accessible through `Fluency\Silex\Application` instance `$app['config']['parameters']`.
+accessible through `Silex\Application` instance `$app['config']['parameters']`.
 
 ### security.yml
 The security firewalls and access control config. All information about it's available
