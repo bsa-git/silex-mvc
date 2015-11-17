@@ -27,13 +27,13 @@ Main features of the framework:
 ### Prerequisites
 
 - [PHP](http://php.net) version >5.4
-- Apache2 web server or similar
+- Apache2, Nginx web servers or similar
 - Composer
 
 ### Deploying
 
 1. Clone [silex-mvc](https://github.com/bsa-git/silex-mvc) project with git.
-2. Run `composer update`.
+2. Run `composer install`.
 3. Run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
    pre-editing the path to` php.exe` and `app\Console\index.php`;
 4. Configure your web server, create a virtual host with `path/to/project/web` as
