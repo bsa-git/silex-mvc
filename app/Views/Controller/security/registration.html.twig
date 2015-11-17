@@ -1,0 +1,83 @@
+{# app/Views/Controller/security/registration.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('FormValidation');
+        BSA.ScriptResources.push('MaskInput');
+        addScriptParams('FormValidation',
+                {
+                    form: 'form[name="reg"]',
+                    id_rules: {
+                        reg_username: {
+                            required: true,
+                            minlength: 3,
+                            remote: {
+                                url: "/registration",
+                                type: "post",
+                                async: true,
+                            }
+                        },
+                        reg_email: {
+                            required: true,
+                            email: true,
+                            remote: {
+                                url: "/registration",
+                                type: "post",
+                                async: true,
+                            }
+                        },
+                        reg_personal_mobile: {
+                            required_with_cleaning: [' ', '\+38'],
+                            minlength_with_cleaning: [10, ' ', '\+38'],
+                            remote: {
+                                url: "/registration",
+                                type: "post",
+                                async: true,
+                            }
+                        },
+                        reg_first_name: {
+                            required: true
+                        },
+                        reg_second_name: {
+                            required: true
+                        }
+                    },
+                    id_messages: {
+                        reg_username: {
+                            required: "{{ 'valid_please_provide_login'|trans }}",
+                            minlength: "{{ 'valid_your_login_must_least_n_characters_long'|trans }}"
+                        },
+                        reg_email: {
+                            required: "{{ 'valid_please_enter_email'|trans }}",
+                            email: "{{ 'valid_please_enter_valid_email_address'|trans }}"
+                        },
+                        reg_first_name: "{{ 'valid_please_enter_your_firstname'|trans }}",
+                        reg_second_name: "{{ 'valid_please_enter_your_lastname'|trans }}",
+                    }
+                });
+        addScriptParams('MaskInput',
+            {
+                definitions: [], //"~=[+-]"
+                masks: {
+                    reg_personal_mobile: ["+389999999999", {placeholder: " "}],
+                }
+
+            });
+    </script>
+{% endblock head %}
+
+{% block page_name %}{{ 'registration'|trans|title }}{% endblock page_name %}
+
+{% block content %}
+    <div class="jumbotron">
+        {{ form(form) }}
+    </div>
+{% endblock content %}
+
+
+

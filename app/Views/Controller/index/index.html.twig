@@ -1,0 +1,19 @@
+{# app/Views/Controller/index/index.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Home{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}Silex - MicroFramework{% endblock page_name %}
+
+{% block content %}
+    <!-- JumboTron -->
+    <div class="jumbotron">
+        <h1 class="exotic">Hello, Silex!</h1>
+        <p>This is the documentation for Silex, the PHP microframework based on <a href="http://symfony.com/components" target="_blank">Symfony2 Components</a>.</p>
+        <p><a href="http://silex.sensiolabs.org/documentation" class="btn btn-primary btn-lg" target="_blank" >{{ 'learn_more'|trans|capitalize }}...</a></p>
+    </div>
+{% endblock content %}
+

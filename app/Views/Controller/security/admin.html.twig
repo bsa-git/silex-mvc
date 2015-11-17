@@ -1,0 +1,16 @@
+{# app/Views/Controller/security/admin.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ action|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{{ controller|capitalize }}/{{ action|capitalize }}{% endblock page_name %}
+
+{% block content %}
+    <p class="important">
+        Welcome to my Admin page
+    </p>
+{% endblock content %}
+

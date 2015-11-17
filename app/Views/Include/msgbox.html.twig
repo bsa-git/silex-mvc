@@ -1,0 +1,54 @@
+{# 
+alert  (
+class_message: 
+alert-warning (alert_warning), 
+alert-danger (alert_danger), 
+alert-success (alert_success), 
+alert-info (alert_info)
+) 
+#}
+{% if msg_box and class_message %}
+    <div class="system-message" id="msg-box" >
+        <div class="alert {{ class_message }} alert-dismissable" >
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5>{{ title_message|trans|upper }}</h5>
+            {% autoescape false %}
+                {% for msg in messages %}
+                    {{ msg }}<br />
+                {% endfor %}
+            {% endautoescape %}
+        </div>
+    </div>
+{% else %}
+    <div class="system-message" id="msg-box" style="display: none" ></div>
+{% endif %}
+{% if alert_block_box and class_message %}
+    <div class="system-message" id="alert-block-box" >
+        <div class="alert {{ class_message }} alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4>{{ title_message|trans|capitalize }}!</h4>
+            {% autoescape false %}
+                {% for msg in messages %}
+                    {{ msg }}<br />
+                {% endfor %}
+            {% endautoescape %}
+        </div>
+    </div>
+{% else %}
+    <div class="system-message" id="alert-block-box" style="display: none"></div>
+{% endif %}
+{% if alert_box and class_message %}
+    <div class="system-message" id="alert-box" >
+        <div class="alert {{ class_message }} alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>{{ title_message|trans|capitalize }}!</strong>
+            {% autoescape false %}
+                {% for msg in messages %}
+                    {{ msg }}<br />
+                {% endfor %}
+            {% endautoescape %}
+        </div>
+    </div>
+{% else %}
+    <div class="system-message" id="alert-box" style="display: none"></div>
+{% endif %}

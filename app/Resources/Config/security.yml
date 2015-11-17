@@ -1,0 +1,44 @@
+service_providers:
+    security:
+        class: Providers\Security\MySecurityServiceProvider
+        construct_parameters:
+            security.role_hierarchy:
+                ROLE_ADMIN: [ 'ROLE_USER', 'ROLE_ALLOWED_TO_SWITCH']
+            # http://symfony.com/doc/2.3/cookbook/security/access_control.html
+            security.access_rules:
+                - [ '^/admin', 'ROLE_ADMIN' ]
+                - [ '^/test', 'ROLE_ADMIN' ]
+                - [ '^/tasks', 'ROLE_ADMIN' ]
+                - [ '^/account$', 'ROLE_USER' ]
+                - [ '^/blog/new$', 'ROLE_USER' ]
+                - [ '^/todo$', 'ROLE_USER' ]
+                - [ '^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY' ]
+            security.firewalls:
+                default:
+                    pattern:   ^/.*$
+                    # When securing only some parts of your website, 
+                    # the user information are not available in non-secured areas. 
+                    # To make the user accessible in such areas, 
+                    # enabled the anonymous authentication mechanism
+                    anonymous: true
+                    # http://example.com/somewhere?_switch_user=thomas
+                    # http://example.com/somewhere?_switch_user=_exit
+                    switch_user: true
+                    form:
+                        login_path: /login
+                        check_path: /login_check
+                        use_referer: true
+#                        default_target_path: /
+#                        always_use_default_target_path: true
+#                        target_path_parameter: _target_path
+                    logout:
+                        logout_path: /logout
+                    users: ~
+#                        admin:
+#                            - ROLE_ADMIN
+#                            # raw password is foo
+#                            - 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==
+#                        user:
+#                            - ROLE_USER
+#                            # raw password is foo
+#                            - 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==    

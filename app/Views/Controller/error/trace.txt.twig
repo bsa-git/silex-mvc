@@ -1,0 +1,8 @@
+{% if trace.function %}
+    at {{ trace.class ~ trace.type ~ trace.function }}()
+{% else %}
+    at n/a
+{% endif %}
+{% if trace.file is defined and trace.line is defined %}
+    in {{ trace.file }} line {{ trace.line }}
+{% endif %}

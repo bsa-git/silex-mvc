@@ -1,0 +1,73 @@
+{# app/Views/Controller/security/login.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+
+{% block title %}Login{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('FormValidation');
+        addScriptParams('FormValidation',
+                {
+                    form: 'form[name="login"]',
+                    rules: {
+                        _username: {
+                            required: true,
+                            minlength: 3
+                        },
+                        _password: {
+                            required: true,
+                            minlength: 3
+                        }
+                    },
+                    messages: {
+                        _username: {
+                            required: "{{ 'valid_please_provide_login'|trans }}",
+                            minlength: "{{ 'valid_your_login_must_least_n_characters_long'|trans }}"
+                        },
+                        _password: {
+                            required: "{{ 'valid_please_provide_password'|trans }}",
+                            minlength: "{{ 'valid_your_password_must_least_n_characters_long'|trans }}"
+                        }
+                    }
+                });
+    </script>
+{% endblock head %}
+
+{% block page_name %}{{ 'login'|trans|title }}{% endblock page_name %}
+
+{% block content %}
+    <div class="jumbotron">
+        <form name="login" method="post" action="/login_check" class="form-horizontal">
+            <div id="login">
+                {% if error %}
+                    <div class="alert alert-danger">    
+                        <ul class="list-unstyled">
+                            <li><span class="glyphicon glyphicon-exclamation-sign"></span> {{ error }} </li>
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required" for="login_username">{{ 'Username'|trans }}</label>
+                    <div class="col-sm-4">
+                        <input type="text" id="login_username" name="_username" required="required" class="form-control" value="{{ last_username }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required" for="login_password">{{ 'Password'|trans }}</label>
+                    <div class="col-sm-4">
+                        <input type="password" id="login_password" name="_password" required="required" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        <button type="submit" id="login_input" name="login[input]" class="btn-default btn">{{ 'Login'|trans }}</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>                
+{% endblock %}

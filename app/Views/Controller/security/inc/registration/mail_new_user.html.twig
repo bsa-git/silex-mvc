@@ -1,0 +1,11 @@
+{# app/Views/Controller/security/lib/registration/mail.txt.twig #}
+<strong>{{ first_name }}, {{ 'congratulate_successful_registration'|trans|capitalize }}!</strong><br />
+{{ 'information_your_login'|trans|capitalize }}:
+<ul>
+    <li>{{ 'address_page_login'|trans|capitalize }}: {{ url('login') }}</li>
+    <li>{{ 'user_logon'|trans|capitalize }}: {{ username }}</li>
+    <li>{{ 'Password'|trans|capitalize }}: {{ password }}</li>
+</ul> 
+<em>{{ 'yours_faithfully'|trans|capitalize }},</em><br />
+<em>{{ 'web_site_administrator'|trans|capitalize }}</em>
+

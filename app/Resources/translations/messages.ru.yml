@@ -1,0 +1,90 @@
+#--- FORM ---#
+Username: Логин
+First name: Имя
+Second name: Фамилия
+Password: Пароль
+Email: Электронный адрес
+Save: Сохранить
+Login: Войти
+Created: Дата создания
+Title: Название
+Body: Содержание
+Personal mobile: Мобильный телефон
+
+#--- MESSAGES ---#
+alert-warning: внимание
+alert_warning: внимание
+alert-danger: ошибка
+alert_danger: ошибка
+alert-success: поздравляем
+alert_success: поздравляем
+alert-info: информация
+alert_info: информация
+registration: регистрация
+login: войти
+logout: выход
+congratulate_successful_registration: поздравляем вас с успешной регистрацией
+information_your_login: информация о вашем логине
+address_page_login: адрес страницы входа на сайт
+user_logon: имя входа пользователя
+yours_faithfully: с уважением
+web_site_administrator: администратор WEB сайта
+new_user: новый пользователь
+account: учетная запись
+learn_more: узнать больше
+home: главная
+blog: блог
+testing: тестирование
+get: получить
+loading_resources: загрузка ресурсов
+search_on_symfony: Поиск на Symfony
+search: поиск
+add_post: добавить сообщение
+edit: редактировать
+delete: удалить
+my_posts: мои сообщения
+not_found: отсутствуют
+all_posts: все сообщения
+author: автор
+edit_post: редактировать сообщение
+russian: русский
+english: английский
+added_new_message: 'Добавлено новое сообщение "{{ title }}"'
+deleted_this_message: 'Было удалено сообщение "{{ title }}"'
+edited_this_message: 'Было отредактировано сообщение "{{ title }}"'
+communication_error: "Ошибка передачи данных"
+task_list: "список заданий"
+todo: "список заданий"
+what_must_be_done: "что необходимо сделать"
+mark_all_as_completed: "отметить все как завершенные"
+clear_completed: "очистить завершенные"
+you_can_download_with: "вы можете скачать с"
+clear: очистить
+completed: завершенное
+finalized: завершенных
+task: задание
+tasks: заданий
+double_click_to_edit_task: "двойной-клик чтобы редактировать задание"
+developer: разработчик
+debug: отладка
+
+#--- VALIDATE ---#
+valid_please_enter_your_firstname: "Пожалуйста, введите свое имя"
+valid_please_enter_your_lastname: "Пожалуйста, введите свою фамилию"
+valid_please_provide_password: "Пожалуйста, введите пароль"
+valid_please_provide_login: "Пожалуйста, введите ваш логин"
+valid_please_enter_date: "Пожалуйста, введите дату"
+valid_please_enter_email: "Пожалуйста, введите E-Mail"
+valid_please_choose_value_from_list: "Пожалуйста, выберите из списка значение"
+valid_date_ru_must_be_format: "Пожалуйста, введите дату в формате 01.12.2014"
+valid_your_password_must_least_n_characters_long: "Ваш пароль должен быть длиной не менее 3 символов"
+valid_your_login_must_least_n_characters_long: "Ваш логин должен быть длиной не менее 3 символов"
+valid_please_confirm_your_password: "Пожалуйста, введите тот же пароль, что и выше"
+valid_please_enter_valid_email_address: "Пожалуйста, введите верный Email адрес"
+valid_user_with_this_login_already_exists: "Пользователь с таким логином уже существует"
+valid_user_with_this_phone_already_exists: "Пользователь с таким телефоном уже существует"
+valid_user_with_this_email_already_exists: "Пользователь с таким E-Mail уже существует"
+valid_please_enter_valid_login: "Пожалуйста, введите верный логин"
+valid_please_enter_valid_reg_code: "Пожалуйста, введите верный код регистрации"
+valid_please_enter_reg_code: "Пожалуйста, введите код регистрации"
+valid_user_with_this_login_not_exists: "Пользователь с таким логином отсутствует"

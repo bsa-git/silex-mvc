@@ -1,0 +1,146 @@
+imports:
+    - { resource: config.yml }
+
+commands:
+    
+    #--- ERROR Handle ---
+    console_error:
+        class: Console\Commands\ErrorCommand
+        configure: { name: "console:error", description: "There was some mistake", delimiter: ";"}
+        arguments: 
+            - {name: "message", mode: OPTIONAL, description: "Parameters error", default: null}
+        options: 
+            - {name: "color", shortcut: null, mode: VALUE_NONE, description: "If set, the error information is displayed in color", default: null}        
+    
+    #--- Doctrine DBAL commands ----
+    dbal_run_sql:
+        # DBAL-RunSql (dbal:run-sql "SELECT * FROM users")
+        # Executing arbitrary SQL from the command line
+        class: Console\Commands\DBAL\RunSqlCommand
+    dbal_import:
+        # DBAL-RunSqlFile (dbal:import "all_users.sql")
+        # Executing arbitrary SQL that can come from a file or directly from the command line
+        class: Console\Commands\DBAL\ImportCommand
+    dbal_reserved_words:
+        # Checks if the current database contains identifiers that are reserved
+        class: Console\Commands\DBAL\ReservedWordsCommand
+    dbal_database_create:
+        # DBAL-CreateDatabase (dbal:database:create)
+        # Command creates the default connections database
+        class: Console\Commands\DBAL\CreateDatabaseCommand
+    dbal_database_drop:
+        # DBAL-DropDatabase (dbal:database:drop --force)
+        # Command drops the default connections database
+        class: Console\Commands\DBAL\DropDatabaseCommand
+    dbal_schema_create:
+        # DBAL-CreateSchema (dbal:schema:create --fakedata)
+        # Creates the configured database schema + fake data
+        class: Console\Commands\DBAL\CreateSchemaCommand  
+    
+    #--- Doctrine ORM commands ---
+    orm_schema_create:
+        # ORM-CreateSchema (orm:schema-tool:create)
+        # Processes the schema and either create it directly on EntityManager Storage Connection or generate the SQL output
+        class: Console\Commands\ORM\SchemaTool\CreateCommand
+    orm_schema_drop:
+        # ORM-DropSchema (orm:schema-tool:drop --force)
+        # Processes the schema and either drop the database schema of EntityManager Storage Connection or generate the SQL output
+        class: Console\Commands\ORM\SchemaTool\DropCommand
+    orm_schema_update:
+        # ORM-UpdateSchema (orm:schema-tool:update --force)
+        # Processes the schema and either update the database schema of EntityManager Storage Connection or generate the SQL output
+        class: Console\Commands\ORM\SchemaTool\UpdateCommand    
+    orm_validate_schema:
+        # ORM-ValidateSchema (orm:validate-schema)
+        # Command to validate that the current mapping is valid
+        class: Console\Commands\ORM\ValidateSchemaCommand
+    orm_generate_entities:
+        # ORM-GenerateEntities (orm:generate-entities "/app")
+        # Generate entity classes and method stubs from your mapping information
+        class: Console\Commands\ORM\GenerateEntitiesCommand
+    orm_info_entities:
+        # ORM-InfoEntities (orm:info)
+        # Show basic information about all mapped entities
+        class: Console\Commands\ORM\InfoCommand
+    orm_info_mapping:
+        # ORM-InfoMapping (orm:mapping:describe)
+        # Display information about mapped objects
+        class: Console\Commands\ORM\MappingDescribeCommand
+    orm_run_dql:
+        # ORM-RunDql (orm:run-dql "SELECT * FROM users")
+        # Executes arbitrary DQL directly from the command line
+        class: Console\Commands\ORM\RunDqlCommand    
+    
+    #---- UBKI commands ----
+    ubki_index:
+        class: Console\Commands\Ubki\IndexCommand
+        configure: { name: "ubki:index", description: "Work with UBKI service", delimiter: ""}
+        arguments: 
+            - {name: "args", mode: OPTIONAL, description: "Parameters to get information", default: ""}
+        options: 
+            - {name: "type", shortcut: "t", mode: VALUE_REQUIRED, description: "Sets a command type", default: info}
+    # UBKI - authorization
+    ubki_auth:
+        class: Console\Commands\Ubki\AuthCommand
+        configure: { name: "ubki:auth", description: "Authorize to UBKI service", delimiter: ""}
+        arguments: 
+            - {name: "args", mode: OPTIONAL, description: "Parameters to get information", default: null}
+    # UBKI - get credit info
+    ubki_info:
+        class: Console\Commands\Ubki\InfoCommand
+        configure: { name: "ubki:info", description: "Get credit information from UBKI servise", delimiter: ""}
+        arguments: 
+            - {name: "args", mode: OPTIONAL, description: "Parameters to get information", default: null}
+    # UBKI - send data
+    ubki_data:
+        class: Console\Commands\Ubki\DataCommand
+        configure: { name: "ubki:data", description: "Send data to UBKI servise", delimiter: ""}
+        arguments: 
+            - {name: "args", mode: OPTIONAL, description: "Parameters to get information", default: null}
+    # UBKI - get registry
+    ubki_registry:
+        class: Console\Commands\Ubki\RegistryCommand
+        configure: { name: "ubki:registry", description: "Getting registry UBKI data transfer", delimiter: "&"}
+        arguments: 
+            - {name: "args", mode: OPTIONAL, description: "Parameters to get information", default: null}        
+    
+    #---- GREET command ----
+    my_greet:
+        class: Console\Commands\Greet\GreetCommand
+        configure: { name: "demo:greet", description: "Greet someone", delimiter: ";"}
+        arguments: 
+            - {name: "name", mode: OPTIONAL, description: "Who do you want to greet?", default: null}
+        options: 
+            - {name: "yell", shortcut: null, mode: VALUE_NONE, description: "If set, the task will yell in uppercase letters", default: null}
+
+service_providers:
+    console:
+        class: Providers\ConsoleServiceProvider
+        construct_parameters: ~
+        parameters:
+            console.name: "Silex/Console"
+            console.version: 1.0.0
+
+    event_dispatcher:
+        class: Providers\EventDispatcherServiceProvider
+        construct_parameters: ~
+        parameters: ~
+
+    monolog:
+        parameters:
+            monolog.logfile: %log_path%/console.log
+            monolog.name: CONSOLE
+    
+    twig:
+        parameters:
+            twig.path:
+                #Global views
+                - %base_path%/app/Console/Views
+
+    filesystem:
+        class: Providers\FileSystemServiceProvider
+        
+    swiftmailer:
+        class: Silex\Provider\SwiftmailerServiceProvider
+        parameters:
+            swiftmailer.use_spool: false   

@@ -1,0 +1,10 @@
+{# app/Views/Controller/books/index.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller }}{% endblock title %}
+{% block head %}{{ parent() }}{% endblock head %}
+
+{% block page_name %}{{ controller|capitalize }}/{{ action|capitalize }}{% endblock page_name %}
+
+
+

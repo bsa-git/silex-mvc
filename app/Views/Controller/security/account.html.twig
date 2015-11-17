@@ -1,0 +1,60 @@
+{# app/Views/Controller/security/account.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ action|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{{ 'account'|trans|title }}{% endblock page_name %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="exotic"> Hello {{ app.user.username|capitalize }}!</h1>
+        <p class="lead">You're browsing to path "{{ app.request.pathInfo }}".</p>
+        <p><a href="/blog/new" class="btn btn-success" role="button"><span class="glyphicon glyphicon-plus"></span> {{ 'add_post'|trans|capitalize }}...</a></p>
+    </div>
+
+    {% if posts|length %}
+        <div class="page-header"><h2>{{ 'my_posts'|trans|title }}</h2></div>
+
+        {% for post in posts %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title"><strong>{{ post.title }}</strong></p>
+                    <p class="post-date">{{ post.created|date("d.m.Y") }}</p>
+                </div>
+                <div class="panel-body">
+                    {{ post.body }}
+                </div>
+                <div class="panel-footer">
+                    <a href="/blog/edit/{{ post.id }}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span> {{ 'edit'|trans|capitalize }}</a>
+                    <a href="/blog/delete/{{ post.id }}" class="btn btn-danger delete-post" role="button"><span class="glyphicon glyphicon-trash"></span> {{ 'delete'|trans|capitalize }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}    
+        <div class="page-header"><h2>{{ 'my_posts'|trans|title }}({{ 'not_found'|trans }})</h2></div>
+    {% endif %}    
+    
+
+    <script>
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+
+            var btnsDelete = $(".delete-post");
+            if (btnsDelete.size()) {
+                btnsDelete.on("click", function () {
+                    if (confirm("Delete Post?")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            }
+        });
+    </script>
+
+{% endblock content %}
+
+

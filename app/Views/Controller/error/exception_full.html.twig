@@ -1,0 +1,13 @@
+{% extends 'Layout/error.html.twig' %}
+
+{% block head %}
+    <link href="{{ asset('css/symfony/exception.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block title %}
+    {{ exception.message }} ({{ status_code }} {{ status_text }})
+{% endblock %}
+
+{% block body %}
+    {% include 'Controller/error/exception.html.twig' %}
+{% endblock %}

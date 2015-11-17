@@ -1,0 +1,17 @@
+{# app/Views/Controller/test/dump.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{{ controller|capitalize }}/{{ action|capitalize }}{% endblock page_name %}
+
+{% block content %}
+    {{ _c_.dump(var) }}
+    {{ _c_.dump(var1) }}
+    {{ _c_.dump(var3) }}
+    {{ _c_.dump(err) }}
+{% endblock content %}
+

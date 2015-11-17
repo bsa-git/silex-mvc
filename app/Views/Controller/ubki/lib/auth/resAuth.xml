@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <auth
+        errcode="" 
+        errtext=""  
+        sessid=""
+        datecr="дата и время создания сессии"
+        dateed="дата и время обновления сессии"
+        userlogin="логин"
+        userid="ИД пользователя"
+        userfname="фамилия пользователя"
+        userlname="имя пользователя"
+        usermname="отчество пользователя"
+        rolegroupid="ИД группы роли"
+        rolegroupname="Наименование группы роли"
+        agrid="ИД организации"
+        agrname="Наименование организации"
+    />
+</doc>

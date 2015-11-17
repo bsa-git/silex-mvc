@@ -1,0 +1,8 @@
+        <traces>
+{% for trace in exception.trace %}
+            <trace>
+{% include 'Controller/error/trace.txt.twig' with { 'trace': trace } only %}
+
+            </trace>
+{% endfor %}
+        </traces>

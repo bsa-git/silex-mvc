@@ -1,0 +1,215 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+    margin: 5px 0;
+}
+
+.log-in-out {
+    margin-top: 23px;
+}
+
+div.brand-text { 
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .4), 0 0 15px rgba(255, 255, 255, .175); 
+    text-align: center; 
+    font-family: playball, sans-serif; 
+    font-size: 48px 
+}
+
+.post-date {
+    color: #999;
+}
+
+.exotic{
+    text-shadow: 0 1px 1px rgba(124, 115, 115, 0.75); 
+    font-family: playball, sans-serif; 
+}
+
+.btns-lang{
+    margin-top: 8px;
+}
+
+/*** VALIDATE ***/
+
+input.error {
+    background: url('../img/assets/system/icon-fail.png') no-repeat right center #ffebef;
+    color: #480000;
+}
+
+select.error {
+    background: url('../img/assets/system/icon-fail.png') no-repeat 87% center #ffebef;
+    color: #480000;
+}
+
+span.form-error.help-block {
+    display: block;
+    color: red;
+    margin-top: 6px;
+    padding-left: 0;
+}
+
+label.error{
+    color: #a94442;
+}
+
+input.valid {
+    background: url('../img/assets/system/icon-ok.png') no-repeat right center #e3ffe5 !important;
+    color: #002f00;
+    border-color: #96b796 !important;
+}
+
+select.valid {
+    background: url('../img/assets/system/icon-ok.png') no-repeat 87% center #e3ffe5 !important;
+    color: #002f00;
+    border-color: #96b796 !important;
+}
+
+/****** System Messages warnings/information *******/
+/* alert-block, alert-error, alert-info, alert-success */
+
+#alert-box div.alert {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+div.alert button.close {
+    color: #000000 !important;
+    background: transparent !important;
+}
+
+#msg-box .close {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #000000 !important;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
+#msg-box .close:hover,
+#msg-box .close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+#msg-box button.close {
+    /*    display: none;*/
+    padding: 0;
+    cursor: pointer;
+    background: transparent !important;
+    border: 0;
+    -webkit-appearance: none;
+
+
+}
+
+#msg-box div.alert 
+{
+    margin: 20px;
+    padding: 10px 20px;
+    text-align: left;
+    min-height: 100px;
+}
+
+#msg-box div.alert h5
+{
+    margin-left: 40%;
+    border: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#msg-box .alert em {
+    font-weight: bold;
+}
+
+/* System Standard Messages radius, shadow*/
+/*#msg-box div.alert {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}*/
+/* alert-block, alert-error, alert-success, alert-info */
+#msg-box div.alert_danger {
+    border: 2px solid #990033;
+    color: #600;
+    background: #fee url(../img/assets/system/alert-error.png) no-repeat;
+    background-position: center left;
+    padding-left: 92px;
+    /*min-height: 80px;*/
+}
+#msg-box div.alert_danger h5 {
+    color: #600;
+    background-color: #fee;
+}
+#msg-box div.alert_danger em {
+    color: #600;
+}
+#msg-box div.alert_info {
+    border: 2px solid #00c;
+    color: #006;
+    background: #eef url(../img/assets/system/alert-info.png) no-repeat;
+    background-position: center left;
+    padding-left: 92px;
+    /*min-height: 100px;*/
+}
+#msg-box div.alert_info h5 {
+    color: #00c;
+    background-color: #eef;
+}
+#msg-box div.alert_info em {
+    color: #00c;
+}
+#msg-box div.alert_warning {
+    border: 2px solid #cc9900;
+    color: #333;
+    background: #ffc url(../img/assets/system/alert-info.png) no-repeat;
+    background-position: center left;
+    padding-left: 92px;
+    /*min-height: 70px;*/
+}
+#msg-box div.alert_warning h5 {
+    color: #777712;
+    background-color: #ffc;
+}
+#msg-box div.alert_warning em {
+    color: #777712;
+}
+#msg-box div.alert_success {
+    border: 2px solid #336600;
+    color: #333;
+    background: #ccffcc url(../img/assets/system/alert-success.png) 10px no-repeat;
+    padding-left: 80px;
+    /*min-height: 40px;*/
+}
+#msg-box div.alert_success h5 {
+    color: #336600;
+    background-color: #ccffcc;
+}
+#msg-box div.alert_success em {
+    color: #336600;
+}
+
+
+/*** DATEPICKER ***/
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year {
+  color: #555;
+  /*font: initial;*/
+}

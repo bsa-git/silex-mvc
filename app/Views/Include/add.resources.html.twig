@@ -1,0 +1,22 @@
+<!-- Add script resources -->
+<script type="text/javascript">
+    if ( undefined === window.BSA) {
+        window.BSA = {};
+        // List script resources
+        window.BSA.ScriptResources = [];
+        // List script parameters
+        window.BSA.ScriptParams = {};
+        // List object instances 
+        window.BSA.ScriptInstances = {};
+        // Add script parameters
+        addScriptParams = function (myclass, params) {
+            var arrParams;
+            if (BSA.ScriptParams[myclass]) {
+                arrParams = BSA.ScriptParams[myclass];
+                arrParams.push(params);
+            } else {
+                BSA.ScriptParams[myclass] = [params];
+            }
+        }
+    }
+</script> 

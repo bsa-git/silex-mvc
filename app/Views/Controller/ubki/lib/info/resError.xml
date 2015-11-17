@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubkidata>
+    <tech>
+        <trace>
+            <step name="star at: 11:35:42" stm="" ftm="" /> 
+            <step name="finish at: 11:35:42" stm="" ftm="" />
+        </trace>
+        <error 
+            errtext="Ошибка валидности входных данных. Код [25].Код [2.25]. Для разьяснения проблемы обратитесь в службу поддержки УБКИ support@ubki.ua или по тел. (044) 585-11-96. Ваши данные: [API 10.1.231.79:8080/b2_api_xml/ubki/xml IP 78.137.5.2]. [okpo(недопустимое значение 0123456789), spd.inn]" 
+            errtype="25" 
+        />
+    </tech>
+</ubkidata>

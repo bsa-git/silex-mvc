@@ -1,0 +1,45 @@
+imports:
+    - { resource: config.yml }
+
+controllers:
+        Controller.Index: Controllers\IndexController
+        Controller.Test: Controllers\TestController
+        Controller.Ubki: Controllers\UbkiController
+        Controller.Books: Controllers\BooksController
+        Controller.Blog: Controllers\BlogController
+        Controller.Security: Controllers\SecurityController
+        Controller.Todo: Controllers\TodoController
+
+service_providers:
+    monolog:
+        parameters:
+            monolog.logfile: %log_path%/application.log
+            monolog.name: APPLICATION
+            
+    service_controller:
+        class: Silex\Provider\ServiceControllerServiceProvider
+        
+    active_record:
+        class: Providers\ActiveRecordServiceProvider     
+    
+    quick_form2:
+        class: Providers\QuickForm2ServiceProvider
+
+    http_cache:
+        class: Silex\Provider\HttpCacheServiceProvider
+        parameters:
+            http_cache.cache_dir: %cache_path%/http
+            http_cache.esi: ~
+
+    url_generator:
+        class: Silex\Provider\UrlGeneratorServiceProvider
+
+    form:
+        class: Silex\Provider\FormServiceProvider
+    
+    session:
+        class: Silex\Provider\SessionServiceProvider
+        
+    
+        
+

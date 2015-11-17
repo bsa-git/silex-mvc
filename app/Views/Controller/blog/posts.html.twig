@@ -1,0 +1,43 @@
+{# app/Views/Controller/blog/posts.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ action|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{% if username %}{{ 'author'|trans|capitalize }}: {{ username|capitalize }}{% endif %}{% endblock page_name %}
+
+{% block content %}
+    {% if username  %}{# Get posts for this username #}
+        {% for post in posts %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="panel-title"><strong>{{ post.title }}</strong></p>
+                    <p class="post-date">{{ post.created|date("d.m.Y") }}</p>
+                </div>
+                <div class="panel-body">
+                    {{ post.body }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}{# Get posts for all users #}
+        {% for user, user_posts in posts %}
+            <h2>{{ 'author'|trans|capitalize }}:  <a href="/blog/posts/{{ user }}">{{ user }}</a></h2>
+                {% for post in user_posts %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <p class="panel-title"><strong>{{ post.title }}</strong></p>
+                        <p class="post-date">{{ post.created|date("d.m.Y") }}</p>
+                    </div>
+                    <div class="panel-body">
+                        {{ post.body }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}    
+{% endblock content %}
+
+
+

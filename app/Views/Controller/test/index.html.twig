@@ -1,0 +1,16 @@
+{# app/Views/Controller/test/index.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{{ controller|capitalize }}/{{ action|capitalize }}{% endblock page_name %}
+
+{% block content %}
+    <p class="important">
+        Welcome to the test page
+    </p>
+{% endblock content %}
+

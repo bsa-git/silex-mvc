@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+    <ubki sessid="">
+        <req_envelope>
+            <req_xml>
+                <request 
+                    version="1.0" 
+                    reqtype="12" 
+                    reqreason="1" 
+                    reqdate="2015-06-20" 
+                    reqidout="bsa"
+                    reqsource="1"
+                >
+                    <i reqlng="2">
+                        <ident 
+                            okpo="2117911255" 
+                            lname="Иванов" 
+                            fname="Иван" 
+                            mname="Иванович" 
+                            bdate="1990-12-12"
+                        >
+                        </ident>
+                    </i>
+                </request>
+            </req_xml>
+        </req_envelope>
+    </ubki>
+</doc>

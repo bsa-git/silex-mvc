@@ -1,0 +1,26 @@
+<?php
+
+// app/Models/BaseModel.php
+
+namespace Models;
+
+use Silex\Application;
+
+
+/**
+ * Class - BaseModel
+ *
+ * @category Model
+ * @package  app\Models
+ * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+ * @link     http://my.site
+ */
+class BaseModel {
+
+    use \Models\Helper\OrmTrait;
+    use \Models\Helper\DbalTrait;
+    use \Models\Helper\EntityTrait;
+    use \Controllers\Helper\SecurityTrait;
+
+}

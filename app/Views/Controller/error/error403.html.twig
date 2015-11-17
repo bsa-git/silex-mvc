@@ -1,0 +1,18 @@
+{# app/Views/Controller/error/error403.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Error-403{% endblock title %}
+
+{% block page_name %}ERROR-403! Resource  access denied{% endblock page_name %}
+
+{% block content %}
+    <div class="text-danger lead"><strong>Message:</strong> {{ exception.message|nl2br }}</div>
+    <br />
+    <p class="text-warning">
+        <em>Error accessing resource "{{ route }}"!</em> You do not have rights to the resource. Please <a href="/logout">Log out</a> and then Login with other rights.
+    </p>
+    <p class="text-warning">
+        The requested page couldn't be opened. Checkout for any URL
+        misspelling or <a href="/home">return to the homepage</a>.
+    </p>
+{% endblock %}

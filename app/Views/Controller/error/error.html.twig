@@ -1,0 +1,15 @@
+{# app/Views/Controller/error/error.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}An Error Occurred: {{ status_text }}{% endblock title %}
+
+{% block page_name %}Oops! An Error Occurred{% endblock page_name %}
+
+{% block content %}
+    <div class="text-danger lead">The server returned a "{{status_code}}-{{status_text}}. {{ exception.message|nl2br }}".</div>
+    <br>
+    <p class="text-warning">
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+{% endblock %}

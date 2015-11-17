@@ -1,0 +1,6 @@
+
+===== {% if env %}{{ env|upper }}{% endif %} === {% if controller %}{{ controller|capitalize }}{% endif %}{% if action %}({{ action|capitalize }}){% endif %} {% if date %} Date = {{ date }}{% endif %} =====
+
+{% for value in results %}
+    {{ value }}
+{% endfor %}

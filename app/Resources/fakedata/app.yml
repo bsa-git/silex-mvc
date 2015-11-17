@@ -1,0 +1,13 @@
+user:
+ - { id: 1, username: admin, first_name: 'Ivan', second_name: 'Petrov', roles: ROLE_ADMIN, email: 'admin@mail.com', personal_mobile: '+380980029369', password: '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='}
+ - { id: 2, username: user, first_name: 'Sergey', second_name: 'Ivanov', roles: ROLE_USER, email: 'user@mail.com', personal_mobile: '+380111111111', password: '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='}
+post:
+ - { user_id: 1, created: '2015-07-31', title: 'Symfony2 - the Yaml Component', body: "The Symfony Yaml component parses YAML strings to convert them to PHP arrays. It is also able to convert PHP arrays to YAML strings."}
+ - { user_id: 1, created: '2015-07-31', title: 'Symfony2 - the YAML Format', body: "According to the official YAML website, YAML is a human friendly data serialization standard for all programming languages."}
+ - { user_id: 2, created: '2015-07-31', title: 'Symfony2 - short description', body: "So you want to try Symfony2, but in the presence of you no more than 10 minutes? The first part of this tutorial is written for you. She will explain how to quickly start with Symfony2, showing the simple structure of the finished project."}
+ - { user_id: 2, created: '2015-07-31', title: 'Symfony2 - download and install', body: "First of all, make sure you have at least PHP 5.4 and it is configured to work with the web server, such as Apache. Ready? Let's start with the download Symfony2. For a quick start, we will use Symfony2 sandbox. It Symfony2, which contains all necessary libraries and a few simple controllers; it also included the basic configuration. The biggest advantage of the sandbox over other types of installation is that you can immediately start experimenting with Symfony2. Download the sandbox (sandbox), and unzip it to the root directory of the web server. Now you should have a folder sandbox /"}
+todo:
+ - {title: 'Take out the trash', task_order: 1, done: true}
+ - {title: 'Prepare for exams to college', task_order: 2, done: false}
+ - {title: 'Call parents', task_order: 3, done: false} 
+ - {title: 'Happy birthday friend', task_order: 4, done: false}

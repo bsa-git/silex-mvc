@@ -1,0 +1,16 @@
+{# app/Views/Controller/books/edit.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Add author{% endblock title %}
+{% block head %}{{ parent() }}{% endblock head %}
+
+{% block page_name %}Add author{% endblock page_name %}
+
+{% block content %}
+    <div class="block">
+        {% autoescape false %}
+            {{ form }}
+        {% endautoescape %}
+    </div>
+{% endblock content %}
+

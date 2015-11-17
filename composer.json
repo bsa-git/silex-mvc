@@ -1,0 +1,23 @@
+{
+    "require": {
+        "silex/silex": "~1.3",
+        "symfony/symfony": "^2.7",
+        "monolog/monolog": "^1.14",
+        "swiftmailer/swiftmailer": "^5.4",
+        "doctrine/dbal": "^2.5",
+        "doctrine/orm": "^2.5",
+        "symfony/intl": "^2.7"
+    },
+    "autoload":{
+        "psr-0":{
+            "Controllers" : "app/",
+            "Config" : "app/Resources/",
+            "Console" : "app/",
+            "Forms" : "app/",
+            "Models" : "app/",
+            "Providers" : "app/",
+            "Pagerfanta" : "vendor/library/",
+            "Services" : "app/"
+        }
+    }
+}

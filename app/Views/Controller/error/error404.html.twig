@@ -1,0 +1,15 @@
+{# app/Views/Controller/error/error404.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Error-404{% endblock title %}
+
+{% block page_name %}ERROR-404! Page not found{% endblock page_name %}
+
+{% block content %}
+    <div class="text-danger lead"><strong>Message:</strong> {{ exception.message|nl2br }}</div>
+    <br>
+    <p class="text-warning">
+       The requested page couldn't be located. Checkout for any URL
+        misspelling or <a href="{{ path('home') }}">return to the homepage</a>.
+    </p>
+{% endblock %}

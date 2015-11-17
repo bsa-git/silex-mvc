@@ -1,0 +1,90 @@
+#--- FORM ---#
+Username: Username
+First name: First name
+Second name: Second name
+Password: Password
+Email: Email
+Save: Save
+Login: Login
+Created: Created
+Title: Title
+Body: Body
+Personal mobile: Personal mobile 
+
+#--- MESSAGES ---#
+alert-warning: attention
+alert_warning: attention
+alert-danger: error
+alert_danger: error
+alert-success: congratulations
+alert_success: congratulations
+alert-info: information
+alert_info: information
+registration: registration
+login: login
+logout: log out
+congratulate_successful_registration: congratulate you successful registration
+information_your_login: information about your login
+address_page_login: address of page login
+user_logon: user logon
+yours_faithfully: yours faithfully
+web_site_administrator: WEB site administrator
+new_user: new user
+account: account
+learn_more: learn more
+home: home
+blog: blog
+testing: testing
+get: get
+loading_resources: loading resources
+search_on_symfony: Search on Symfony
+search: search
+add_post: add post
+edit: edit
+delete: delete
+my_posts: my posts
+not_found: not found
+all_posts: all posts
+author: author
+edit_post: edit post
+russian: russian
+english: english
+added_new_message: 'Added new message "{{ title }}"'
+deleted_this_message: 'Deleted message "{{ title }}"'
+edited_this_message: 'Edited message "{{ title }}"'
+communication_error: "Communication error"
+task_list: "task list"
+todo: todo
+what_must_be_done: "what must be done"
+mark_all_as_completed: "mark all as completed"
+clear_completed: "clear completed"
+you_can_download_with: "you can download with"
+clear: clear
+completed: completed
+finalized: finalized
+task: task
+tasks: tasks
+double_click_to_edit_task: double-click to edit task
+developer: developer
+debug: debug
+
+#--- VALIDATE ---#
+valid_please_enter_your_firstname: "Please enter your name"
+valid_please_enter_your_lastname: "Please enter your last name"
+valid_please_provide_password: "Please enter your password"
+valid_please_provide_login: "Enter your login"
+valid_please_enter_date: "Please enter date"
+valid_please_enter_email: "Please enter E-Mail"
+valid_please_choose_value_from_list: "Please select from the list value"
+valid_date_ru_must_be_format: "Please type the date in the format 01.12.2014"
+valid_your_password_must_least_n_characters_long: "Your password must be at least 3 characters"
+valid_your_login_must_least_n_characters_long: "Your login must be at least 3 characters"
+valid_please_confirm_your_password: "Please enter the same password as above"
+valid_please_enter_valid_email_address: "Please enter a valid Email address"
+valid_user_with_this_login_already_exists: "A user with this login already exists"
+valid_user_with_this_phone_already_exists: "User with this phone already exists"
+valid_user_with_this_email_already_exists: "Users with E-Mail already exists"
+valid_please_enter_valid_login: "Please enter a valid login"
+valid_please_enter_valid_reg_code: "Please enter the correct registration code"
+valid_please_enter_reg_code: "Please enter a registration code"
+valid_user_with_this_login_not_exists: "User with this login missing"

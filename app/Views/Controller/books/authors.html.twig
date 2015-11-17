@@ -1,0 +1,40 @@
+{# app/Views/Controller/books/authors.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Authors{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}Authors{% endblock page_name %}
+
+{% block content %}
+    <div class="block">
+        {% if authors %}
+            {% for author in authors %}
+                <div>
+                    {{ author.name }}
+                    <div>
+                        {% for book in author.books %}
+                            <div>{# path #}
+                                <a href="{{ url('book', {'id': book.id}) }}">
+                                    {{ book.name }}
+                                </a>
+                            </div>
+                        {% endfor %}    
+                    </div>
+                </div>
+            {% endfor %}
+            <br>
+            {% if pagerfanta.haveToPaginate() %}
+                <div class="pagerfanta"> 			
+                    {% autoescape false %}
+                        {{ html }}
+                    {% endautoescape %}
+                </div>
+            {% endif %}
+        {% else %}
+            Nothing Found
+        {% endif %}
+    </div>
+{% endblock content %}

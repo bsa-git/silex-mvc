@@ -1,0 +1,81 @@
+service_providers:
+    models:
+        class: Providers\ModelsServiceProvider
+        construct_parameters: ~
+        parameters:
+            models.path: %base_path%/app/Models
+    
+    monolog:
+        class: Silex\Provider\MonologServiceProvider
+        construct_parameters: ~
+        parameters:
+            monolog.logfile: %log_path%/common.log
+            monolog.name: COMMON
+
+    twig:
+        class: Silex\Provider\TwigServiceProvider
+        construct_parameters: ~
+        parameters:
+            twig.path:
+                #Global views
+                - %base_path%/app/Views
+            twig.form.templates:    
+                #Global form templates
+                - Form/bootstrap_3_horizontal_layout.html.twig
+            twig.options:
+                cache: %cache_path%/twig
+                strict_variables: false
+                auto_reload: true
+    
+    validator:
+        class: Silex\Provider\ValidatorServiceProvider
+    
+    translation:
+        class: Silex\Provider\TranslationServiceProvider
+        parameters:
+            locale_fallbacks: [en, ru]
+            locale: %locale%    
+        
+    swiftmailer:
+        class: Silex\Provider\SwiftmailerServiceProvider
+        parameters:
+            swiftmailer.options:
+                host: %mail.host%
+                port: %mail.port%
+                username: %mail.username%
+                password: %mail.password%
+                encryption: %mail.encryption%
+                auth_mode: %mail.auth_mode%
+        
+    doctrine:
+        class: Silex\Provider\DoctrineServiceProvider
+        construct_parameters: ~
+        parameters:
+            dbs.options:
+                default:
+                    driver: %driver%
+                    path: %base_path%%dbpath%
+    
+    doctrine_orm:
+        class: Providers\DoctrineOrmServiceProvider
+        construct_parameters: ~
+        parameters:
+            # Path to metadata
+            orm.metadata: %base_path%/app/Models/ORM
+            # Database options
+            orm.options:
+                driver: %driver%
+                path: %base_path%%dbpath%
+
+
+# Schema creation config
+dbal_schema:
+    #connection alias
+    default: 
+        #schema class
+        security: Models\DBAL\AppSchema 
+        # A valid config too
+        tables:
+            user: Models\DBAL\UserTable
+            post: Models\DBAL\PostTable
+            todo: Models\DBAL\TodoTable

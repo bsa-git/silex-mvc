@@ -1,0 +1,49 @@
+{# app/Views/Layout/base.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="{{ _charset }}">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="shortcut icon" href="{{ asset('img/assets/ico/favicon.ico') }}">
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <title>{% block title %}{% endblock %}</title>
+            <!-- Bootstrap -->
+            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet">
+            <!-- font-awesome -->
+            <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+            <!-- Google fonts -->
+            <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+            <!-- === Core JavaScript === -->
+            <!-- Require -->
+            <script data-main="{{ asset('js/main') }}" src="{{ asset('js/lib/requirejs/require.js') }}"></script>
+            <!-- jQuery -->
+            <script type="text/javascript" src="{{ asset('js/lib/jquery/jquery.min.js') }}"></script>
+        {% endblock head %}
+    </head>
+    <body>
+        <!-- Common Data -->
+        {% include 'Include/common.html.twig' %}
+        <!-- Fixed NavBar -->
+        {% include 'Include/navbar.html.twig' %}
+        <div id="content" class="container">
+            <!-- Header -->
+            {% include 'Include/header.html.twig' %}
+            <!-- Page Header -->
+            <div class="page-header"><h1>{% block page_name %}{% endblock page_name %}</h1></div>
+            <!-- Message Box -->
+            {% include 'Include/msgbox.html.twig' %}
+            <!-- Page Content -->
+            <div id="page_content">
+                {% block content %}{% endblock content %}
+            </div>
+    </div>
+    <!-- /container -->
+
+    <!-- Include MyStyle -->
+    <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}" />
+</body>
+</html>
