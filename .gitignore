@@ -44,5 +44,6 @@ Temporary Items
 
 # My ignore dir
 data/
+app/Resources/db/
 nbproject/
 vendor/
