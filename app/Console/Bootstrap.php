@@ -195,7 +195,8 @@ class Bootstrap {
      * @param Application $app
      */
     private function _iniApplication(Application $app) {
-        
+        // Create application paths
+        $config = $app['my']->get('config')->createAppPaths();
     }
 
     /**

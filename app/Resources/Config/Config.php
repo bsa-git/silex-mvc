@@ -26,12 +26,20 @@ class Config {
     private $app;
     
     /**
-     * Data dir
+     * Application paths
      * 
-     * @var string
+     * @var array
      */
-    public $data_dir = null;
-
+    private $arrAppPaths = array(
+        "cache" => "/data/cache",
+        "cache_twig" => "/data/cache/twig",
+        "download" => "/data/download",
+        "upload" => "/data/upload",
+        "logs" => "/data/logs",
+        "temp" => "/data/temp",
+        "db" => "/app/Resources/db",
+        );
+    
     //---------------------------
     /**
      * Constructor
@@ -69,11 +77,10 @@ class Config {
     /**
      *  Get the path to the main project working directory
      * 
-     * @param  Application $app 
-     * @param  string $aType //Тип пути для файла
+     * @param  string $aPath 
      * @return string
      */
-    public function getProjectPath($aType) {
+    public function getProjectPath($aPath) {
         $patch = "";
         $newDir = "";
         $opts = $this->app['my.opts'];
@@ -89,7 +96,7 @@ class Config {
         //Set DOCUMENT_ROOT
         $rootDocument = $this->app['config']['base_path'];
 
-        switch ($aType) {
+        switch ($aPath) {
             case "application":
                 $patch = $rootDocument . "/app";
                 break;
@@ -150,6 +157,30 @@ class Config {
                 break;
         }
         return $patch;
+    }
+    
+    /**
+     *  Create application paths
+     * 
+     * @param  int $mode 
+     */
+    public function createAppPaths($mode = 0777) {
+        //Set DOCUMENT_ROOT
+        $rootDocument = $this->app['config']['base_path'];
+        foreach ($this->arrAppPaths as $key => $path) {
+            $strPath = $rootDocument . $path;
+            if(!is_dir($strPath)){
+                $trimPath = trim($path, "/");
+                $arrPath = explode('/', $trimPath);
+                $strPath = $rootDocument;
+                foreach ($arrPath as $itemPath) {
+                    $strPath .= "/{$itemPath}";
+                    if(!is_dir($strPath) && !mkdir($strPath, $mode)){
+                        $this->app->abort(406, "Failed to create a directory '{$strPath}' ...");
+                    }
+                }
+            }
+        }
     }
 
 }
