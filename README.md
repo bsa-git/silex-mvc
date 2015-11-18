@@ -34,16 +34,10 @@ Main features of the framework:
 
 1. Clone [silex-mvc]( https://github.com/bsa-git/silex-mvc ) project with git.
 2. Run `composer install`.
-3. Run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
+3. To create a database run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
    pre-editing the path to` php.exe` and `app\Console\index.php`;
-4. Configure your web server, create a virtual host with `path/to/project/web` as
-document root.
-5. Set web server write permissions.
-    Ubuntu example:
-    ```bash
-    sudo chmod -R 775 path/to/project/var && sudo chown -R www-data:www-data path/to/project/var
-    ```
-
+4. Configure the web server so that the entry point was `public/index.php`.
+5. Set, if necessary, the appropriate permissions to write to `path/to/project/var`.
 6. Access your project url with web browser.
 
 ## Configuration
