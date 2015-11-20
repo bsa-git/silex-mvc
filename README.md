@@ -58,6 +58,11 @@ service_providers:
 ...
 ```
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 ### console.yml \& application.yml
 The console and web bootstrap config respectively. If you use `imports` statement
 the config will be merged recursively allows partial specific configs.
