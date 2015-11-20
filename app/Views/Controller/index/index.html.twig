@@ -4,6 +4,11 @@
 {% block title %}Home{% endblock title %}
 {% block head %}
     {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('Highlight');
+    </script>
 {% endblock head %}
 
 {% block page_name %}Silex - MicroFramework{% endblock page_name %}
@@ -15,5 +20,6 @@
         <p>This is the documentation for Silex, the PHP microframework based on <a href="http://symfony.com/components" target="_blank">Symfony2 Components</a>.</p>
         <p><a href="http://silex.sensiolabs.org/documentation" class="btn btn-primary btn-lg" target="_blank" >{{ 'learn_more'|trans|capitalize }}...</a></p>
     </div>
+    {{  _c_.showMarkdown([app.basepath, '/README.md']|join )|raw }}
 {% endblock content %}
 

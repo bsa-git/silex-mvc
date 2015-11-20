@@ -85,6 +85,8 @@ class Bootstrap {
 
         //Set debug option
         $app['debug'] = $app['config']['parameters']['debug'];
+        //Set basepath option
+        $app['basepath'] = $this->app['config']['base_path'];
 
         //Set Timezone
         if (isset($app['config']['parameters']['timezone'])) {

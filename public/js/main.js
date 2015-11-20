@@ -15,6 +15,7 @@ requirejs.config({
         //backbone: 'lib/backbone/backbone-min',
         backbone: 'lib/backbone/backbone',
         ExtendClass: 'lib/Extend.class',
+        Highlight: 'app/services/Highlight.class',
         FormValidation: 'app/services/FormValidation.class',
         Datepicker: 'app/services/Datepicker.class',
         MaskInput: 'app/services/MaskInput.class',
@@ -51,6 +52,9 @@ requirejs.config({
         },
         'MaskInput': {
             deps: ['lib/jquery-maskedinput/jquery.maskedinput.min']
+        },
+        'Highlight': {
+            deps: ['css!lib/highlight/css/github.css', 'lib/highlight/highlight.pack']
         },
         'Todo': {
             deps: ['css!app/bb-todo/css/style.css', 'backbone', 'lib/backbone/backbone.localStorage', 'lib/sugarjs/sugar-str.min']

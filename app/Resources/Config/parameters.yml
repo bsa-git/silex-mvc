@@ -4,7 +4,7 @@ parameters:
     locale: en
     ### Debug: true, false
     ###---------------------
-    debug: false
+    debug: true
     ### Environment: production, test, dev
     ###------------------------------
     environment: test 

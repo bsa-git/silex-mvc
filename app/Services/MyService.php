@@ -197,5 +197,62 @@ class MyService {
         }
         return $app['my.debug'];
     }
-
+    
+    
+    /**
+     * Get Markdown service
+     * Markdown is a lightweight and easy-to-use syntax for text styling
+     * according to http://daringfireball.net/projects/markdown/syntax
+     * 
+     * @return Parsedown
+     */
+    public function getMarkdown() {
+        $app = $this->app;
+        //-----------------
+        // ParamBox
+        if (!isset($app['my.markdown'])) {
+            $app['my.markdown'] = $app->share(function () {
+                return new \Services\My\markdown\Markdown();
+            });
+        }
+        return $app['my.markdown'];
+    }
+    
+    /**
+     * Get MarkdownGithub service
+     * Markdown is a lightweight and easy-to-use syntax for text styling
+     * according to https://help.github.com/articles/github-flavored-markdown
+     * 
+     * @return Parsedown
+     */
+    public function getMarkdownGithub() {
+        $app = $this->app;
+        //-----------------
+        // ParamBox
+        if (!isset($app['my.markdown_github'])) {
+            $app['my.markdown_github'] = $app->share(function () {
+                return new \Services\My\markdown\GithubMarkdown();
+            });
+        }
+        return $app['my.markdown_github'];
+    }
+    
+    /**
+     * Get MarkdownExtra service
+     * Markdown is a lightweight and easy-to-use syntax for text styling
+     * according to http://michelf.ca/projects/php-markdown/extra
+     * 
+     * @return Parsedown
+     */
+    public function getMarkdownExtra() {
+        $app = $this->app;
+        //-----------------
+        // ParamBox
+        if (!isset($app['my.markdown_extra'])) {
+            $app['my.markdown_extra'] = $app->share(function () {
+                return new \Services\My\markdown\MarkdownExtra();
+            });
+        }
+        return $app['my.markdown_extra'];
+    }
 }

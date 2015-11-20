@@ -59,6 +59,9 @@ class IndexController extends BaseController {
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
+            
+            
+            
             return $this->showView();
         } catch (\Exception $exc) {
             return $this->showError($exc);

@@ -96,7 +96,7 @@ use \Controllers\Helper\DebugTrait;
      * @api
      */
     public $url_path;
-    
+
     /**
      * Returns the root path from which this request is executed.
      *
@@ -114,7 +114,7 @@ use \Controllers\Helper\DebugTrait;
     public $url_basepath;
 
     //----------------------
-    
+
     public function __construct(Application $app) {
 
         $this->app = $app;
@@ -148,10 +148,10 @@ use \Controllers\Helper\DebugTrait;
 
         // Set url path 
         $this->url_path = $params["url_path"];
-        
+
         // Set url basepath 
         $this->url_basepath = $params["url_basepath"];
-        
+
         // Set route 
         $this->route = $this->app["route"];
 
@@ -221,7 +221,7 @@ use \Controllers\Helper\DebugTrait;
         // Get PathInfo
         $pathInfo = $request->getPathInfo();
         $pathInfo = trim($pathInfo, "/");
-        
+
         // Get PathInfo
         $basePath = $request->getBasePath();
         $basePath = trim($pathInfo, "/");
@@ -351,14 +351,101 @@ use \Controllers\Helper\DebugTrait;
     }
 
     /**
+     * Show text markdown markup file
+     * file is selected according to the localization
+     * 
+     * @param string $filename
+     * @param string $type Type of Markdown: traditional, github, extra
+     * @return string
+     */
+    public function showMarkdown($filename, $type = 'github') {
+        $twig = $this->app['twig'];
+        $arBox = $this->app['my']->get('array');
+        $strBox = $this->app['my']->get('string');
+        $basepath = $this->app['basepath'];
+        $locale = $this->app['locale'];
+        $title = "";
+        $filename = trim($filename);
+        $filename = str_replace('\\', '/', $filename);
+        //-------------------------------------------
+        if (is_file($filename)) {
+            $lastFilename = $arBox->set($filename, "/")->getLast();
+            // Set title
+            $title = $lastFilename;
+            // Check word in uppercase
+            $upperFilename = $strBox->set($lastFilename)->toUpper()->get();
+            $isUpper = ($arBox->set($lastFilename, ".")->get(0) == $arBox->set($upperFilename, ".")->get(0));
+            if ($isUpper) {
+                $locale = strtoupper($locale);
+            }
+            // Get the name of the file to a different locale 
+            $lastFilename = $arBox->set($lastFilename, ".")->get(0) . "-{$locale}.md";
+            $localeFilename = $arBox->set($filename, "/")->pop()->join('/') . "/{$lastFilename}";
+            // Get file content
+            if (is_file($localeFilename)) {
+                // Set title
+                $title = $lastFilename;
+                $strFile = file_get_contents($localeFilename);
+            } else {
+                $strFile = file_get_contents($filename);
+            }
+        } else {
+
+            // Get file name
+            $filename = $basepath . '/app/Views/' . $this->getIncPath() . '/' . $filename;
+            if (!is_file($filename)) {
+                $this->app->abort(404, "File '{$filename}' does not exist.");
+            }
+            $lastFilename = $arBox->set($filename, "/")->getLast();
+            // Set title
+            $title = $lastFilename;
+
+            // Check word in uppercase
+            $upperFilename = $strBox->set($lastFilename)->toUpper()->get();
+            $isUpper = ($arBox->set($lastFilename, ".")->get(0) == $arBox->set($upperFilename, ".")->get(0));
+            if ($isUpper) {
+                $locale = strtoupper($locale);
+            }
+            // Get the name of the file to a different locale 
+            $lastFilename = $arBox->set($lastFilename, ".")->get(0) . "-{$locale}.md";
+            $localeFilename = $arBox->set($filename, "/")->pop()->join('/') . "/{$lastFilename}";
+            // Get file content
+            if (is_file($localeFilename)) {
+                // Set title
+                $title = $lastFilename;
+                $strFile = file_get_contents($localeFilename);
+            } else {
+                $strFile = file_get_contents($filename);
+            }
+        }
+        switch ($type) {
+            case 'traditional':
+                $markdown = $this->app['my']->get('markdown');
+                break;
+            case 'github':
+                $markdown = $this->app['my']->get('markdown_github');
+                break;
+            case 'extra':
+                $markdown = $this->app['my']->get('markdown_extra');
+                break;
+            default:
+                break;
+        }
+        // Get markdown parser text
+        $text = $markdown->parse($strFile);
+        // Get twig render content
+        $tplFile = "Include/markdown_container.html.twig";
+        $content = $twig->render($tplFile, array('title' => $title, 'text' => $text));
+        return $content;
+    }
+
+    /**
      * Get path to lib
      * 
      * @return string
      */
     protected function getLibPath() {
-
         $basepath = $this->app['config']['base_path'];
-
         return $basepath . "/app/Views/Controller/{$this->opts["controller"]}/lib/{$this->opts["action"]}";
     }
 
@@ -525,7 +612,7 @@ use \Controllers\Helper\DebugTrait;
             $errMsg = $error->getMessage();
             $errProp = $error->getPropertyPath();
             $errValue = $sysBox->varExport($error->getInvalidValue());
-            $message .=  "<li>errProperty = '{$errProp}'; errValue = '{$errValue}'; errMessage = {$errMsg}</li>";
+            $message .= "<li>errProperty = '{$errProp}'; errValue = '{$errValue}'; errMessage = {$errMsg}</li>";
         }
         $message .= '</ul>';
         return $message;
@@ -559,7 +646,7 @@ use \Controllers\Helper\DebugTrait;
                 $code .= " ({$httpCodes[$code]})";
             }
             $message .= "<em>Code:</em> {$code}<br>";
-            
+
             $message .= '<em>Params:</em><br><ul>';
             $message .= "<li>{$sysBox->varExport($this->params)}</li>";
             $message .= '</ul>';
@@ -570,7 +657,7 @@ use \Controllers\Helper\DebugTrait;
             $trace = $exc->getTraceAsString();
             $arrTrace = $arBox->set($exc->getTraceAsString(), '#')->delRows()->shift()->get();
             foreach ($arrTrace as $value) {
-                if($value){
+                if ($value) {
                     $message .= "<li>{$value}</li>";
                 }
             }
@@ -597,8 +684,8 @@ use \Controllers\Helper\DebugTrait;
         }
 
         $code = (int) $code;
-        $message =  $this->_getMsgErrorExc($exc);
-        $messages =  $this->getAlertMessage($message);
+        $message = $this->_getMsgErrorExc($exc);
+        $messages = $this->getAlertMessage($message);
         return $this->sendJson($messages, $code);
     }
 
