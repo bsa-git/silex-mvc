@@ -263,3 +263,34 @@ div.alert button.close {
 .markdown-body code, .markdown-body tt {
     color: #333;
 }
+
+.markdown-body table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.markdown-body table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.markdown-body table th, .markdown-body table td {
+    padding: 6px 13px;
+    border: 1px solid #ddd;
+}
+
+.markdown-body p, 
+.markdown-body blockquote, 
+.markdown-body ul, 
+.markdown-body ol, 
+.markdown-body dl, 
+.markdown-body table, 
+.markdown-body pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+}

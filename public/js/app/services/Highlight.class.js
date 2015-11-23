@@ -20,7 +20,7 @@ define(['jquery'], function ($) {
                 // class = "language-yaml" => class = "yaml"
                 $('pre code').each(function (i, block) {
                     var c = $(block).attr("class");
-                    if(c && c.length > 0){
+                    if(c){
                         c = c.replace("language-","")
                         $(block).attr("class", c);
                     }

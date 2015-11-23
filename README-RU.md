@@ -18,9 +18,9 @@
 - использует БД типа SqlLite `app/Resources/db/app.db`;
 - работа с БД обеспечивается с помощью Doctrine (DBAL, ORM);
 - добавлены сервисы такие как Zend-Filter, Zend-Json и др. `app/library`;
-- так же добавлены сервисы для работы с массивами, строками, XML, HTTP `app/Services/My`;
+- так же добавлены сервисы для работы с массивами, строками, XML, HTTP, Markdown `app/Services/My`;
 - на стороне клиента используются библиотеки : jQuery, Bootstrap3, RequireJS, Backbone `public/js/lib`;
-- на стороне клиента используются сервисы: Datepicker, FormValidation, MaskInput `public/js/app/services`;
+- на стороне клиента используются сервисы: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`;
 - для примера работы фреймворка Backbone реализовано приложение `ToDo` для локального или серверного хранилищ данных `public/js/app/bb-todo`.
 
 
@@ -49,12 +49,16 @@
 
 ```yaml
  service_providers:
-    monolog:
-        class: Silex\Provider\MonologServiceProvider
-        construct_parameters: ~
+    swiftmailer:
+        class: Silex\Provider\SwiftmailerServiceProvider
         parameters:
-            monolog.logfile: %log_path%/common.log
-            monolog.name: COMMON
+            swiftmailer.options:
+                host: %mail.host%
+                port: %mail.port%
+                username: %mail.username%
+                password: %mail.password%
+                encryption: %mail.encryption%
+                auth_mode: %mail.auth_mode%
 ...
 ```
 

@@ -18,9 +18,9 @@ Main features of the framework:
 - Uses a database type SqlLite `app/Resources/db/app.db`.
 - Work with databases provided by Doctrine (DBAL, ORM).
 - Added services such as the Zend-Filter, Zend-Json and others. `app/library`.
-- Added services for working with arrays, strings, XML, HTTP `app/Services/My`.
+- Added services for working with arrays, strings, XML, HTTP, Markdown `app/Services/My`.
 - On the client side using the library: jQuery, Bootstrap3, RequireJS, Backbone `public/js/lib`.
-- Client-side services are used: Datepicker, FormValidation, MaskInput `public/js/app/services`.
+- Client-side services are used: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`.
 - `ToDo` implemented application (for the local or server storage) to show the work of the framework Backbone `public/js/app/bb-todo`.
 
 ## Installing
@@ -49,19 +49,18 @@ providers under `service_providers` section.
 
 ```yaml
 service_providers:
-    monolog:
-        class: Silex\Provider\MonologServiceProvider
-        construct_parameters: ~
+    swiftmailer:
+        class: Silex\Provider\SwiftmailerServiceProvider
         parameters:
-            monolog.logfile: %log_path%/common.log
-            monolog.name: COMMON
+            swiftmailer.options:
+                host: %mail.host%
+                port: %mail.port%
+                username: %mail.username%
+                password: %mail.password%
+                encryption: %mail.encryption%
+                auth_mode: %mail.auth_mode%
 ...
 ```
-
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
 ### console.yml \& application.yml
 The console and web bootstrap config respectively. If you use `imports` statement
