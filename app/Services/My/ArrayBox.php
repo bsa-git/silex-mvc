@@ -715,8 +715,8 @@ Class ArrayBox implements \IteratorAggregate, \Countable {
     }
 
     /**
-     * Получить срез массива значений (массивов/обьектов) по ключу
-     * и удалить повторяющиеся значения из среза, если нужно
+     * Get a slice of the array of values (arrays / objects) on the key
+     * and remove duplicate values from the cut, if needed
      *
      * @param  string|array $key     //The name of the field or fields ['id', 'email']
      * @param  bool $unique    //Sign of the uniqueness of the output array
@@ -740,7 +740,7 @@ Class ArrayBox implements \IteratorAggregate, \Countable {
                 if (is_array($key)) {
                     $key_ = $key[0];
                     $value_ = $key[1];
-                    $array[$item[$key_]] = $item->$value_;
+                    $array[$item->$key_] = $item->$value_;
                 } else {
                     $array[] = $item->$key;
                 }

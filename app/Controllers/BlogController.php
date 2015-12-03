@@ -119,7 +119,7 @@ class BlogController extends BaseController {
         $request = $this->getRequest();
         $models = $this->app['models'];
         $locale = $this->getLocale();
-        $format = $locale == 'ru'? 'd.m.Y':'m/d/Y';
+        $format = $locale == 'ru' ? 'd.m.Y' : 'm/d/Y';
         //--------------------
         try {
             // Initialization
@@ -132,22 +132,18 @@ class BlogController extends BaseController {
             $form = $this->createForm(new PostForm(), $newPost, array('action' => "/blog/new"));
             $form->handleRequest($request);
 
-            if ($form->isSubmitted()) {
-                if ($form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
+                $user = $this->getUser();
+                $username = $user->getUsername();
+                // Set field "created" to datetime object
+                $created = $newPost->getCreated();
+                $newPost->setCreated(date_create($created));
 
-                    $user = $this->getUser();
-                    $username = $user->getUsername();
-                    
-                    // Set field "created" to datetime object
-                    $created = $newPost->getCreated();
-                    $newPost->setCreated(date_create($created));
-                    
-                    $models->load('Post', 'newPost', array('username' => $username, 'new_post' => $newPost));
+                $models->load('Post', 'newPost', array('username' => $username, 'new_post' => $newPost));
 
-                    $this->addFlash('info_message', $this->trans('added_new_message', array('{{ title }}' => $newPost->getTitle())));
+                $this->addFlash('info_message', $this->trans('added_new_message', array('{{ title }}' => $newPost->getTitle())));
 
-                    return $this->redirect("/account");
-                }
+                return $this->redirect("/account");
             }
 
             // Show form
@@ -168,7 +164,7 @@ class BlogController extends BaseController {
         $models = $this->app['models'];
         $request = $this->getRequest();
         $locale = $this->getLocale();
-        $format = $locale == 'ru'? 'd.m.Y':'m/d/Y';
+        $format = $locale == 'ru' ? 'd.m.Y' : 'm/d/Y';
         $em = $this->app['em'];
         $repo = $em->getRepository('Models\ORM\Post');
         //--------------------
@@ -178,30 +174,26 @@ class BlogController extends BaseController {
 
             // Find edit post
             $editPost = $repo->find($id);
-           
+
             // Set field "created" to string format
             $created = $editPost->getCreated();
             $created = date_format($created, $format);
             $editPost->setCreated($created);
-            
+
             // Create form
             $form = $this->createForm(new PostForm(), $editPost, array('action' => "/blog/edit/{$id}"));
             $form->handleRequest($request);
 
-            if ($form->isSubmitted()) {
-                if ($form->isValid()) {
-                    
-                    // Set field "created" to datetime object
-                    $created = $editPost->getCreated();
-                    $editPost->setCreated(date_create($created));
-                    
-                    // Save post
-                    $models->load('Post', 'editPost', array('edit_post' => $editPost));
-                    
-                    $this->addFlash('info_message', $this->trans('edited_this_message', array('{{ title }}' => $editPost->getTitle())));
-                    
-                    return $this->redirect("/account");
-                }
+            if ($form->isSubmitted() && $form->isValid()) {
+                // Set field "created" to datetime object
+                $created = $editPost->getCreated();
+                $editPost->setCreated(date_create($created));
+                // Save post
+                $models->load('Post', 'editPost', array('edit_post' => $editPost));
+
+                $this->addFlash('info_message', $this->trans('edited_this_message', array('{{ title }}' => $editPost->getTitle())));
+
+                return $this->redirect("/account");
             }
             // Show form
             return $this->showView(array('form' => $form->createView()));

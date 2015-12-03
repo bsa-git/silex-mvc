@@ -168,7 +168,7 @@ trait EntityTrait
             }
             if (method_exists($this, $method)) {
                 $value = $this->$method();
-                if ($value !== NULL) {
+                if ($value !== NULL && !is_object($value)) {
                     $arrResult[$key] = $value;
                 }
             }

@@ -34,6 +34,7 @@ service_providers:
                     logout:
                         logout_path: /logout
                     users: ~
+#                    users:
 #                        admin:
 #                            - ROLE_ADMIN
 #                            # raw password is foo

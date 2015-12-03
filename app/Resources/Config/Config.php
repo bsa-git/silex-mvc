@@ -94,7 +94,7 @@ class Config {
             $newDir = rtrim($newDir, "/");
         }
         //Set DOCUMENT_ROOT
-        $rootDocument = $this->app['config']['base_path'];
+        $rootDocument = $this->app['basepath'];
 
         switch ($aPath) {
             case "application":
@@ -119,12 +119,6 @@ class Config {
                     $patch = $rootDocument . "/app/Views";
                 }
                 break;
-            case "import":
-                $patch = $rootDocument . "/data/import";
-                break;
-            case "export":
-                $patch = $rootDocument . "/data/export";
-                break;
             case "cache":
                 $patch = $rootDocument . "/data/cache";
                 break;
@@ -135,6 +129,9 @@ class Config {
                     $patch = $rootDocument . "/data/download";
                 }
                 break;
+            case "download_srv":
+                $patch = $rootDocument . "/data/download";
+                break;        
             case "upload":
                 if ($newDir) {
                     $patch = $newDir;
@@ -148,9 +145,6 @@ class Config {
                 } else {
                     $patch = $rootDocument . "/data/logs";
                 }
-                break;
-            case "sessid":
-                $patch = $rootDocument . "/data/download";
                 break;
             case "fakedata":
                 $patch = $rootDocument . "/app/Resources/fakedata";
@@ -166,7 +160,7 @@ class Config {
      */
     public function createAppPaths($mode = 0777) {
         //Set DOCUMENT_ROOT
-        $rootDocument = $this->app['config']['base_path'];
+        $rootDocument = $this->app['basepath'];
         foreach ($this->arrAppPaths as $key => $path) {
             $strPath = $rootDocument . $path;
             if(!is_dir($strPath)){

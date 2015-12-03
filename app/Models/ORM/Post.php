@@ -5,7 +5,6 @@
 namespace Models\ORM;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-//use Symfony\Component\Validator\Constraints as Assert;
 use Forms\Constraints as Assert;
 
 /**
@@ -62,7 +61,6 @@ class Post {
      * @param Symfony\Component\Validator\Mapping\ClassMetadata $metadata
      */
     static public function loadValidatorMetadata(ClassMetadata $metadata) {
-//        $metadata->addPropertyConstraint('created', new Assert\Type('\DateTime'));
         $metadata->addPropertyConstraint('created', new Assert\NotBlank());
         $metadata->addPropertyConstraint('title', new Assert\NotBlank());
         $metadata->addPropertyConstraint('title', new Assert\Length(array('min' => 5)));

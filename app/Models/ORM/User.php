@@ -4,7 +4,6 @@
 
 namespace Models\ORM;
 
-use Silex\Application;
 use Forms\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 

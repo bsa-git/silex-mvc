@@ -156,11 +156,11 @@ class SecurityController extends BaseController {
                         $result = $errorList[0]->getMessage();
                     }
                 } elseif (isset($this->params['reg']['personal_mobile'])) {
-                    
+
                     $mobile = $this->params['reg']['personal_mobile'];
-                    
+
                     $len = strlen($mobile);
-                    if($len < 13){
+                    if ($len < 13) {
                         $result = TRUE;
                         return $this->sendJson($result);
                     }
@@ -179,7 +179,7 @@ class SecurityController extends BaseController {
                         $result = TRUE;
                     } else {
                         $result = $errorList[0]->getMessage();
-                    }    
+                    }
                 } else {
                     $result = $this->trans('communication_error');
                 }
@@ -191,22 +191,18 @@ class SecurityController extends BaseController {
                 $form = $this->createForm(new RegForm(), $newUser);
                 $form->handleRequest($request);
 
-                if ($form->isSubmitted()) {
-                    if ($form->isValid()) {
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $data = $models->load('User', 'newUser', array('new_user' => $newUser));
+                    $view = $this->getIncPath() . '/mail_new_user.html.twig';
+                    $mailBody = $this->renderView($view, $data);
 
-                        $data = $models->load('User', 'newUser', array('new_user' => $newUser));
+                    $this->mail(\Swift_Message::newInstance()
+                                    ->setSubject('Silex Email Test')
+                                    ->setFrom(array('m5-asutp@azot.ck.ua'))
+                                    ->setTo(array('bsa2657@yandex.ru'))
+                                    ->setBody($mailBody, 'text/html')); // 'text/html', 'text/plain'
 
-                        $view = $this->getIncPath() . '/mail_new_user.html.twig';
-                        $mailBody = $this->renderView($view, $data);
-
-                        $this->mail(\Swift_Message::newInstance()
-                                        ->setSubject('Silex Email Test')
-                                        ->setFrom(array('m5-asutp@azot.ck.ua'))
-                                        ->setTo(array('bsa2657@yandex.ru'))
-                                        ->setBody($mailBody, 'text/html')); // 'text/html', 'text/plain'
-
-                        return $this->redirect("/login");
-                    }
+                    return $this->redirect("/login");
                 }
                 // Show form
                 return $this->showView(array('form' => $form->createView()));

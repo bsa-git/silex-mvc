@@ -28,9 +28,11 @@ class MySecurityServiceProvider implements ServiceProviderInterface {
     }
 
     public function register(Application $app) {
-        $this->params['security.firewalls']['default']['users'] = $app->share(function () use ($app) {
-            return new DbalUserProvider($app['db']);
-        });
+        if (!isset($this->params['security.firewalls']['default']['users'])) {
+            $this->params['security.firewalls']['default']['users'] = $app->share(function () use ($app) {
+                return new DbalUserProvider($app['db']);
+            });
+        }
         $app->register(new SecurityServiceProvider(), $this->params);
     }
 

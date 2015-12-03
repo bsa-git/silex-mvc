@@ -31,7 +31,7 @@ class UbkiModel extends BaseModel {
         $config = $this->app["my"]->get('config');
         //-------------------
         // Get file path with "sessid"
-        $path = $config->getProjectPath("sessid");
+        $path = $config->getProjectPath("download_srv");
         $files = $sysBox->getNameFilesSortDesc($path, "sessid_");
         if (count($files)) {// sessid_20150524.txt
             // Check the relevance of the "sessid"
@@ -60,7 +60,7 @@ class UbkiModel extends BaseModel {
     private function _setSessId($sessid) {
         $config = $this->app["my"]->get('config');
         //-------------------
-        $path = $config->getProjectPath("sessid");
+        $path = $config->getProjectPath("download_srv");
         $date_now = date("Ymd");
         $filePath = $path . "/sessid_{$date_now}.txt";
         file_put_contents($filePath, $sessid, LOCK_EX);
@@ -532,7 +532,7 @@ class UbkiModel extends BaseModel {
     private function _setResForAuth($res) {
         $config = $this->app["my"]->get('config');
         //---------------------
-        $path = $config->getProjectPath("sessid");
+        $path = $config->getProjectPath("download_srv");
         $date_now = date("Ymd");
         $filePath = $path . "/resAuth_{$date_now}.xml";
         file_put_contents($filePath, $res, LOCK_EX);

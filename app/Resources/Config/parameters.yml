@@ -5,7 +5,7 @@ parameters:
     ### Debug: true, false
     ###---------------------
     debug: true
-    ### Environment: production, test, dev
+    ### Environment: production, test, development
     ###------------------------------
     environment: test 
     ### Directory data for console
