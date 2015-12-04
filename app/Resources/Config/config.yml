@@ -53,8 +53,8 @@ service_providers:
         parameters:
             dbs.options:
                 default:
-                    driver: %driver%
-                    path: %base_path%%dbpath%
+                    driver: %db.driver%
+                    path: %base_path%%db.path%
     
     doctrine_orm:
         class: Providers\DoctrineOrmServiceProvider
@@ -64,8 +64,8 @@ service_providers:
             orm.metadata: %base_path%/app/Models/ORM
             # Database options
             orm.options:
-                driver: %driver%
-                path: %base_path%%dbpath%
+                driver: %db.driver%
+                path: %base_path%%db.path%
 
 
 # Schema creation config

@@ -21,9 +21,9 @@ parameters:
     ubki_test_pass: "test38%"
     ###-- Database parameters
     ###---------------------
-    driver: pdo_sqlite
-    dbpath: "/app/Resources/db/app.db"
-    dbname: app
+    db.driver: pdo_sqlite
+    db.path: "/app/Resources/db/app.db"
+    db.name: app
 #    charset: utf8
     ###-- Only relevant for pdo_mysql, pdo_pgsql, and pdo_oci/oci8 drivers
 #    host: localhost

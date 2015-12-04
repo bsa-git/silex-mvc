@@ -112,7 +112,7 @@ EOT
             $arr = explode('.', $tbName);
             $tbNames[] = $arr[count($arr) - 1];
         }
-        $dbname = $this->getParameter('dbname');
+        $dbname = $this->getParameter('db.name');
         $filePath = BASEPATH . "/app/Resources/fakedata/{$dbname}.yml";
         if (!is_file($filePath)) {
             $this->getContainer()->abort(404, "File \"{$filePath}\" not found.");
