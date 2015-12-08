@@ -38,7 +38,7 @@ class PostForm extends AbstractType {
     public function setDefaultOptions(OptionsResolverInterface $resolver) {
         $resolver->setDefaults(array(
             'validation_groups' => array(),
-            'data_class' => 'Models\ORM\Post',
+            'data_class' => 'Models\ORM\Post',//Models\ORM\Post Models\AR\Post
             'csrf_protection' => true,
             'csrf_field_name' => '_token',
             // unique key to generate a secret token

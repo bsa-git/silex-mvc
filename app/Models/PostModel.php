@@ -4,7 +4,6 @@
 
 namespace Models;
 
-
 /**
  * Class - PostModel
  * Model for Posts
@@ -16,10 +15,9 @@ namespace Models;
  * @link     http://my.site
  */
 class PostModel extends BaseModel {
-
     //------------------------
-    
-     /**
+
+    /**
      * newPost
      * Add post for current user
      * 
@@ -27,24 +25,26 @@ class PostModel extends BaseModel {
      * @return void
      */
     public function newPost($data) {
-        $em = $this->app['em'];
-        $repo = $em->getRepository('Models\ORM\User');
+        $db = $this->app['db'];
         //--------------------
-        
-        $username = $data['username'];
-        $new_post = $data['new_post'];
-        
-        $user = $repo->findOneByUsername($username);
 
-        if ($user === NULL) {
-            $this->app->abort(404, "Not find user for this username \"{$userName}\"");
+        $username = $data['username'];
+        $ormPost = $data['new_post'];
+        // Transform the date to format 'Y-m-d'
+        $date = new \DateTime($ormPost->getCreated());
+        $ormPost->setCreated($date->format('Y-m-d'));
+        $arrPost = $ormPost->getValues();
+
+        // Get user's id
+        $sql = "SELECT * FROM user WHERE username = ?";
+        $user = $db->fetchAssoc($sql, array($username));
+        if ($user === FALSE) {
+            $this->app->abort(404, "Not find user for this username \"{$username}\"");
         }
-        
-        $new_post->setUser($user);
-        $em->persist($new_post);
-        $em->flush();
+        $arrPost['user_id'] = $user['id'];
+        $db->insert('post', $arrPost);
     }
-    
+
     /**
      * editPost
      * Edit this post
@@ -53,13 +53,20 @@ class PostModel extends BaseModel {
      * @return void
      */
     public function editPost($data) {
-        $em = $this->app['em'];
+        $db = $this->app['db'];
         //--------------------
-        $edit_post = $data['edit_post'];
-        $em->persist($edit_post);
-        $em->flush();
+        $ormPost = $data['edit_post'];
+        $id = $ormPost->getId();
+        // Transform the date to format 'Y-m-d'
+        $date = new \DateTime($ormPost->getCreated());
+        $ormPost->setCreated($date->format('Y-m-d'));
+        $arrPost = $ormPost->getValues();
+        unset($arrPost['id']);
+        
+        $db->update('post', $arrPost, array('id' => $id));
+        
     }
-    
+
     /**
      * getPostsForUser
      * Get posts for user
@@ -129,11 +136,30 @@ class PostModel extends BaseModel {
 
             // Add debug info
             $this->app['my.debug']->add($posts);
-            
+
             // Data for user's posts
             $data = array('username' => $userName, 'posts' => $posts);
         }
         return $data;
+    }
+
+    /**
+     * getPost
+     * Read post for id
+     * 
+     * @param int $id
+     * @return array
+     */
+    public function getPost($id) {
+        $db = $this->app['db'];
+        //--------------------
+        // Get user's posts
+        $sql = "SELECT * FROM post WHERE id = ?";
+        $post = $db->fetchAssoc($sql, array($id));
+        if ($post === FALSE) {
+            $this->app->abort(404, "Not find post for this id \"{$id}\"");
+        }
+        return $post;
     }
 
 }

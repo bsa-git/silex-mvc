@@ -25,10 +25,9 @@ class ActiveRecordServiceProvider implements ServiceProviderInterface {
     public function register(Application $app) {
         // PHPActiveRecord 'sqlite' => 'sqlite://my_database.db',
         require_once BASEPATH . '/library/AR/ActiveRecord.php';
-        \ActiveRecord\Config::initialize(function($cfg) use ($app) {
-            $cfg->set_model_directory(BASEPATH . '/app/Models');
-            $cfg->set_connections(array('production' => "sqlite://../app/Resources/db/simple.db"));
-            $cfg->set_default_connection('production');
+        $app['ar'] = $app->share(function ($app) {
+            // Obtaining the orm manager
+            return new \Models\AR\Db($app);
         });
     }
 

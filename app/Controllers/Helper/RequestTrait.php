@@ -47,6 +47,18 @@ trait RequestTrait
     }
     
     /**
+     * Checks if the request method is of specified type.
+     *
+     * @param string $method Uppercase request method (GET, POST etc).
+     *
+     * @return bool
+     */
+    public function isMethod($method)
+    {
+        return $this->app['request']->isMethod($method);
+    }
+    
+    /**
      * Generates a ABSOLUTE_URL from the given parameters.
      *
      * @param string      $route         The name of the route

@@ -41,6 +41,7 @@ class AppSchema extends Schema {
 
         $this->_addTable($userTable = new UserTable());
         $this->_addTable($postTable = new PostTable());
+        $this->_addTable($todoTable = new TodoTable());
 
         $this->getTable($postTable->getName())->addColumn(
                 'user_id', 'integer', array('unsigned' => true, 'notnull' => true,)

@@ -47,6 +47,7 @@ class TodoModel extends BaseModel {
      */
     public function updateTask($data) {
         $db = $this->app['db'];
+        //---------------------
         $id = $data['id'];
         unset($data['id']);
         $db->update('todo', $data, array('id' => $id));
@@ -78,7 +79,7 @@ class TodoModel extends BaseModel {
         $norm_tasks = array();
         //--------------------
         // Get user's posts
-        $sql = "SELECT * FROM post WHERE id = ?";
+        $sql = "SELECT * FROM todo WHERE id = ?";
         $task = $db->fetchAll($sql, array($id));
         if (is_array($task) && count($task)) {
             $norm_tasks[] = Todo::normalizeValues($task, $this->app);

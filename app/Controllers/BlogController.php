@@ -126,22 +126,19 @@ class BlogController extends BaseController {
             $this->init(__CLASS__ . "/" . __FUNCTION__);
 
             // Create object NewPost and set values
-            $newPost = new Post();
-            $newPost->setCreated(date($format));
+            $ormPost = new Post();
+            $ormPost->setCreated(date($format));
             // Create form
-            $form = $this->createForm(new PostForm(), $newPost, array('action' => "/blog/new"));
+            $form = $this->createForm(new PostForm(), $ormPost, array('action' => "/blog/new"));
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $user = $this->getUser();
                 $username = $user->getUsername();
-                // Set field "created" to datetime object
-                $created = $newPost->getCreated();
-                $newPost->setCreated(date_create($created));
+                // Create new post
+                $models->load('Post', 'newPost', array('username' => $username, 'new_post' => $ormPost));
 
-                $models->load('Post', 'newPost', array('username' => $username, 'new_post' => $newPost));
-
-                $this->addFlash('info_message', $this->trans('added_new_message', array('{{ title }}' => $newPost->getTitle())));
+                $this->addFlash('info_message', $this->trans('added_new_message', array('{{ title }}' => $ormPost->getTitle())));
 
                 return $this->redirect("/account");
             }
@@ -165,33 +162,30 @@ class BlogController extends BaseController {
         $request = $this->getRequest();
         $locale = $this->getLocale();
         $format = $locale == 'ru' ? 'd.m.Y' : 'm/d/Y';
-        $em = $this->app['em'];
-        $repo = $em->getRepository('Models\ORM\Post');
+        $db = $this->app['db'];
         //--------------------
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
 
-            // Find edit post
-            $editPost = $repo->find($id);
+            // Get post for id
+            $arrPost = $models->load('Post', 'getPost', $id);
+            $date = new \DateTime($arrPost['created']);
+            $arrPost['created'] = $date->format($format);
 
-            // Set field "created" to string format
-            $created = $editPost->getCreated();
-            $created = date_format($created, $format);
-            $editPost->setCreated($created);
+            // Set values
+            $ormPost = new Post();
+            $ormPost->setValues($arrPost);
 
             // Create form
-            $form = $this->createForm(new PostForm(), $editPost, array('action' => "/blog/edit/{$id}"));
+            $form = $this->createForm(new PostForm(), $ormPost, array('action' => "/blog/edit/{$id}"));
             $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                // Set field "created" to datetime object
-                $created = $editPost->getCreated();
-                $editPost->setCreated(date_create($created));
                 // Save post
-                $models->load('Post', 'editPost', array('edit_post' => $editPost));
+                $models->load('Post', 'editPost', array('edit_post' => $ormPost));
 
-                $this->addFlash('info_message', $this->trans('edited_this_message', array('{{ title }}' => $editPost->getTitle())));
+                $this->addFlash('info_message', $this->trans('edited_this_message', array('{{ title }}' => $ormPost->getTitle())));
 
                 return $this->redirect("/account");
             }
@@ -210,23 +204,18 @@ class BlogController extends BaseController {
      * @return string
      */
     public function deleteAction($id) {
-        $request = $this->getRequest();
         $models = $this->app['models'];
-        $em = $this->app['em'];
-        $repo = $em->getRepository('Models\ORM\Post');
+        $db = $this->app['db'];
         //--------------------
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
 
-            // Find edit post
-            $deletePost = $repo->find($id);
-
-            $em->remove($deletePost);
-            $em->flush();
-
-            $this->addFlash('info_message', $this->trans('deleted_this_message', array('{{ title }}' => $deletePost->getTitle())));
-
+            // Find post
+            $data = $models->load('Post', 'getPost', $id);
+            // Delete post
+            $db->delete('post', array('id' => $id));
+            $this->addFlash('info_message', $this->trans('deleted_this_message', array('{{ title }}' => $data['title'])));
             return $this->redirect("/account");
         } catch (\Exception $exc) {
             return $this->showError($exc);

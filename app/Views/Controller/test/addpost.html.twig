@@ -1,0 +1,52 @@
+{# app/Views/Controller/test/addpost.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('FormValidation');
+        BSA.ScriptResources.push('Datepicker');
+        addScriptParams('FormValidation',
+                {
+                    form: 'form[name="post"]',
+                    rules: {
+                        "post[created]": {
+                            required: true
+                        },
+                        "post[title]": {
+                            required: true,
+                            minlength: 5
+                        },
+                        "post[body]": {
+                            required: true
+                        }
+                    }
+                });
+        addScriptParams('Datepicker',
+                {
+                    definitions: [
+                        {
+                            ids: "input#post_created",
+                            changeMonth: "true",
+                            changeYear: "true",
+                            yearRange: "2014:2030"
+                        }
+                    ],
+                });
+    </script>
+{% endblock head %}
+
+{% block page_name %}{{ 'add_post'|trans|title }}{% endblock page_name %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        {{ form(form) }}
+    </div>
+
+{% endblock content %}
+

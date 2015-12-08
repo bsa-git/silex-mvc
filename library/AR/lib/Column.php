@@ -168,8 +168,14 @@ class Column
 				if ($value instanceof DateTime)
 					return $value;
 
-				if ($value instanceof \DateTime)
-					return new DateTime($value->format('Y-m-d H:i:s T'));
+				if ($value instanceof \DateTime){
+                                    
+//                                    return new DateTime($value->format('Y-m-d H:i:s T'));
+                                    //== My change ==//
+                                    return new DateTime($value->format(Config::instance()->get_date_format()));
+                                    //== End my change ==//
+                                }
+					
 
 				return $connection->string_to_datetime($value);
 		}

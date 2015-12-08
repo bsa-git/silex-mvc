@@ -445,7 +445,7 @@ use \Controllers\Helper\DebugTrait;
      * @return string
      */
     protected function getLibPath() {
-        $basepath = $this->app['config']['base_path'];
+        $basepath = $this->app['basepath'];
         return $basepath . "/app/Views/Controller/{$this->opts["controller"]}/lib/{$this->opts["action"]}";
     }
 

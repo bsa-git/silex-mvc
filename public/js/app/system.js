@@ -56,7 +56,7 @@ define(['jquery'], function ($) {
         {
             $("pre.sf-dump").css("z-index", 0);
         },
-        //====== Message functions ====//
+        //====== MESSAGE FUNCTIONS ====//
 
         /**
          * Show message
@@ -218,7 +218,7 @@ define(['jquery'], function ($) {
             }
             return oMessages;
         },
-        //====== Ajax functions ====//
+        //====== AJAX FUNCTIONS ====//
 
         /**
          * Check Ajax Data
@@ -342,7 +342,7 @@ define(['jquery'], function ($) {
                 }
             }
         },
-        //====== Additional functions ====//
+        //====== ADD FUNCTIONS ====//
 
         /**
          * Generate four random hex digits.
@@ -362,7 +362,7 @@ define(['jquery'], function ($) {
             return ("{" + this.S4() + this.S4() + "-" + this.S4() + "-" + this.S4() + "-" + this.S4() + "-" + this.S4() + this.S4() + this.S4() + "}");
         },
         
-        //====== Error functions ====//
+        //====== ERROR FUNCTIONS ====//
         /**
          * Error event
          * 

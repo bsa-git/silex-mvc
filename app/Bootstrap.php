@@ -138,7 +138,7 @@ class Bootstrap {
                     $data['Render'] = array('t' => $renderDuration);
                 }
 
-                $app['monolog']->addDebug('<< Profile:eApp >>', $data);
+                $app['monolog']->addDebug('<== Profile:eApp ==>', $data);
             }
         });
     }
@@ -150,25 +150,46 @@ class Bootstrap {
      */
     private function _iniConfig(Application $app) {
 
+        // Set type configuration
+        $app['yml_config'] = FALSE;
 
         // Setting the sign of the console
         $app['is_console'] = FALSE;
 
         // Load configurations
-        $app->register(
-                new Providers\YamlConfigServiceProvider(
-                array(
-            '%base_path%' => BASEPATH,
-            '%log_path%' => BASEPATH . '/data/logs',
-            '%cache_path%' => BASEPATH . '/data/cache'
-                )
-                ), array(
-            'config.dir' => BASEPATH . '/app/Resources/Config',
-            'config.files' => array(
-                'application.yml', 'security.yml' //  'routing.yml', 'security.yml', 'services.yml'
-            ),
-                )
-        );
+        if ($app['yml_config']) {
+            $app->register(
+                    new Providers\YamlConfigServiceProvider(
+                    array(
+                '%base_path%' => BASEPATH,
+                '%log_path%' => BASEPATH . '/data/logs',
+                '%cache_path%' => BASEPATH . '/data/cache'
+                    )
+                    ), array(
+                'config.dir' => BASEPATH . '/app/Resources/Config',
+                'config.files' => array(
+                    'application.yml', 'security.yml' //  'routing.yml', 'security.yml', 'services.yml'
+                ),
+                    )
+            );
+        } else {
+            $app['config'] = $app->share(function () use ($app) {
+                $params = array();
+                //---------------------
+                $params['base_path'] = BASEPATH;
+                $params['log_path'] = BASEPATH . "/data/logs";
+                $params['cache_path'] = BASEPATH . "/data/cache";
+                $data = parse_ini_file(BASEPATH . '/app/Resources/Config/app.ini', true);
+                foreach ($data['parameters'] as $key => $value) {
+                    $params['parameters'][$key] = $this->_formatIniValue($value);
+                }
+                foreach ($data['controllers'] as $key => $value) {
+                    $params['controllers'][$key] = $this->_formatIniValue($value);
+                }
+                return $params;
+            });
+        }
+
 
         //Set debug option
         $app['debug'] = $app['config']['parameters']['debug'];
@@ -194,15 +215,139 @@ class Bootstrap {
     private function _iniProviders(Application $app) {
 
         // Register the service providers
-        foreach ($app['config']['service_providers'] as $serviceProviderConfig) {
+        if ($app['yml_config']) {
+            foreach ($app['config']['service_providers'] as $serviceProviderConfig) {
+                $app->register(
+                        new $serviceProviderConfig['class'](
+                        (!isset($serviceProviderConfig['construct_parameters'])) ?
+                                null : $serviceProviderConfig['construct_parameters']
+                        ), (isset($serviceProviderConfig['parameters']) &&
+                        null !== $serviceProviderConfig['parameters']) ?
+                                $serviceProviderConfig['parameters'] : array()
+                );
+            }
+        } else {
+            // Models
             $app->register(
-                    new $serviceProviderConfig['class'](
-                    (!isset($serviceProviderConfig['construct_parameters'])) ?
-                            null : $serviceProviderConfig['construct_parameters']
-                    ), (isset($serviceProviderConfig['parameters']) &&
-                    null !== $serviceProviderConfig['parameters']) ?
-                            $serviceProviderConfig['parameters'] : array()
-            );
+                    new Providers\ModelsServiceProvider(), array(
+                'models.path' => "{$app['basepath']}/app/Models"
+            ));
+
+            // Monolog
+            $app->register(new Silex\Provider\MonologServiceProvider(), array(
+                'monolog.logfile' => "{$app['config']['log_path']}/application.log",
+                'monolog.name' => 'APPLICATION'
+            ));
+
+            // Twig
+            $app->register(
+                    new Silex\Provider\TwigServiceProvider(), array(
+                'twig.path' => array("{$app['basepath']}/app/Views"),
+                'twig.form.templates' => array("Form/bootstrap_3_horizontal_layout.html.twig"),
+                'twig.options' => array(
+                    'cache' => "{$app['config']['cache_path']}/twig",
+                    'strict_variables' => false,
+                    'auto_reload' => true)
+            ));
+
+            // Translation
+            $app->register(
+                    new Silex\Provider\TranslationServiceProvider(), array(
+                'locale_fallbacks' => array('en', 'ru'),
+                'locale' => $app['config']['parameters']['locale']
+            ));
+
+            // HttpCache
+            $app->register(
+                    new Silex\Provider\HttpCacheServiceProvider(), array(
+                'http_cache.cache_dir' => "{$app['config']['cache_path']}/http",
+                'http_cache.esi' => NULL
+            ));
+
+            // SwiftmailerService
+            $app->register(
+                    new Silex\Provider\SwiftmailerServiceProvider(), array(
+                'swiftmailer.options' => array(
+                    'host' => $app['config']['parameters']['mail.host'],
+                    'port' => $app['config']['parameters']['mail.port'],
+                    'username' => $app['config']['parameters']['mail.username'],
+                    'password' => $app['config']['parameters']['mail.password'],
+                    'encryption' => $app['config']['parameters']['mail.encryption'],
+                    'auth_mode' => $app['config']['parameters']['mail.auth_mode']
+                )
+            ));
+
+            // DoctrineService
+            $app->register(
+                    new Silex\Provider\DoctrineServiceProvider(), array(
+                'dbs.options' => array('default' => array(
+                        'driver' => $app['config']['parameters']['db.driver'],
+                        'path' => "{$app['basepath']}{$app['config']['parameters']['db.path']}"
+                    ))
+            ));
+
+            // DoctrineOrmService
+            $app->register(
+                    new Providers\DoctrineOrmServiceProvider(), array(
+                'orm.metadata' => "{$app['basepath']}/app/Models/ORM",
+                'orm.options' => array(
+                    'driver' => $app['config']['parameters']['db.driver'],
+                    'path' => "{$app['basepath']}{$app['config']['parameters']['db.path']}"
+                )
+            ));
+
+            // ActiveRecord
+            $app->register(new Providers\ActiveRecordServiceProvider(), array());
+
+            // Security
+            $app->register(
+                    new Providers\Security\MySecurityServiceProvider(
+                    array(
+                'security.role_hierarchy' => array('ROLE_ADMIN' => array('ROLE_USER', 'ROLE_ALLOWED_TO_SWITCH')),
+                'security.access_rules' => array(
+                    array('^/admin', 'ROLE_ADMIN'),
+                    array('^/test', 'ROLE_ADMIN'),
+                    array('^/tasks', 'ROLE_ADMIN'),
+                    array('^/account$', 'ROLE_USER'),
+                    array('^/blog/new$', 'ROLE_USER'),
+                    array('^/todo$', 'ROLE_USER'),
+                    array('^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY')
+                ),
+                'security.firewalls' => array(
+                    'default' => array(
+                        'pattern' => '^/.*$',
+                        'anonymous' => TRUE,
+                        'switch_user' => TRUE,
+                        'form' => array(
+                            'login_path' => '/login',
+                            'check_path' => '/login_check',
+                            'use_referer' => TRUE),
+                        'logout' => '/logout',
+//                    'users' => array(
+//                        'admin' => array(
+//                            'ROLE_ADMIN',
+//                            '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='),
+//                        'user' => array(
+//                            'ROLE_USER',
+//                            '5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg=='))
+                    )))), array());
+
+
+
+            // ServiceProvider
+            $app->register(new Silex\Provider\ServiceControllerServiceProvider(), array());
+
+            // UrlGenerator
+            $app->register(new Silex\Provider\UrlGeneratorServiceProvider(), array());
+
+            // SessionService
+            $app->register(new Silex\Provider\SessionServiceProvider(), array());
+
+            // FormService
+            $app->register(new Silex\Provider\FormServiceProvider(), array());
+
+            // ValidatorService
+            $app->register(new Silex\Provider\ValidatorServiceProvider(), array());
         }
     }
 
@@ -298,7 +443,11 @@ class Bootstrap {
             return $controller->showAction($app['request'], $exception, null);
         });
 
-
+//        if ($app['yml_config']) {
+//            
+//        }  else {
+//            
+//        }
         // Load controllers
         foreach ($app['config']['controllers'] as $controllerServiceName => $controllerClass) {
             $app[$controllerServiceName] = $app->share(function () use ($app, $controllerClass) {
@@ -316,7 +465,6 @@ class Bootstrap {
     private function _iniApplication(Application $app) {
         // Create application paths
         $config = $app['my']->get('config')->createAppPaths();
-        
     }
 
     /**
@@ -328,4 +476,30 @@ class Bootstrap {
         $this->app->run();
     }
 
+    
+    /**
+     *  Format value for ini config file
+     * 
+     * @param string $value
+     * @return string|int|float|bool
+     */
+    private function _formatIniValue($value) {
+        if ($value === 'true' || $value === 'yes') {
+            $value = TRUE;
+        }
+        if ($value === 'false' || $value === 'no') {
+            $value = FALSE;
+        }
+        if ($value === '') {
+            $value = NULL;
+        }
+        if (is_numeric($value)) {
+            if (strpos($value, '.') !== false) {
+                $value = floatval($value);
+            } else {
+                $value = intval($value);
+            }
+        }
+        return $value;
+    }
 }

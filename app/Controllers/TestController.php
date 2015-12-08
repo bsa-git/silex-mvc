@@ -5,6 +5,8 @@
 namespace Controllers;
 
 use Silex\Application;
+use Models\ORM\Post;
+use Forms\PostForm;
 
 /**
  * Class - TestController
@@ -49,6 +51,11 @@ class TestController extends BaseController {
         $this->app->get('/test/dump', function () use ($self) {
             return $self->dumpAction();
         })->bind('test_dump');
+        $this->app->get('/test/addpost', function () use ($self) {
+                    return $self->addpostAction();
+                })
+                ->bind('test_addpost')
+                ->method('GET|POST');
     }
 
     /**
@@ -111,6 +118,53 @@ class TestController extends BaseController {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
             return $this->forwardToRoute("todo");
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+
+    /**
+     * Action - test/addpost
+     * add post via Active Record
+     * 
+     * @return string
+     */
+    public function addpostAction() {
+        $request = $this->getRequest();
+        $locale = $this->getLocale();
+        $format = $locale == 'ru' ? 'd.m.Y' : 'm/d/Y';
+        $db = $this->app['ar'];
+        //--------------------
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+
+            // Create object NewPost and set values
+            $ormPost = new Post();
+            if($this->isMethod('GET')){
+                $ormPost->setCreated(date($format));
+            }
+            // Create form
+            $form = $this->createForm(new PostForm(), $ormPost, array('action' => "/test/addpost"));
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+                // Get username
+                $user = $this->getUser();
+                $username = $user->getUsername();
+                // Get user
+                $user = $db->find('user', 'first', array('conditions' => "username='{$username}'"));
+                // Create model post and set values
+                $arPost = $db->create('post', $ormPost->getValues());
+                $arPost->user_id = $user->id;
+                $arPost->saveModel();
+                // Send flash message
+                $this->addFlash('info_message', $this->trans('added_new_message', array('{{ title }}' => $ormPost->getTitle())));
+                // Go to "/account"
+                return $this->redirect("/account");
+            }
+
+            // Show form
+            return $this->showView(array('form' => $form->createView()));
         } catch (\Exception $exc) {
             return $this->showError($exc);
         }

@@ -49,6 +49,9 @@ final class UserTable extends Table {
                 'email', 'string', array('length' => 127, 'notnull' => true)
         );
         $this->addColumn(
+                'personal_mobile', 'string', array('length' => 32, 'notnull' => true)
+        );
+        $this->addColumn(
                 'password', 'string', array('length' => 255, 'notnull' => true)
         );
         $this->addColumn(
