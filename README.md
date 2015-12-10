@@ -16,7 +16,7 @@ Main features of the framework:
 - Ensures the registration process, user authentication and authorization.
 - The database created two users with the appropriate rights. The administrator (login = admin; pass = foo) User (login = user; pass = foo).
 - Uses a database type SqlLite `app/Resources/db/app.db`.
-- Work with databases provided by Doctrine(DBAL, ORM) and и PHP ActiveRecord.
+- Work with databases provided by Doctrine(DBAL, ORM) and PHP ActiveRecord.
 - Added services such as the Pagerfanta, Zend-Filter, Zend-Json and others. `app/library`.
 - Added services for working with arrays, strings, XML, HTTP, Markdown `app/Services/My`.
 - On the client side using the library: jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`.
