@@ -1,1 +1,1 @@
-c:\NginxServer\php\php.exe c:\NginxServer\html\silex-mvc\app\Console\index.php %1 %2 %3
+php.exe ../../index.php %1 %2 %3

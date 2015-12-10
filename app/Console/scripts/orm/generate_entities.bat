@@ -1,3 +1,3 @@
-c:\NginxServer\php\php.exe c:\NginxServer\html\silex-mvc\app\Console\index.php orm:generate-entities "/app"
+php.exe ../../index.php orm:generate-entities "/app"
 
 TIMEOUT /T 30
