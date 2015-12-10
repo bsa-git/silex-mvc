@@ -16,10 +16,10 @@
 - обеспечивается процесс регистрации, аутентификации и авторизации пользователей;
 - в БД созданы два пользователя с соответствующими правами. Администратор (login=admin; pass=foo) User (login=user; pass=foo);
 - использует БД типа SqlLite `app/Resources/db/app.db`;
-- работа с БД обеспечивается с помощью Doctrine (DBAL, ORM);
-- добавлены сервисы такие как Zend-Filter, Zend-Json и др. `app/library`;
+- работа с БД обеспечивается с помощью Doctrine(DBAL, ORM) и PHP ActiveRecord;
+- добавлены сервисы такие как Pagerfanta, Zend-Filter, Zend-Json и др. `app/library`;
 - так же добавлены сервисы для работы с массивами, строками, XML, HTTP, Markdown `app/Services/My`;
-- на стороне клиента используются библиотеки : jQuery, Bootstrap3, RequireJS, Backbone `public/js/lib`;
+- на стороне клиента используются библиотеки : jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`;
 - на стороне клиента используются сервисы: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`;
 - для примера работы фреймворка Backbone реализовано приложение `ToDo` для локального или серверного хранилищ данных `public/js/app/bb-todo`.
 
@@ -75,3 +75,7 @@
 ### security.yml
 Здесь устанавливаются значения способа аутентификации пользователя и его авторизации.
 С подробностями можно познакомиться [сдесь](http://silex.sensiolabs.org/doc/providers/security.html ).
+
+### app.ini
+Для увеличения быстродействия веб приложения можно сконфигурировать приложение
+через `ini` файл.

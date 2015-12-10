@@ -98,12 +98,18 @@ class Bootstrap {
         // The middleware is run after the routing and the security.
         $app->before(function (Request $request, Application $app) {
 
-            // Set route
+            // Get route
             $attrs = $request->attributes->all();
             if (isset($attrs['_route'])) {
                 $route = $attrs['_route'];
                 $app['route'] = $route;
             }
+            // Get route params
+            if (isset($attrs['_route_params']) && count($attrs['_route_params'])) {
+                $route_params = $attrs['_route_params'];
+                $app['route_params'] = $route_params;
+            }
+            
         });
 
         // Set event after the Response

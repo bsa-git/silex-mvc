@@ -2,13 +2,12 @@ imports:
     - { resource: config.yml }
 
 controllers:
-        Controller.Index: Controllers\IndexController
-        Controller.Test: Controllers\TestController
-        Controller.Ubki: Controllers\UbkiController
-        Controller.Books: Controllers\BooksController
         Controller.Blog: Controllers\BlogController
+        Controller.Index: Controllers\IndexController
         Controller.Security: Controllers\SecurityController
+        Controller.Test: Controllers\TestController
         Controller.Todo: Controllers\TodoController
+        Controller.Ubki: Controllers\UbkiController
 
 service_providers:
     monolog:

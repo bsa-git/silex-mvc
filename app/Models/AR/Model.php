@@ -18,6 +18,8 @@ use Silex\Application;
  */
 class Model extends \ActiveRecord\Model {
 
+    use \Controllers\Helper\PaginationTrait;
+    
     /**
      * Name column with a primary key
      * @var string

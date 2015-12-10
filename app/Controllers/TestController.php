@@ -56,6 +56,15 @@ class TestController extends BaseController {
                 })
                 ->bind('test_addpost')
                 ->method('GET|POST');
+        $this->app->get('/test/posts/{username}/{page}', function ($username, $page) use ($self) {
+            return $self->postsAction($username, $page);
+        })->bind('test_posts_user_page');
+        $this->app->get('/test/posts/{username}', function ($username) use ($self) {
+            return $self->postsAction($username, null);
+        })->bind('test_posts_user');
+        $this->app->get('/test/posts', function () use ($self) {
+            return $self->postsAction(null, null);
+        })->bind('test_posts_all');
     }
 
     /**
@@ -141,7 +150,7 @@ class TestController extends BaseController {
 
             // Create object NewPost and set values
             $ormPost = new Post();
-            if($this->isMethod('GET')){
+            if ($this->isMethod('GET')) {
                 $ormPost->setCreated(date($format));
             }
             // Create form
@@ -165,6 +174,51 @@ class TestController extends BaseController {
 
             // Show form
             return $this->showView(array('form' => $form->createView()));
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+
+    /**
+     * Action - test/posts
+     * receive posts written by the user
+     * 
+     * @param string $userName 
+     * @param int $page 
+     * @return string
+     */
+    public function postsAction($userName, $page) {
+        $app = $this->app;
+        $db = $this->app['ar'];
+        //--------------------
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            // Get posts
+            if ($userName) {
+
+                // Get user
+                $user = $db->find('user', 'first', array('conditions' => "username='{$userName}'"));
+                // Get paginator
+                $params = array('conditions' => "user_id={$user->id}", 'order' => 'id DESC');
+                $pag = $db->create('post')->getPaginator($page, function($page) use ($app) {
+                    $route_params = $app['route_params'];
+                    return $app['url_generator']->generate('test_posts_user_page', array('username' => $route_params['username'], 'page' => $page));
+                }, $params);
+                
+                // Data for user's posts
+                $data = array('username' => $userName, 'posts' => $pag['data'], 'paginator' => $pag['html']);
+            } else {
+                $posts = array();
+                // Get user's posts
+                $users = $db->find('user', 'all', array('select' => 'id, username'));
+                foreach ($users as $user) {
+                    $posts[$user->username] = $user->post;
+                }
+                // Data for user's posts
+                $data = array('posts' => $posts);
+            }
+            return $this->showView($data);
         } catch (\Exception $exc) {
             return $this->showError($exc);
         }

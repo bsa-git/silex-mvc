@@ -48,5 +48,8 @@ parameters:
     mail.auth_mode: null
     # Disabling Sending
     mail.disable_delivery:  true
+    # PagerFanta
+    pagerfanta.max_per_page: 2
+    pagerfanta.proximity: 3
     
     

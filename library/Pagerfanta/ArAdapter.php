@@ -6,11 +6,11 @@ namespace Pagerfanta;
 
 
 /**
- * PfAdapter - Adapter for use with PHP ActiveRecord
+ * ArAdapter - Adapter for use with PHP ActiveRecord
  *
  * @author ASUTP
  */
-class PfAdapter implements Adapter\AdapterInterface {
+class ArAdapter implements Adapter\AdapterInterface {
 
     private $classname = null;
     private $params = null;

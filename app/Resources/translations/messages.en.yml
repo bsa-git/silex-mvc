@@ -47,6 +47,7 @@ not_found: not found
 all_posts: all posts
 author: author
 edit_post: edit post
+user_messages: user messages
 russian: russian
 english: english
 added_new_message: 'Added new message "{{ title }}"'
@@ -67,6 +68,8 @@ tasks: tasks
 double_click_to_edit_task: double-click to edit task
 developer: developer
 debug: debug
+previous: Previous
+next: Next
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Please enter your name"

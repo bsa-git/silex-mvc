@@ -42,19 +42,19 @@ class Post extends Model {
     //=== GETTERS ===//
 
     public function get_created() {
-        if($this->app){
+        if ($this->app) {
             $locale = $this->getLocale();
-        }  else {
+        } else {
             $locale = 'en';
         }
         $format = $locale == 'ru' ? 'd.m.Y' : 'm/d/Y';
         $created = $this->read_attribute('created');
-        if($created){
+        if ($created) {
             $created = $created->format($format);
         }
-        return   $created;
+        return $created;
     }
-    
+
     /**
      * Set created
      * 
@@ -83,4 +83,28 @@ class Post extends Model {
     static $validates_size_of = array(
         array('title', 'minimum' => 5)
     );
+
+    //=== PAGINATION ===//
+
+    /**
+     * Get paginator
+     * 
+     * @param int $page
+     * @param function $routeGenerator
+     * @param array $params
+     * @return string
+     */
+    public function getPaginator($page, $routeGenerator, $params = array()) {
+        $db = $this->app['ar'];
+        $arrResult = array();
+        //----------------------
+        // Create Paginator
+        $adapter = $this->createPaginatorAdapter('\Pagerfanta\ArAdapter', $db->getClass('post'), $params);
+        $pagerfanta = $this->createPaginator($adapter);
+        $pagerfanta->setCurrentPage($page);
+        $arrResult['html'] = $this->renderPaginator($pagerfanta, $routeGenerator);
+        $arrResult['data'] = $pagerfanta->getCurrentPageResults();
+        return $arrResult;
+    }
+
 }

@@ -47,6 +47,7 @@ not_found: отсутствуют
 all_posts: все сообщения
 author: автор
 edit_post: редактировать сообщение
+user_messages: пользовательские сообщения
 russian: русский
 english: английский
 added_new_message: 'Добавлено новое сообщение "{{ title }}"'
@@ -67,6 +68,8 @@ tasks: заданий
 double_click_to_edit_task: "двойной-клик чтобы редактировать задание"
 developer: разработчик
 debug: отладка
+previous: Предыдущая
+next: Следующая
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Пожалуйста, введите свое имя"

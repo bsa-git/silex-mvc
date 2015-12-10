@@ -44,6 +44,8 @@ use \Controllers\Helper\MonologTrait;
 
 use \Controllers\Helper\DebugTrait;
 
+use \Controllers\Helper\PaginationTrait;
+
     /**
      * Container application
      * 

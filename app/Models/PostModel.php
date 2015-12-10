@@ -99,7 +99,7 @@ class PostModel extends BaseModel {
      * @return array
      */
     public function getPosts($userName) {
-        $arBox = $this->app['my']->get('array');
+        $arrBox = $this->app['my']->get('array');
         $db = $this->app['db'];
         //--------------------
         if ($userName) {
@@ -125,10 +125,10 @@ class PostModel extends BaseModel {
             $posts = array();
             $sql = "SELECT *  FROM user";
             $users = $db->fetchAll($sql);
-            $arUsers = $arBox->set($users)->slice(array('id', 'username'))->get();
+            $arrUsers = $arrBox->set($users)->slice(array('id', 'username'))->get();
             // Add debug info
             $this->app['my.debug']->add($users);
-            foreach ($arUsers as $id => $user_name) {
+            foreach ($arrUsers as $id => $user_name) {
                 $sql = "SELECT * FROM post WHERE user_id = ?";
                 $userPosts = $db->fetchAll($sql, array($id));
                 $posts[$user_name] = $userPosts;

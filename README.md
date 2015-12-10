@@ -16,10 +16,10 @@ Main features of the framework:
 - Ensures the registration process, user authentication and authorization.
 - The database created two users with the appropriate rights. The administrator (login = admin; pass = foo) User (login = user; pass = foo).
 - Uses a database type SqlLite `app/Resources/db/app.db`.
-- Work with databases provided by Doctrine (DBAL, ORM).
-- Added services such as the Zend-Filter, Zend-Json and others. `app/library`.
+- Work with databases provided by Doctrine(DBAL, ORM) and и PHP ActiveRecord.
+- Added services such as the Pagerfanta, Zend-Filter, Zend-Json and others. `app/library`.
 - Added services for working with arrays, strings, XML, HTTP, Markdown `app/Services/My`.
-- On the client side using the library: jQuery, Bootstrap3, RequireJS, Backbone `public/js/lib`.
+- On the client side using the library: jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`.
 - Client-side services are used: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`.
 - `ToDo` implemented application (for the local or server storage) to show the work of the framework Backbone `public/js/app/bb-todo`.
 
@@ -73,3 +73,7 @@ accessible through `Silex\Application` instance `$app['config']['parameters']`.
 ### security.yml
 The security firewalls and access control config. All information about it's available
 [here](http://silex.sensiolabs.org/doc/providers/security.html).
+
+### app.ini
+To increase the performance of web applications, you can configure the application
+through `ini` file.
