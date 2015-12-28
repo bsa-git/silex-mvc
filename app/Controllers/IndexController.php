@@ -45,6 +45,9 @@ class IndexController extends BaseController {
         $this->app->get('/locale/{lang}', function ($lang) use ($self) {
             return $self->localeAction($lang);
         })->bind('locale');
+        $this->app->get('/scheme/{scheme}', function ($scheme) use ($self) {
+            return $self->schemeAction($scheme);
+        })->bind('scheme');
         $this->app->post('/lang', function () use ($self) {
             return $self->langAction();
         })->bind('lang');
@@ -79,6 +82,31 @@ class IndexController extends BaseController {
             $this->init(__CLASS__ . "/" . __FUNCTION__);
 
             $this->setSessValue('_locale', $lang);
+            if ($this->hasSessValue('prev_url')) {
+                $url = $this->getSessValue('prev_url');
+                return $this->redirect($url);
+            } else {
+                return $this->redirect("/home");
+            }
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+    
+    /**
+     * Action - index/scheme
+     * set scheme
+     * 
+     * @param string $scheme (en,ru,uk)
+     * @return string
+     */
+    public function schemeAction($scheme) {
+
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+
+            $this->setSessValue('_scheme', $scheme);
             if ($this->hasSessValue('prev_url')) {
                 $url = $this->getSessValue('prev_url');
                 return $this->redirect($url);

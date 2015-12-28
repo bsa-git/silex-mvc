@@ -44,9 +44,9 @@ define(['jquery'], function ($) {
         // ex. {Highlight: [new Highlight(), ... ,new Highlight()]}
         RegRunOnLoad: function () {
 
-            // Получим параметры для создания обьекта
+            // Receive settings to create the object
             var params = BSA.ScriptParams['Highlight'];
-            // Ф-ия создания обьектов по их параметрам
+            // The function to create objects of their parameters
             var createObject = function (param) {
                 var highlight = BSA.ScriptInstances['Highlight'];
                 if (highlight) {
@@ -55,7 +55,7 @@ define(['jquery'], function ($) {
                     BSA.ScriptInstances['Highlight'] = [new Highlight(param)];
                 }
             };
-            // Создание обьектов
+            // Creating objects
             if (params) {
                 $.each(params, function (i, param) {
                     createObject(param);

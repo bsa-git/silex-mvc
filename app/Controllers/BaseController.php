@@ -184,7 +184,10 @@ use \Controllers\Helper\PaginationTrait;
         }
         // Save current url
         $isXmlHttpRequest = $request->isXmlHttpRequest();
-        if ($this->route !== 'locale' && !$isXmlHttpRequest) {
+        if (
+                $this->route !== 'locale' && 
+                $this->route !== 'scheme' && 
+                !$isXmlHttpRequest) {
             $url = $request->getUri();
             $session->set('prev_url', $url);
         }

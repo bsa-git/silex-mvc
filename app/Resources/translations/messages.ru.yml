@@ -1,3 +1,17 @@
+#--- MENU ---#
+registration: регистрация
+login: войти
+logout: выход
+account: учетная запись
+home: главная
+blog: блог
+testing: тестирование
+russian: русский
+english: английский
+license: лицензия
+product_overview: краткая информация о продукте
+loading_resources: загрузка ресурсов
+
 #--- FORM ---#
 Username: Логин
 First name: Имя
@@ -12,6 +26,7 @@ Body: Содержание
 Personal mobile: Мобильный телефон
 
 #--- MESSAGES ---#
+developer_copyright: "© 2006 - 2015 Сергей Бескоровайный. Все права защищены"
 alert-warning: внимание
 alert_warning: внимание
 alert-danger: ошибка
@@ -20,9 +35,6 @@ alert-success: поздравляем
 alert_success: поздравляем
 alert-info: информация
 alert_info: информация
-registration: регистрация
-login: войти
-logout: выход
 congratulate_successful_registration: поздравляем вас с успешной регистрацией
 information_your_login: информация о вашем логине
 address_page_login: адрес страницы входа на сайт
@@ -30,13 +42,8 @@ user_logon: имя входа пользователя
 yours_faithfully: с уважением
 web_site_administrator: администратор WEB сайта
 new_user: новый пользователь
-account: учетная запись
 learn_more: узнать больше
-home: главная
-blog: блог
-testing: тестирование
 get: получить
-loading_resources: загрузка ресурсов
 search_on_symfony: Поиск на Symfony
 search: поиск
 add_post: добавить сообщение
@@ -48,8 +55,6 @@ all_posts: все сообщения
 author: автор
 edit_post: редактировать сообщение
 user_messages: пользовательские сообщения
-russian: русский
-english: английский
 added_new_message: 'Добавлено новое сообщение "{{ title }}"'
 deleted_this_message: 'Было удалено сообщение "{{ title }}"'
 edited_this_message: 'Было отредактировано сообщение "{{ title }}"'
@@ -70,6 +75,9 @@ developer: разработчик
 debug: отладка
 previous: Предыдущая
 next: Следующая
+help: помощь
+select_scheme: выбрать схему
+select_language: выбрать язык
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Пожалуйста, введите свое имя"

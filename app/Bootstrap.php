@@ -109,7 +109,6 @@ class Bootstrap {
                 $route_params = $attrs['_route_params'];
                 $app['route_params'] = $route_params;
             }
-            
         });
 
         // Set event after the Response
@@ -201,7 +200,7 @@ class Bootstrap {
         $app['debug'] = $app['config']['parameters']['debug'];
         //Set basepath option
         $app['basepath'] = $this->app['config']['base_path'];
-
+        
         //Set Timezone
         if (isset($app['config']['parameters']['timezone'])) {
             date_default_timezone_set($app['config']['parameters']['timezone']);
@@ -448,12 +447,14 @@ class Bootstrap {
             $controller = new Controllers\ErrorController($app);
             return $controller->showAction($app['request'], $exception, null);
         });
-
-//        if ($app['yml_config']) {
-//            
-//        }  else {
-//            
-//        }
+        
+        //Set the color scheme
+        if ($app['session']->has('_scheme')) {
+            $app['scheme'] = $app['session']->get('_scheme');
+        }  else {
+            $app['scheme'] = $this->app['config']['parameters']['scheme'];
+        }
+        
         // Load controllers
         foreach ($app['config']['controllers'] as $controllerServiceName => $controllerClass) {
             $app[$controllerServiceName] = $app->share(function () use ($app, $controllerClass) {
@@ -482,7 +483,6 @@ class Bootstrap {
         $this->app->run();
     }
 
-    
     /**
      *  Format value for ini config file
      * 
@@ -508,4 +508,5 @@ class Bootstrap {
         }
         return $value;
     }
+
 }

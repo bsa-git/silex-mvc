@@ -1,0 +1,38 @@
+<div id="footer" class="row">
+    <div class="col-xs-4">
+        <h3>{{ 'help'|trans|title }}</h3>
+        <ul>
+            <li>
+                <a href="/index/license" tabindex="0">{{ 'license'|trans|capitalize }}</a>
+            </li>
+            <li>
+                <a href="/index/readme" tabindex="0">{{ 'product_overview'|trans|capitalize }}</a>
+            </li>
+            <li>
+                <a href="https://github.com/bsa-git/silex-mvc/" tabindex="0">GitHub</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-4">
+        <h3>{{ 'select_scheme'|trans|title }}:</h3>
+        <ul>
+            <li {% if app.scheme == 'black-white-gray' %}class='active'{% endif %}>
+                <a href="/scheme/black-white-gray" >{{ 'black_white_gray'|trans }}</a>
+            </li>
+            <li {% if app.scheme == 'black-white-blue' %}class='active'{% endif %}>
+                <a href="/scheme/black-white-blue" >{{ 'black_white_blue'|trans }}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-4">
+        <h3>{{ 'select_language'|trans|title }}:</h3>
+        <ul>
+            <li {% if app.locale == 'en' %}class='active'{% endif %}>
+                <a href="/locale/en" >English</a>
+            </li>
+            <li {% if app.locale == 'ru' %}class='active'{% endif %}>
+                <a href="/locale/ru">Русский</a>
+            </li>
+        </ul>
+    </div>
+</div>

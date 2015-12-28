@@ -2,25 +2,22 @@ parameters:
     log_level:  DEBUG
     timezone: Europe/Kiev
     locale: en
-    ### Debug: true, false
-    ###---------------------
+    #--- schemes: "black-white-gray", "black-white-green" ---
+    scheme: "black-white-gray"
+    #--- Debug: true, false ---
     debug: true
-    ### Environment: production, test, development
-    ###------------------------------
+    #--- Environment: production, test, development ---
     environment: test 
-    ### Directory data for console
-    ###---------------------------
+    #--- Directory data for console ---
     data_dir:  "c:/tmp"
-    ###-- HOST url for local testing
-    ###------------------------------
+    #--- HOST url for local testing ---
     url_test: "http://localhost:8888"
-    ###-- UBKI parameters
+    #--- UBKI parameters ---
     ubki_login: "ubkiuser"
     ubki_pass: "ubkipass"
     ubki_test_login: "partest"
     ubki_test_pass: "test38%"
-    ###-- Database parameters
-    ###---------------------
+    #--- Database parameters ---
     db.driver: pdo_sqlite
     db.path: "/app/Resources/db/app.db"
     db.name: app
@@ -29,15 +26,9 @@ parameters:
     db.connection.production: "sqlite://../app/Resources/db/app.db"
     db.connection.development: "sqlite://../app/Resources/db/app.db"
     db.connection.test: "sqlite://../app/Resources/db/app.db"
-#    charset: utf8
-    ###-- Only relevant for pdo_mysql, pdo_pgsql, and pdo_oci/oci8 drivers
-#    host: localhost
-#    port: 3306
-#    user: root
-#    password: admin123
-    ###-- Only relevant for sqlite
-    ###-- Email parameters
-    ###---------------------
+    #--- Developer mail ---
+    developer_mail: "bsa2657@yandex.ru"
+    #--- Email parameters ---
     mail.host: mail.azot.local
     mail.port: 25
     mail.username: m5-asutp
@@ -48,7 +39,7 @@ parameters:
     mail.auth_mode: null
     # Disabling Sending
     mail.disable_delivery:  true
-    # PagerFanta
+    #--- PagerFanta ---
     pagerfanta.max_per_page: 2
     pagerfanta.proximity: 3
     

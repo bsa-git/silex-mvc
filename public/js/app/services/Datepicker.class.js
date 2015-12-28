@@ -59,9 +59,9 @@ define(['jquery'], function ($) {
         // ex. {Datepicker: [new Datepicker(), ... ,new Datepicker()]}
         RegRunOnLoad: function () {
 
-            // Получим параметры для создания обьекта
+            // Receive settings to create the object
             var params = BSA.ScriptParams['Datepicker'];
-            // Ф-ия создания обьектов по их параметрам
+            // The function to create objects of their parameters
             var createObject = function (param) {
                 var datepicker = BSA.ScriptInstances['Datepicker'];
                 if (datepicker) {
@@ -70,7 +70,7 @@ define(['jquery'], function ($) {
                     BSA.ScriptInstances['Datepicker'] = [new Datepicker(param)];
                 }
             };
-            // Создание обьектов
+            // Creating objects
             if (params) {
                 $.each(params, function (i, param) {
                     createObject(param);

@@ -41,10 +41,6 @@
                     </li>
                 {% endif %}
             </ul>
-            <div class="btn-group navbar-right btns-lang">
-                <a href="/locale/en" class="btn btn-default {% if app.locale == 'en' %} active {% endif %}" title="{{ 'english'|trans|capitalize }}">EN</a>
-                <a href="/locale/ru" class="btn btn-default {% if app.locale == 'ru' %} active {% endif %}" title="{{ 'russian'|trans|capitalize }}">RU</a>
-            </div>
             <form method="get" action="http://symfony.com/search" class="navbar-form navbar-right" role="form" target="_blank">
                 <div class="form-group">
                     <input name="q" id="search-id" type="search" class="form-control" placeholder="{{ 'search_on_symfony'|trans }}..." />

@@ -1,3 +1,19 @@
+#--- MENU ---#
+registration: registration
+login: login
+logout: log out
+account: account
+home: home
+blog: blog
+testing: testing
+russian: russian
+english: english
+license: license
+product_overview: product overview
+loading_resources: loading resources
+black_white_gray: Black-White-Gray
+black_white_blue: Black-White-Blue
+
 #--- FORM ---#
 Username: Username
 First name: First name
@@ -12,6 +28,7 @@ Body: Body
 Personal mobile: Personal mobile 
 
 #--- MESSAGES ---#
+developer_copyright: "© 2006 - 2015 by Sergei Beskorovainyi. All rights reserved"
 alert-warning: attention
 alert_warning: attention
 alert-danger: error
@@ -20,9 +37,6 @@ alert-success: congratulations
 alert_success: congratulations
 alert-info: information
 alert_info: information
-registration: registration
-login: login
-logout: log out
 congratulate_successful_registration: congratulate you successful registration
 information_your_login: information about your login
 address_page_login: address of page login
@@ -30,13 +44,8 @@ user_logon: user logon
 yours_faithfully: yours faithfully
 web_site_administrator: WEB site administrator
 new_user: new user
-account: account
 learn_more: learn more
-home: home
-blog: blog
-testing: testing
 get: get
-loading_resources: loading resources
 search_on_symfony: Search on Symfony
 search: search
 add_post: add post
@@ -48,8 +57,6 @@ all_posts: all posts
 author: author
 edit_post: edit post
 user_messages: user messages
-russian: russian
-english: english
 added_new_message: 'Added new message "{{ title }}"'
 deleted_this_message: 'Deleted message "{{ title }}"'
 edited_this_message: 'Edited message "{{ title }}"'
@@ -70,6 +77,10 @@ developer: developer
 debug: debug
 previous: Previous
 next: Next
+help: help
+select_scheme: select scheme
+select_language: select language
+
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Please enter your name"

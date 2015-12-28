@@ -1,0 +1,108 @@
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block}
+mark, rp, rt, ruby, summary, time {display:inline}
+
+
+/* body */
+body {
+    background: url(../img/bg-gray.png) repeat;
+    border:0;
+    font:12px Arial, Helvetica, sans-serif;
+    /*color:#b8bfcb;*/
+    line-height:18px
+}
+
+/* page content */
+#page_content {
+    background: #f5f6fc;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .7);
+    behavior: url(js/PIE.htc);
+    position: relative;
+    padding: 28px 43px 23px 47px;
+    color: #000;
+}
+
+.jumbotron {
+    background: none;
+}
+
+a {
+    color: #23527c;
+}
+
+/* footer */
+footer {
+    height:38px;
+    padding:26px 0;
+    color:#c1c8d3;
+    text-align:center;
+}
+footer a {color:#f8f9fb}
+
+#bsa-footer{
+    clear: both;
+    color: black;
+    height: auto;
+    margin: 25px;
+    padding-top: 15px;
+}
+
+#footer h2, #footer h3 {
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0px;
+}
+
+#footer h2, #footer h3 {
+    color: black;
+    margin: 0px;
+    padding: 16px 0 0;
+}
+
+#footer ul {
+    line-height: 14px;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0 0 2px 0;
+    margin: 0;
+}
+
+#footer li {
+    background: url(../img/bullets.gif) no-repeat -2px 2px;
+    color: #666;
+    margin: 4px 0;
+    padding: 0 0 0 10px;
+}
+
+/*#footer a {
+    color: black;
+    display: block;
+    text-decoration: none;
+}*/
+
+#footer li.active a {
+    /*color: #CCC !important;*/
+    color: black !important;
+}
+
+
+/* ToDo app */
+#instructions{
+    color: black;
+}
+
+#credits{
+    color: black;
+}
+
+#credits a {
+    color: black;
+}
