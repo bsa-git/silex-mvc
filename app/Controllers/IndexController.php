@@ -51,6 +51,12 @@ class IndexController extends BaseController {
         $this->app->post('/lang', function () use ($self) {
             return $self->langAction();
         })->bind('lang');
+        $this->app->get('/license', function () use ($self) {
+            return $self->licenseAction();
+        })->bind('license');
+        $this->app->get('/readme', function () use ($self) {
+            return $self->readmeAction();
+        })->bind('readme');
     }
 
     /**
@@ -92,7 +98,7 @@ class IndexController extends BaseController {
             return $this->showError($exc);
         }
     }
-    
+
     /**
      * Action - index/scheme
      * set scheme
@@ -134,11 +140,11 @@ class IndexController extends BaseController {
             $this->init(__CLASS__ . "/" . __FUNCTION__);
 
             if ($this->isAjaxRequest()) {
-                
+
                 // get hash for translation messages
                 $hash = $this->getLangHash();
-                
-                if(isset($this->params['hash']) && $this->params['hash'] !== $hash){
+
+                if (isset($this->params['hash']) && $this->params['hash'] !== $hash) {
                     $arTrans = $this->getLangMsgs();
                     $data['hash'] = $hash;
                     $data['values'] = $arTrans;
@@ -147,6 +153,38 @@ class IndexController extends BaseController {
             }
         } catch (\Exception $exc) {
             return $this->errorAjax($exc);
+        }
+    }
+
+    /**
+     * Action - index/license
+     * 
+     * @return string
+     */
+    public function licenseAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            $markdown = $this->getMarkdown("{$this->app['basepath']}/LICENSE.txt");
+            return $this->showView(array('markdown' => $markdown));
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+
+    /**
+     * Action - index/readme
+     * 
+     * @return string
+     */
+    public function readmeAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            $markdown = $this->getMarkdown("{$this->app['basepath']}/README.md");
+            return $this->showView(array('markdown' => $markdown));
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
         }
     }
 

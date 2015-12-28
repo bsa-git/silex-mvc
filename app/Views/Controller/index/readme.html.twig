@@ -1,0 +1,19 @@
+{# app/Views/Controller/index/index.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Home{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('Highlight');
+    </script>
+{% endblock head %}
+
+{% block page_name %}{{  markdown.title }}{% endblock page_name %}
+
+{% block content %}
+    <div class="markdown-body">{{  markdown.text|raw }}</div>
+{% endblock content %}
+

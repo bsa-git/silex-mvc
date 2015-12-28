@@ -356,15 +356,14 @@ use \Controllers\Helper\PaginationTrait;
     }
 
     /**
-     * Show text markdown markup file
+     * Get text markdown markup file
      * file is selected according to the localization
      * 
      * @param string $filename
      * @param string $type Type of Markdown: traditional, github, extra
-     * @return string
+     * @return array
      */
-    public function showMarkdown($filename, $type = 'github') {
-        $twig = $this->app['twig'];
+    public function getMarkdown($filename, $type = 'github') {
         $arBox = $this->app['my']->get('array');
         $strBox = $this->app['my']->get('string');
         $basepath = $this->app['basepath'];
@@ -438,9 +437,7 @@ use \Controllers\Helper\PaginationTrait;
         }
         // Get markdown parser text
         $text = $markdown->parse($strFile);
-        // Get twig render content
-        $tplFile = "Include/markdown_container.html.twig";
-        $content = $twig->render($tplFile, array('title' => $title, 'text' => $text));
+        $content = array('title' => $title, 'text' => $text);
         return $content;
     }
 

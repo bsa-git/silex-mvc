@@ -1,0 +1,14 @@
+{# app/Views/Controller/index/license.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}Home{% endblock title %}
+{% block head %}
+    {{ parent() }}
+{% endblock head %}
+
+{% block page_name %}{{  markdown.title }}{% endblock page_name %}
+
+{% block content %}
+    <div class="markdown-body">{{  markdown.text|raw }}</div>
+{% endblock content %}
+
