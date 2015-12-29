@@ -139,14 +139,20 @@ div.alert button.close {
     font-weight: bold;
 }
 
+/* alert_warning, alert_danger, alert_success, alert_info */
+
 /* System Standard Messages radius, shadow*/
-/*#msg-box div.alert {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}*/
-/* alert-block, alert-error, alert-success, alert-info */
+#msg-box div.alert_warning, 
+#msg-box div.alert_danger,
+#msg-box div.alert_info, 
+#msg-box div.alert_success
+{
+/*    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    -khtml-border-radius: 5px; */
+}
+
 #msg-box div.alert_danger {
     border: 2px solid #990033;
     color: #600;
@@ -178,7 +184,7 @@ div.alert button.close {
     color: #00c;
 }
 #msg-box div.alert_warning {
-    border: 2px solid #cc9900;
+    border: 2px solid #9E6722;
     color: #333;
     background: #ffc url(../img/assets/system/alert-info.png) no-repeat;
     background-position: center left;

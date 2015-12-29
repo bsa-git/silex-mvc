@@ -77,8 +77,14 @@ define(['jquery'], function ($) {
             if (type_box) {
                 idBox = type_box.replace(/_/g, "-");
                 class_message = class_message.replace(/_/g, "-");
+                if (class_message.search('-') == -1) {
+                    class_message = 'alert-' + class_message;
+                }
             } else {
                 class_message = class_message.replace(/-/g, "_");
+                if (class_message.search('_') == -1) {
+                    class_message = 'alert_' + class_message;
+                }
             }
 
             // Exit, else not message box
@@ -95,13 +101,14 @@ define(['jquery'], function ($) {
                 if (message) {
                     strMessage = message.replace(/&lt;/g, "<");
                     strMessage = strMessage.replace(/&gt;/g, ">");
+                    strMessage = strMessage.replace(/\n/g, "<br /> - ");
                     htmlMessages = htmlMessages + strMessage + '<br />';
                 }
 
             });
 
             // Get message title
-            if (app.lb) {
+            if (window.app && window.app.lb) {
                 titleMessages = app.lb.trans(class_message);
             } else {
                 var msgs = this.getMessages('div.msg-box p');
@@ -233,11 +240,11 @@ define(['jquery'], function ($) {
                 return false;
             }
 
-            if ( _.isObject(data) && data.class_message){
+            if (_.isObject(data) && data.class_message) {
                 this.onFailure(data);
                 return false;
             }
-            
+
             return true;
 
         },
@@ -361,7 +368,6 @@ define(['jquery'], function ($) {
         getGUID: function () {
             return ("{" + this.S4() + this.S4() + "-" + this.S4() + "-" + this.S4() + "-" + this.S4() + "-" + this.S4() + this.S4() + this.S4() + "}");
         },
-        
         //====== ERROR FUNCTIONS ====//
         /**
          * Error event
@@ -373,24 +379,24 @@ define(['jquery'], function ($) {
         onFailure: function (message, delay_clear) {
             var msgs;
             //-------------
-            
-            if(_.isString(message)){
+
+            if (_.isString(message)) {
                 this.messagebox_write('alert_danger', [message], delay_clear);
                 return;
             }
-            
-            if (_.isObject(message) && message.class_message){
+
+            if (_.isObject(message) && message.class_message) {
                 msgs = message.messages;
                 this.messagebox_write(message.class_message, msgs, delay_clear);
                 return;
             }
-            
-            if (_.isObject(message) &&  message.responseJSON ) {
+
+            if (_.isObject(message) && message.responseJSON) {
                 this.onFailure(message.responseJSON, delay_clear);
                 return;
             }
 
-            if (_.isObject(message) &&  message.responseText ) {
+            if (_.isObject(message) && message.responseText) {
                 this.onFailure(message.responseText, delay_clear);
                 return;
             }

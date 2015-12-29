@@ -19,7 +19,7 @@
             <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
             <!-- === Core JavaScript === -->
             <!-- Require -->
-            <script data-main="{{ asset('js/main') }}" src="{{ asset('js/lib/requirejs/require.js') }}"></script>
+            <script type="text/javascript" data-main="{{ asset('js/main') }}" src="{{ asset('js/lib/requirejs/require.js') }}"></script>
             <!-- jQuery -->
             <script type="text/javascript" src="{{ asset('js/lib/jquery/jquery.min.js') }}"></script>
         {% endblock head %}
@@ -46,7 +46,6 @@
             {% include 'Include/footer.privacy.html.twig' %}
     </div>
     <!-- /container -->
-
     
     <!-- scheme -->
     <link href="{{ asset(['schemes/', app.scheme, '/css/style.css']|join) }}" rel="stylesheet" media="screen">
