@@ -43,8 +43,8 @@ Temporary Items
 .apdisk
 
 # My ignore dir
-data/
-app/Resources/db/
-nbproject/
-/vendor/
-!/vendor/library/
+/data/*
+/app/Resources/db/*
+/nbproject/*
+/vendor/*
+!/vendor/library/*

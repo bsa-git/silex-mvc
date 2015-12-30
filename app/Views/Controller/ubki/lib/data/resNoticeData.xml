@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<doc>
+    <tech>
+        <trace>
+            <step name="INPROC" stm="1435317496.59" ftm="1435317496.67" /> 
+            <step name="VALID" stm="1435317496.67" ftm="1435317496.7" /> 
+            <step name="INSERT" stm="1435317496.77" ftm="1435317496.77" /> 
+        </trace>
+        <reqinfo reqid="IN#0002133198" /> 
+        <error errtype="" errtext="" /> 
+        <sentdatainfo reqid="IN#0002133198" state="nt">
+            <item compid="1" tag="FOTO" attr="LNG" code="NOTICE" msg="Формат изображения не разрешенный" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN2 7 2008" ok="" er="" /> 
+        </sentdatainfo>
+    </tech>
+</doc>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+- <doc>
+    - <tech>
+        - <trace>
+            <step name="INPROC" stm="1435317496.59" ftm="1435317496.67" /> 
+            <step name="VALID" stm="1435317496.67" ftm="1435317496.7" /> 
+            <step name="INSERT" stm="1435317496.77" ftm="1435317496.77" /> 
+        </trace>
+        <reqinfo reqid="IN#0002133198" /> 
+        <error errtype="" errtext="" /> 
+        - <sentdatainfo reqid="IN#0002133198" state="er">
+            <item compid="1" tag="CKI" attr="BDATE" code="CRITICAL" msg="Формат даты 1975­01­01 в `CKI` некорректный" ok="" er="" /> 
+            <item compid="1" tag="IDENT" attr="VDATE" code="CRITICAL" msg="Формат даты 2005­01­01 в `IDENT` некорректный" ok="" er="" /> 
+            <item compid="1" tag="IDENT" attr="BDATE" code="CRITICAL" msg="Формат даты 1975­01­01 в `IDENT` некорректный" ok="" er="" /> 
+            <item compid="1" tag="WORK" attr="VDATE" code="CRITICAL" msg="Формат даты 2010­01­01 в `WORK` некорректный" ok="" er="" /> 
+            <item compid="1" tag="DOC" attr="VDATE" code="CRITICAL" msg="Формат даты 2009­01­11 в `DOC` некорректный" ok="" er="" /> 
+            <item compid="1" tag="DOC" attr="DTERM" code="CRITICAL" msg="Формат даты 2010­12­31 в `DOC` некорректный" ok="" er="" /> 
+            <item compid="1" tag="DOC" attr="DWDT" code="CRITICAL" msg="Формат даты 1998­01­01 в `DOC` некорректный" ok="" er="" /> 
+            <item compid="1" tag="DOC" attr="VDATE" code="CRITICAL" msg="Формат даты 2009­07­29 в `DOC` некорректный" ok="" er="" /> 
+            <item compid="1" tag="DOC" attr="DWDT" code="CRITICAL" msg="Формат даты 1999­01­01 в `DOC` некорректный" ok="" er="" /> 
+            <item compid="1" tag="ADDR" attr="VDATE" code="CRITICAL" msg="Формат даты 2012­12­31 в `ADDR` некорректный" ok="" er="" /> 
+            <item compid="1" tag="ADDR" attr="VDATE" code="CRITICAL" msg="Формат даты 2011­12­31 в `ADDR` некорректный" ok="" er="" /> 
+            <item compid="1" tag="FOTO" attr="LNG" code="NOTICE" msg="Формат изображения не разрешенный" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDS" code="CRITICAL" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDPF" code="CRITICAL" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="CRITICAL" msg="Формат даты 2009­02­01 в `DEALLIFE` некорректный SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 2 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDS" code="CRITICAL" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDPF" code="CRITICAL" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="CRITICAL" msg="Формат даты 2009­03­01 в `DEALLIFE` некорректный SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN1 3 2009" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDS" code="CRITICAL" msg="Формат даты 2008­07­01 в `DEALLIFE` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDPF" code="CRITICAL" msg="Формат даты 2013­07­01 в `DEALLIFE` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="CRITICAL" msg="Формат даты 2008­12­31 в `DEALLIFE` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Формат даты 2009­01­01 в `DEALLIFE` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDFF" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="DEALLIFE" attr="DLDATECLC" code="NOTICE" msg="Дата старта не может быть пустой 2117911255 SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="3" tag="SUSD" attr="VOTEDATE" code="CRITICAL" msg="Формат даты 2013­01­01 в `SUSD` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="3" tag="SUSD" attr="VDATE" code="CRITICAL" msg="Формат даты 2013­01­01 в `SUSD` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="10" tag="CONT" attr="VDATE" code="CRITICAL" msg="Формат даты 2005­01­01 в `CONT` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="10" tag="CONT" attr="VDATE" code="CRITICAL" msg="Формат даты 2008­12­31 в `CONT` некорректный SAMDN2 7 2008" ok="" er="" /> 
+            <item compid="2" tag="CRDEAL" attr="INN" code="CRITICAL" msg="Некорректный ИНН `0123456789`" ok="" er="" /> 
+            <item compid="2" tag="CRDEAL" attr="INN" code="CRITICAL" msg="Несколько разных значений инн" ok="" er="" /> 
+        </sentdatainfo>
+    </tech>
+</doc>
