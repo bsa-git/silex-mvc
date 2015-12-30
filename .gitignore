@@ -47,4 +47,4 @@ Temporary Items
 /app/Resources/db/*
 /nbproject/*
 /vendor/*
-!vendor/library/*
+!/vendor/library
