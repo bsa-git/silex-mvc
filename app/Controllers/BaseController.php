@@ -367,7 +367,7 @@ use \Controllers\Helper\PaginationTrait;
         $arBox = $this->app['my']->get('array');
         $strBox = $this->app['my']->get('string');
         $basepath = $this->app['basepath'];
-        $locale = $this->app['locale'];
+        $locale = $this->getLocale();
         $title = "";
         $filename = trim($filename);
         $filename = str_replace('\\', '/', $filename);
