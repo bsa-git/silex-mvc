@@ -16,7 +16,7 @@
             "Forms" : "app/",
             "Models" : "app/",
             "Providers" : "app/",
-            "Pagerfanta" : "library/",
+            "Pagerfanta" : "vendor/library/",
             "Services" : "app/"
         }
     }
