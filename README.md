@@ -1,9 +1,10 @@
 # silex-mvc 
 
 Simple framework implements a design pattern - MVC-based SILEX (PHP micro-framework,
-created by Symfony2 components). The documentation can be found on the SILEX
-Online (http://silex.sensiolabs.org). Examples of installation of the framework given for OS "Windows"
-and web server Nginx.
+created by Symfony2 components). I have taken some ideas from the project 
+[GitHub (silex-enhanced)](https://github.com/FluencyLabs/silex-enhanced-skeleton).
+The documentation can be found on the SILEX Online (http://silex.sensiolabs.org). 
+Examples of installation of the framework given for OS "Windows" and web server Nginx.
 
 Main features of the framework:
 
@@ -14,10 +15,10 @@ Main features of the framework:
 - As an example, the work of the console application implemented to work with the service [UBKI](http://ubki.ua/ru).
 - Realized the localization of two languages: English and Russian.
 - Ensures the registration process, user authentication and authorization.
-- The database created two users with the appropriate rights. The administrator (login = admin; pass = foo) User (login = user; pass = foo).
+- The database created two users with the appropriate rights. The Administrator (login = admin; pass = foo) User (login = user; pass = foo).
 - Uses a database type SqlLite `app/Resources/db/app.db`.
 - Work with databases provided by Doctrine(DBAL, ORM) and PHP ActiveRecord.
-- Added services such as the Pagerfanta, Zend-Filter, Zend-Json and others. `app/library`.
+- Added services such as the Pagerfanta, Zend-Filter, Zend-Json and others. `vendor/library`.
 - Added services for working with arrays, strings, XML, HTTP, Markdown `app/Services/My`.
 - On the client side using the library: jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`.
 - Client-side services are used: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`.
@@ -35,7 +36,7 @@ Main features of the framework:
 
 1. Clone [silex-mvc](https://github.com/bsa-git/silex-mvc) project with git.
 2. Run `composer install`.
-3. To create a database run the batch file from the console `app/Console/scripts/orm/schema create.bat` 
+3. To create a database run the batch file from the console `app/Console/scripts/orm/schema_create.bat` 
    pre-editing the path to` php.exe` and `app\Console\index.php`;
 4. Configure the web server so that the entry point was `public/index.php`.
 5. Set, if necessary, the appropriate permissions to write to `path/to/project/var`.
@@ -62,7 +63,7 @@ service_providers:
 ...
 ```
 
-### console.yml \& application.yml
+### console.yml or application.yml
 The console and web bootstrap config respectively. If you use `imports` statement
 the config will be merged recursively allows partial specific configs.
 
