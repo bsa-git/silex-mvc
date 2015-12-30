@@ -17,10 +17,10 @@
         <h3>{{ 'select_scheme'|trans|title }}:</h3>
         <ul>
             <li {% if app.scheme == 'black-white-gray' %}class='active'{% endif %}>
-                <a href="/scheme/black-white-gray" >{{ 'black_white_gray'|trans }}</a>
+                <a href="/scheme/black-white-gray" >{{ 'gray'|trans|capitalize }}</a>
             </li>
             <li {% if app.scheme == 'black-white-blue' %}class='active'{% endif %}>
-                <a href="/scheme/black-white-blue" >{{ 'black_white_blue'|trans }}</a>
+                <a href="/scheme/black-white-blue" >{{ 'blue'|trans|capitalize }}</a>
             </li>
         </ul>
     </div>
@@ -28,10 +28,10 @@
         <h3>{{ 'select_language'|trans|title }}:</h3>
         <ul>
             <li {% if app.locale == 'en' %}class='active'{% endif %}>
-                <a href="/locale/en" >English</a>
+                <a href="/locale/en" >{{ 'english'|trans|capitalize }}</a>
             </li>
             <li {% if app.locale == 'ru' %}class='active'{% endif %}>
-                <a href="/locale/ru">Русский</a>
+                <a href="/locale/ru">{{ 'russian'|trans|capitalize }}</a>
             </li>
         </ul>
     </div>

@@ -11,6 +11,12 @@ english: английский
 license: лицензия
 product_overview: краткая информация о продукте
 loading_resources: загрузка ресурсов
+gray: серая
+blue: голубая
+english: английский
+russian: русский
+pagination: нумерация страниц
+user_posts: сообщения пользователей
 
 #--- FORM ---#
 Username: Логин
@@ -26,7 +32,7 @@ Body: Содержание
 Personal mobile: Мобильный телефон
 
 #--- MESSAGES ---#
-developer_copyright: "© 2006 - 2015 Сергей Бескоровайный. Все права защищены"
+developer_copyright: "© 2015 Сергей Бескоровайный. Все права защищены"
 alert-warning: внимание
 alert_warning: внимание
 alert-danger: ошибка

@@ -11,8 +11,12 @@ english: english
 license: license
 product_overview: product overview
 loading_resources: loading resources
-black_white_gray: Black-White-Gray
-black_white_blue: Black-White-Blue
+gray: gray
+blue: blue
+english: english
+russian: russian
+pagination: pagination
+user_posts: user posts
 
 #--- FORM ---#
 Username: Username
@@ -28,7 +32,7 @@ Body: Body
 Personal mobile: Personal mobile 
 
 #--- MESSAGES ---#
-developer_copyright: "© 2006 - 2015 by Sergei Beskorovainyi. All rights reserved"
+developer_copyright: "© 2015 by Sergei Beskorovainyi. All rights reserved"
 alert-warning: attention
 alert_warning: attention
 alert-danger: error
@@ -80,7 +84,6 @@ next: Next
 help: help
 select_scheme: select scheme
 select_language: select language
-
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Please enter your name"

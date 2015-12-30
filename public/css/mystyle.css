@@ -73,7 +73,7 @@ select.valid {
 }
 
 /****** System Messages warnings/information *******/
-/* alert-block, alert-error, alert-info, alert-success */
+/* alert_warning, alert_danger, alert_success, alert_info */
 
 #alert-box div.alert {
     padding-top: 15px;
@@ -137,20 +137,6 @@ div.alert button.close {
 
 #msg-box .alert em {
     font-weight: bold;
-}
-
-/* alert_warning, alert_danger, alert_success, alert_info */
-
-/* System Standard Messages radius, shadow*/
-#msg-box div.alert_warning, 
-#msg-box div.alert_danger,
-#msg-box div.alert_info, 
-#msg-box div.alert_success
-{
-/*    -webkit-border-radius: 5px; 
-    -moz-border-radius: 5px; 
-    -o-border-radius: 5px; 
-    -khtml-border-radius: 5px; */
 }
 
 #msg-box div.alert_danger {
@@ -268,6 +254,7 @@ div.alert button.close {
 
 .markdown-body code, .markdown-body tt {
     color: #333;
+    background-color: #E7E7E7;
 }
 
 .markdown-body table {
