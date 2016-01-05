@@ -165,7 +165,7 @@ class IndexController extends BaseController {
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
-            $markdown = $this->getMarkdown("{$this->app['basepath']}/LICENSE.txt");
+            $markdown = $this->getMarkdown("{$this->app['basepath']}/LICENSE.md");
             return $this->showView(array('markdown' => $markdown));
         } catch (\Exception $exc) {
             return $this->showError($exc);

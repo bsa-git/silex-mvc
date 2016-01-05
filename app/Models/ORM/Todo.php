@@ -87,10 +87,10 @@ class Todo {
 
         // Normalizer 'title'
         $resolver->setNormalizer('title', function (Options $options, $value) {
-        $nValue = $this->app['zend']
+        $nValue = $this->app['zf2']
                     ->get('filter')
-                    ->addFilter($this->app['zend.filter.stringtrim']())
-                    ->addFilter($this->app['zend.filter.striptags']())
+                    ->attach($this->app['zf2.filter.string_trim']())
+                    ->attach($this->app['zf2.filter.strip_tags']())
                     ->filter($value);
             return $nValue;
         });
@@ -118,10 +118,10 @@ class Todo {
         }
         if(isset($aValues['title'])){
             $value = $aValues['title'];
-            $nValue = $app['zend']
+            $nValue = $app['zf2']
                     ->get('filter')
-                    ->addFilter($app['zend.filter.stringtrim']())
-                    ->addFilter($app['zend.filter.striptags']())
+                    ->attach($app['zf2.filter.string_trim']())
+                    ->attach($app['zf2.filter.strip_tags']())
                     ->filter($value);
             $nValues['title'] = $nValue;
         }

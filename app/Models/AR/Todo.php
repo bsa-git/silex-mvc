@@ -60,11 +60,11 @@ class Todo extends Model {
      */
     public function get_title() {
         $value = $this->read_attribute('title');
-        if ($this->has('zend')) {
-            $nValue = $this->app['zend']
+        if ($this->has('zf2')) {
+            $nValue = $this->app['zf2']
                     ->get('filter')
-                    ->addFilter($this->app['zend.filter.stringtrim']())
-                    ->addFilter($this->app['zend.filter.striptags']())
+                    ->attach($this->app['zf2.filter.string_trim']())
+                    ->attach($this->app['zf2.filter.strip_tags']())
                     ->filter($value);
             return $nValue;
         } else {
@@ -112,11 +112,11 @@ class Todo extends Model {
      * @return void
      */
     public function set_title($title) {
-        if ($this->has('zend')) {
-            $title = $this->app['zend']
+        if ($this->has('zf2')) {
+            $title = $this->app['zf2']
                     ->get('filter')
-                    ->addFilter($this->app['zend.filter.stringtrim']())
-                    ->addFilter($this->app['zend.filter.striptags']())
+                    ->attach($this->app['zf2.filter.string_trim']())
+                    ->attach($this->app['zf2.filter.strip_tags']())
                     ->filter($title);
         }
         $this->assign_attribute('title', $title);

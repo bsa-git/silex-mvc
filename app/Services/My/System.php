@@ -318,7 +318,7 @@ class System {
      * @return array
      */
     public function Xml2Array($aXml, Application $app) {
-        $classJson = $app['zend']->get('json');
+        $classJson = $app['zf2']->get('json');
         //------------------------
         $json = $classJson::fromXml($aXml, true);
         $arrXml = $classJson::decode($json);

@@ -6,7 +6,10 @@
         "swiftmailer/swiftmailer": "^5.4",
         "doctrine/dbal": "^2.5",
         "doctrine/orm": "^2.5",
-        "symfony/intl": "^2.7"
+        "symfony/intl": "^2.7",
+        "zendframework/zend-json": "2.*",
+        "zendframework/zendxml": "^1.0",
+        "zendframework/zend-filter": "2.*"
     },
     "autoload":{
         "psr-0":{
@@ -17,7 +20,11 @@
             "Models" : "app/",
             "Providers" : "app/",
             "Pagerfanta" : "vendor/library/",
-            "Services" : "app/"
+            "Services" : "app/",
+            "Zend\\Filter": "vendor/zendframework/zend-filter/src/",
+            "Zend\\Json": "vendor/zendframework/zend-json/src/",
+            "ZendXml": "vendor/zendframework/zendxml/library/",
+            "Zend\\Stdlib": "vendor/zendframework/zend-stdlib/src/"
         }
     }
 }

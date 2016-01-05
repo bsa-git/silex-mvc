@@ -454,7 +454,7 @@ class CrXml implements ArrayAccess, Iterator {
     }
 
     function xml2Array(Application $app) {
-        $classJson = $app['zend']->get('json');
+        $classJson = $app['zf2']->get('json');
         //-------------------
         $xml = $this->xml();
         $json = $classJson::fromXml($xml, true);

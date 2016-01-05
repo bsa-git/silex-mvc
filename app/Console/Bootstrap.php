@@ -133,9 +133,9 @@ class Bootstrap {
             return new \Services\MyService($app);
         });
         
-        // ZendService
-        $app['zend'] = $app->share(function ($app) {
-            return new \Services\ZendService($app);
+        // Zf2Service
+        $app['zf2'] = $app->share(function ($app) {
+            return new \Services\Zf2Service($app);
         });
     }
 
