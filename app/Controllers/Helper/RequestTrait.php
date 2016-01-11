@@ -87,7 +87,6 @@ trait RequestTrait
      */
     public function path($route, $parameters = array(), $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH) {
         $path = $this->app['url_generator']->generate($route, $parameters, $referenceType);
-        $path = str_replace('/index.php', '', $path);
         return $path;
     }
     
