@@ -4,11 +4,6 @@
 {% block title %}Home{% endblock title %}
 {% block head %}
     {{ parent() }}
-    <!-- Add Resources (required) -->
-    {% include 'Include/add.resources.html.twig' %}
-    <script type="text/javascript">
-        BSA.ScriptResources.push('Highlight');
-    </script>
 {% endblock head %}
 
 {% block page_name %}Silex - MicroFramework{% endblock page_name %}

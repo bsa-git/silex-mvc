@@ -20,7 +20,7 @@ body {
     box-shadow: 0 0 6px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 0 6px rgba(0, 0, 0, .7);
     -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, .7);
-    behavior: url(js/PIE.htc);
+    behavior:url(/css/pie/PIE.htc);
     position: relative;
     padding: 28px 43px 23px 47px;
     color: #000;

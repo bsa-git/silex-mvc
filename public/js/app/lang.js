@@ -124,7 +124,7 @@ define(['jquery'], function ($) {
                 this.sys.post(url, {hash: ''}, onAjaxSuccess, false);
             }
             return result;
-        },
+        }
     });
 
     return Lang;

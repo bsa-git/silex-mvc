@@ -83,7 +83,7 @@ class SecurityController extends BaseController {
 
             $data = array(
                 'error' => $error,
-                'last_username' => $last_username,
+                'last_username' => $last_username
             );
 
             // Show form
@@ -126,7 +126,7 @@ class SecurityController extends BaseController {
                     $usernameConstraint = new Assert\Customize\UniqueEntity(array(
                         'app' => $this->app,
                         'entity' => 'Models\ORM\User',
-                        'field' => 'username',
+                        'field' => 'username'
                     ));
 
                     // use a validator to check the value
@@ -144,7 +144,7 @@ class SecurityController extends BaseController {
                     $emailConstraint = new Assert\Customize\UniqueEntity(array(
                         'app' => $this->app,
                         'entity' => 'Models\ORM\User',
-                        'field' => 'email',
+                        'field' => 'email'
                     ));
 
                     // use a validator to check the value
@@ -169,7 +169,7 @@ class SecurityController extends BaseController {
                     $mobileConstraint = new Assert\Customize\UniqueEntity(array(
                         'app' => $this->app,
                         'entity' => 'Models\ORM\User',
-                        'field' => 'personal_mobile',
+                        'field' => 'personal_mobile'
                     ));
 
                     // use a validator to check the value

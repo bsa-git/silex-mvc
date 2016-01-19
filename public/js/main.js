@@ -13,8 +13,8 @@
             underscore: 'lib/underscore/underscore-min',
             storage: 'lib/jstorage/jstorage',
             json: 'lib/json/json2',
-            //backbone: 'lib/backbone/backbone-min',
-            backbone: 'lib/backbone/backbone',
+            backbone: 'lib/backbone/backbone-min',
+            //backbone: 'lib/backbone/backbone',
             ExtendClass: 'lib/Extend.class',
             Highlight: 'app/services/Highlight.class',
             FormValidation: 'app/services/FormValidation.class',
@@ -27,7 +27,7 @@
                 exports: '$'
             },
             'bootstrap': {
-                deps: ['jquery', 'respond', 'html5shiv'],
+                deps: ['jquery', 'respond', 'html5shiv']
             },
             'underscore': {
                 exports: '_'
@@ -40,7 +40,7 @@
                 exports: 'JSON'
             },
             'storage': {
-                deps: ['json', 'jquery'],
+                deps: ['json', 'jquery']
             },
             'app/app': {
                 deps: ['ExtendClass', 'bootstrap', 'underscore', 'storage']
@@ -59,7 +59,7 @@
             },
             'Todo': {
                 deps: ['css!app/bb-todo/css/style.css', 'backbone', 'lib/backbone/backbone.localStorage', 'lib/sugarjs/sugar-str.min']
-            },
+            }
         }
     });
 })(jQuery)
