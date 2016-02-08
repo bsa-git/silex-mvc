@@ -39,13 +39,13 @@
 
 ### Развертывание
 
-1. Клонировать [silex-mvc](https://github.com/alvk4r/silex-enhanced) проект с помощью git.
+1. Клонировать [silex-mvc]((https://github.com/bsa-git/silex-mvc) проект с помощью git.
 2. Выполнить `composer install`.
 3. Для создания базы данных выполнить командный файл из консоли `app/Console/scripts/orm/schema_create.bat`, 
 предварительно отредактировав пути к `php.exe` и к `app\Console\index.php`;
 4. Сконфигурируйте веб сервер, что бы точка входа была `public/index.php`.
 5. Установите, если необходимо, соответсвующие права на запись в `path/to/project/var`.
-6. Введите адрес сайта в броузер (пр. http://silex-mvc/)
+6. Введите адрес сайта в броузер (пр. http://silex-mvc.ru/)
 
 ## Конфигурация
 

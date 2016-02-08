@@ -6,16 +6,16 @@ created by Symfony2 components). I have taken some ideas from the project
 The documentation can be found on the SILEX Online (http://silex.sensiolabs.org). 
 Examples of installation of the framework given for OS "Windows" and web server Nginx.
 
-Main features of the framework:
+Main features of the application:
 
-- framework implements a simple application management blog.
+- application implements a simple application management blog.
 - expands with configuration files located in the `app/Resources/Сonfig`.
 - it works as a web or as a console application.
 - console application can perform various tasks (e.g. Creation of a database `app/Console/scripts/orm/schema_create.bat`).
 - as an example, the work of the console application implemented to work with the service [UBKI](http://ubki.ua/ru).
 - realized the localization of two languages: English and Russian.
 - ensures the registration process, user authentication and authorization.
-- the database created two users with the appropriate rights. The Administrator (login = admin; pass = foo) User (login = user; pass = foo).
+- the database created two users with the appropriate rights. The Administrator (login = admin; pass = foo), User (login = user; pass = foo).
 - uses a database type SqlLite `app/Resources/db/app.db`.
 - work with databases provided by Doctrine(DBAL, ORM) `vendor/doctrine` and PHP ActiveRecord `vendor/library/AR`.
 - realized the possibility output the pages using the library Pagerfanta `vendor/library/Pagerfanta`.
