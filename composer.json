@@ -19,7 +19,7 @@
             "Forms" : "app/",
             "Models" : "app/",
             "Providers" : "app/",
-            "Pagerfanta" : "vendor/library/",
+            "Pagerfanta" : "library/",
             "Services" : "app/",
             "Zend\\Filter": "vendor/zendframework/zend-filter/src/",
             "Zend\\Json": "vendor/zendframework/zend-json/src/",

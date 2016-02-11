@@ -42,9 +42,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# My ignore dir
+# =========================
+# My Ignore
+# =========================
+
 /data/*
 /app/Resources/db/*
 /nbproject/*
 /vendor/*
-!/vendor/library

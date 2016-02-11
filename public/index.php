@@ -8,7 +8,7 @@ try {
     }
 
     // Set the path to library
-    set_include_path(implode(PATH_SEPARATOR, array(BASEPATH . '/vendor/library', get_include_path())));
+    set_include_path(implode(PATH_SEPARATOR, array(BASEPATH . '/library', get_include_path())));
 
     //Set timezone
     date_default_timezone_set("UTC");
