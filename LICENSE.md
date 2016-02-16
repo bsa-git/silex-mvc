@@ -1,6 +1,6 @@
 ## The MIT License (MIT)
 
-#### The MIT License (MIT)
+#### [The MIT License](http://www.opensource.org/licenses/mit-license.php)
 ### Copyright (c) 2015, Sergei Beskorovainyi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
