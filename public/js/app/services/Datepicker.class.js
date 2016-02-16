@@ -32,6 +32,7 @@ define(['jquery'], function ($) {
             var ids;
             var definitions = this.$params.definitions;
             //---------------------------
+
             $.each(definitions, function (i, definition) {
                 var opt = {};
                 $.each(definition, function (key, value) {

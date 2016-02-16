@@ -2,13 +2,9 @@
 /* Written by Stuart. */
 (function (factory) {
     if (typeof define === "function" && define.amd) {
-
         // AMD. Register as an anonymous module.
-//        define(["../datepicker"], factory);
-        define(["Datepicker"], factory);
-        factory(jQuery.datepicker);
+        define(["../datepicker"], factory);
     } else {
-
         // Browser globals
         factory(jQuery.datepicker);
     }

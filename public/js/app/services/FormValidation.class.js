@@ -270,4 +270,4 @@ define(['jquery'], function ($) {
         }
     });
     return FormValidation;
-})
+});
