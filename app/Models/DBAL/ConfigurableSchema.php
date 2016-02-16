@@ -1,15 +1,5 @@
 <?php
 
-/**
- * PHP version ~5.5
- *
- * @category PHPClass
- * @package  Silex\Doctrine\DBAL\Schema
- * @author   Rafael Ernesto Espinosa Santiesteban <ralphlnx@gmail.com>
- * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://fluency.inc.com
- */
-
 namespace Models\DBAL;
 
 use Doctrine\DBAL\Schema\Schema;

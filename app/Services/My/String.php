@@ -10,9 +10,9 @@ namespace Services\My;
  *
  * @category Service
  * @package  app\Services
- * @author   @author Azeem Michael
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class String implements ComparableInterface {
 

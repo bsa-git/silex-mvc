@@ -13,9 +13,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  * 
  * @category Command
  * @package  app\Console\Commands
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://site.my
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class ErrorCommand extends BaseCommand {
 

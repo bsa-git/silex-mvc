@@ -13,9 +13,9 @@ use Forms\PostForm;
  * 
  * @category Controller
  * @package  app\Controllers
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class TestController extends BaseController {
 
@@ -205,7 +205,7 @@ class TestController extends BaseController {
                     $route_params = $app['route_params'];
                     return $app['url_generator']->generate('test_posts_user_page', array('username' => $route_params['username'], 'page' => $page));
                 }, $params);
-                
+
                 // Data for user's posts
                 $data = array('username' => $userName, 'posts' => $pag['data'], 'paginator' => $pag['html']);
             } else {

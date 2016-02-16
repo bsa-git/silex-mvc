@@ -1,19 +1,19 @@
 <?php
 
-/**
- *
- * @category Command
- * @package  app\Console\Commands
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
- * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://site.my
- */
-
 namespace Console\Commands\Greet;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+/**
+ * GreetCommand
+ * 
+ * @category Command
+ * @package  app\Console\Commands
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+ * @link     https://github.com/bsa-git/silex-mvc/
+ */
 class GreetCommand extends \Console\Commands\BaseCommand {
 
     /**

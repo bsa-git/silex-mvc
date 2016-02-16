@@ -1,15 +1,5 @@
 <?php
 
-/**
- * PHP version ~5.5
- *
- * @category Listener
- * @package  Fluency\Silex\Console\EventListener
- * @author   Rafael Ernesto Espinosa Santiesteban <ralphlnx@gmail.com>
- * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://fluency.inc.com
- */
-
 namespace Providers\Console\EventListener;
 
 use Providers\Console\Events;

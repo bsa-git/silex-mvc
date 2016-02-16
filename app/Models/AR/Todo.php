@@ -4,21 +4,15 @@
 
 namespace Models\AR;
 
-use Silex\Application;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
-use Forms\Constraints as Assert;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\OptionsResolver\Options;
-
 /**
  * Class - Todo 
  * Model for Todo
  * 
  * @category Model
  * @package  app\Models
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class Todo extends Model {
 

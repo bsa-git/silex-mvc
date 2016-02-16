@@ -1,16 +1,6 @@
 <?php
 
 // app/Console/Commands/DBAL/DropDatabaseCommand.php
-/**
- * PHP version ~5.5
- *
- * @category Command
- * @package  Fluency\Silex\Doctrine\DBAL\Tools\Console\Command
- * @author   Rafael Ernesto Espinosa Santiesteban <ralphlnx@gmail.com>
- * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://fluency.inc.com
- */
-
 namespace Console\Commands\DBAL;
 
 use Symfony\Component\Console\Input\InputInterface;

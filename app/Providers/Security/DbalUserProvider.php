@@ -10,6 +10,17 @@ use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Doctrine\DBAL\Connection;
 
+/**
+ * Class - DbalUserProvider
+ * user provider
+ * 
+ * @category Provider
+ * @package  app\Providers
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+ * @link     https://github.com/bsa-git/silex-mvc/
+ * 
+ */
 class DbalUserProvider implements UserProviderInterface
 {
     private $conn;

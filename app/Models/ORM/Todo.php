@@ -16,15 +16,15 @@ use Symfony\Component\OptionsResolver\Options;
  * 
  * @category Model
  * @package  app\Models
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  * 
  * @Entity
  * @Table(name="todo")
  */
 class Todo {
-    
+
     use \Models\Helper\EntityTrait;
 
     /**
@@ -33,7 +33,6 @@ class Todo {
      * @GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
 
     /**
      * @Column(name="`title`", type="string", length=255)
@@ -52,7 +51,6 @@ class Todo {
 
     //------------------------
 
-
     /**
      * Load validator metadata
      * 
@@ -63,7 +61,7 @@ class Todo {
         $metadata->addPropertyConstraint('task_order', new Assert\Type('int'));
         $metadata->addPropertyConstraint('done', new Assert\Type('boolean'));
     }
-    
+
     /**
      * Configure options for resolver
      * 
@@ -87,7 +85,7 @@ class Todo {
 
         // Normalizer 'title'
         $resolver->setNormalizer('title', function (Options $options, $value) {
-        $nValue = $this->app['zf2']
+            $nValue = $this->app['zf2']
                     ->get('filter')
                     ->attach($this->app['zf2.filter.string_trim']())
                     ->attach($this->app['zf2.filter.strip_tags']())
@@ -95,7 +93,7 @@ class Todo {
             return $nValue;
         });
     }
-    
+
     /**
      * Normalize values
      * 
@@ -105,18 +103,18 @@ class Todo {
      */
     public static function normalizeValues($aValues = array(), Application $aApp = NULL) {
         $nValues = array();
-        $app = $aApp? $aApp : self::getAppStatic();
+        $app = $aApp ? $aApp : self::getAppStatic();
         //------------------------
-        if(isset($aValues['id'])){
+        if (isset($aValues['id'])) {
             $nValues['id'] = (int) $aValues['id'];
         }
-        if(isset($aValues['task_order'])){
+        if (isset($aValues['task_order'])) {
             $nValues['task_order'] = (int) $aValues['task_order'];
         }
-        if(isset($aValues['done'])){
+        if (isset($aValues['done'])) {
             $nValues['done'] = (boolean) $aValues['done'];
         }
-        if(isset($aValues['title'])){
+        if (isset($aValues['title'])) {
             $value = $aValues['title'];
             $nValue = $app['zf2']
                     ->get('filter')
@@ -125,19 +123,16 @@ class Todo {
                     ->filter($value);
             $nValues['title'] = $nValue;
         }
-        
-            return $nValues;
-    }
 
-    
+        return $nValues;
+    }
 
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -148,8 +143,7 @@ class Todo {
      *
      * @return Todo
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -160,8 +154,7 @@ class Todo {
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -172,8 +165,7 @@ class Todo {
      *
      * @return Todo
      */
-    public function setTaskOrder($taskOrder)
-    {
+    public function setTaskOrder($taskOrder) {
         $this->task_order = $taskOrder;
 
         return $this;
@@ -184,8 +176,7 @@ class Todo {
      *
      * @return integer
      */
-    public function getTaskOrder()
-    {
+    public function getTaskOrder() {
         return $this->task_order;
     }
 
@@ -196,8 +187,7 @@ class Todo {
      *
      * @return Todo
      */
-    public function setDone($done)
-    {
+    public function setDone($done) {
         $this->done = $done;
 
         return $this;
@@ -208,8 +198,8 @@ class Todo {
      *
      * @return boolean
      */
-    public function getDone()
-    {
+    public function getDone() {
         return $this->done;
     }
+
 }

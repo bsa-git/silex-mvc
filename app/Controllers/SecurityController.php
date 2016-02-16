@@ -15,9 +15,9 @@ use Forms\Constraints as Assert;
  * 
  * @category Controller
  * @package  app\Controllers
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class SecurityController extends BaseController {
 

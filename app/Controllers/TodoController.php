@@ -13,9 +13,9 @@ use Models\ORM\Todo;
  * 
  * @category Controller
  * @package  app\Controllers
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class TodoController extends BaseController {
 
@@ -173,10 +173,10 @@ class TodoController extends BaseController {
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
-            
+
             // Delete task
             $models->load('Todo', 'deleteTask', $id);
-            
+
             return $this->sendJson(TRUE);
         } catch (\Exception $exc) {
             return $this->errorAjax($exc);

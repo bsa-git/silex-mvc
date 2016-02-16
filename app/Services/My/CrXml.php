@@ -5,17 +5,12 @@
 namespace Services\My;
 
 use Silex\Application;
-
 use \ArrayAccess;
 use \Iterator;
 use DOMDocument;
 use DOMElement;
 use DOMXPath;
 use DOMNodeList;
-
-//use DOMDocument;
-//use DOMElement;
-//use DOMNodeList;
 
 /*
 
@@ -97,8 +92,6 @@ use DOMNodeList;
  *
  * @category Service
  * @package  app\Services
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
-  * @link     http://my.site
  */
 class CrXml implements ArrayAccess, Iterator {
 

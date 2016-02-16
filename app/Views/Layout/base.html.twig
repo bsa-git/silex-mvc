@@ -4,7 +4,7 @@
     <head>
         {% block head %}
             <meta charset="{{ _charset }}">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">{# edge #}
+            <meta http-equiv="X-UA-Compatible" content="IE=7">{# edge, 7,8,9,10 #}
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="shortcut icon" href="{{ asset('img/assets/ico/favicon.ico') }}">
             <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -21,6 +21,9 @@
             <script type="text/javascript" src="{{ asset('js/lib/jquery/jquery.min.js') }}"></script>
             <!-- Require -->
             <script type="text/javascript" data-main="{{ asset('js/main') }}" src="{{ asset('js/lib/requirejs/require.js') }}"></script>
+            <!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
         {% endblock head %}
     </head>
     <body>
@@ -37,15 +40,15 @@
             {% include 'Include/msgbox.html.twig' %}
             <!-- Page Content -->
             <div id="page_content">
-                {% block content %}{% endblock content %}
-            </div>
-            <!-- Footer Menu -->
-            {% include 'Include/footer.menu.html.twig' %}
-            <!-- Footer Privacy -->
-            {% include 'Include/footer.privacy.html.twig' %}
+            {% block content %}{% endblock content %}
+        </div>
+        <!-- Footer Menu -->
+        {% include 'Include/footer.menu.html.twig' %}
+        <!-- Footer Privacy -->
+        {% include 'Include/footer.privacy.html.twig' %}
     </div>
     <!-- /container -->
-    
+
     <!-- scheme -->
     <link href="{{ asset(['schemes/', app.scheme, '/css/style.css']|join) }}" rel="stylesheet" media="screen">
     <!-- Include MyStyle -->

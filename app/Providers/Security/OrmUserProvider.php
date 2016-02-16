@@ -10,6 +10,17 @@ use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Doctrine\ORM\EntityManager;
 
+/**
+ * Class - OrmUserProvider
+ * user provider
+ * 
+ * @category Provider
+ * @package  app\Providers
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+ * @link     https://github.com/bsa-git/silex-mvc/
+ * 
+ */
 class OrmUserProvider implements UserProviderInterface
 {
     private $em;

@@ -5,11 +5,9 @@ define(['app/bb-todo/models/tasklist', 'app/bb-todo/views/appview'], function (T
      *
      * JavaScript
      *
-     * @author     Sergei Beskorovainyi <bs261257@gmail.com>
-     * @copyright  2011 Sergei Beskorovainyi
-     * @license    BSD
-     * @version    1.00.00
-     * @link       http://my-site.com
+     * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+     * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+     * @link     https://github.com/bsa-git/silex-mvc/
      */
     var Todo = Class.extend({
         init: function (params) {

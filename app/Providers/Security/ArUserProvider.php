@@ -10,6 +10,17 @@ use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Models\AR\Db;
 
+/**
+ * Class - ArUserProvider
+ * user provider
+ * 
+ * @category Provider
+ * @package  app\Providers
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+ * @link     https://github.com/bsa-git/silex-mvc/
+ * 
+ */
 class ArUserProvider implements UserProviderInterface
 {
     private $db;

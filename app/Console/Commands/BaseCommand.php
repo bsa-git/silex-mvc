@@ -21,9 +21,9 @@ use Providers\Console\Command as ConsoleCommand;
  *
  * @category Command
  * @package  app\Console\Commands
- * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
- * @link     http://my.site
+ * @link     https://github.com/bsa-git/silex-mvc/
  */
 class BaseCommand extends ConsoleCommand {
 

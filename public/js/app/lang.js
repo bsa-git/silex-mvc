@@ -5,11 +5,9 @@ define(['jquery'], function ($) {
      *
      * JavaScript
      *
-     * @author     Sergei Beskorovainyi <bs261257@gmail.com>
-     * @copyright  2011 Sergei Beskorovainyi
-     * @license    BSD
-     * @version    1.00.00
-     * @link       http://my-site.com
+     * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+     * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+     * @link     https://github.com/bsa-git/silex-mvc/
      */
     var Lang = Class.extend({
         init: function (sys) {
@@ -22,11 +20,10 @@ define(['jquery'], function ($) {
 
             // Removed from the base URL addresses last slash
             this['urlBase'] = _.initial(this['urlBase']).join('');
-            
+
             // Get translation data
             this.getTransData();
         },
-        
         /**
          * Get translation data from server
          * and save to jStorage database
@@ -43,8 +40,8 @@ define(['jquery'], function ($) {
                 translate = $.jStorage.get("trans");
                 if (translate) {
                     hash = translate.hash;
-                    if(this.lang_hash === hash){
-                        return; 
+                    if (this.lang_hash === hash) {
+                        return;
                     }
                 }
 
@@ -69,7 +66,6 @@ define(['jquery'], function ($) {
 
             }
         },
-        
         /**
          * Get translation value for id
          * and set value options 
@@ -85,7 +81,7 @@ define(['jquery'], function ($) {
             var result = "";
             options = options || {};
             //-----------------------
-            
+
             // Find value in this
             if (this[messageId]) {
                 msg = this[messageId];
@@ -93,7 +89,7 @@ define(['jquery'], function ($) {
                 result = tmpl(options);
                 return result;
             }
-            
+
             // Find value in jStorage
             translate = $.jStorage.get("trans");
             if (translate) {

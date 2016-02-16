@@ -1,4 +1,14 @@
 define(['app/system', 'app/lang'], function (System, Lang) {
+    /**
+     * App - application
+     *
+     *
+     * JavaScript
+     *
+     * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+     * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
+     * @link     https://github.com/bsa-git/silex-mvc/
+     */
     var App = Class.extend({
         init: function () {
             try {
