@@ -3,7 +3,7 @@
 Simple framework implements a design pattern MVC, based SILEX (PHP micro-framework,
 created by Symfony2 components). I have taken some ideas from the project 
 [GitHub (silex-enhanced)](https://github.com/FluencyLabs/silex-enhanced-skeleton).
-The documentation can be found on the SILEX Online (http://silex.sensiolabs.org). 
+The documentation can be found on the [SILEX Online](http://silex.sensiolabs.org). 
 Examples of installation of the framework given for OS "Windows" and web server Nginx.
 
 Main features of the application:
