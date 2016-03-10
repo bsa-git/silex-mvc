@@ -1,6 +1,6 @@
 <?php
 
-// vendor/library/Pagerfanta/PfAdapter.php
+// library/Pagerfanta/PfAdapter.php
 
 namespace Pagerfanta;
 

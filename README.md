@@ -17,8 +17,8 @@ Main features of the application:
 - ensures the registration process, user authentication and authorization.
 - the database created two users with the appropriate rights. The Administrator (login = admin; pass = foo), User (login = user; pass = foo).
 - uses a database type SqlLite `app/Resources/db/app.db`.
-- work with databases provided by Doctrine(DBAL, ORM) `vendor/doctrine` and PHP ActiveRecord `vendor/library/AR`.
-- realized the possibility output the pages using the library Pagerfanta `vendor/library/Pagerfanta`.
+- work with databases provided by Doctrine(DBAL, ORM) `vendor/doctrine` and PHP ActiveRecord `library/AR`.
+- realized the possibility output the pages using the library Pagerfanta `library/Pagerfanta`.
 - used template Twig `vendor/twig`.
 - library of SwiftMailer is used for email `vendor/swiftmailer`. 
 - added services such as Zend-Filter, Zend-Json and others `vendor/zendframework`.

@@ -18,8 +18,8 @@
 - обеспечивается процесс регистрации, аутентификации и авторизации пользователей;
 - в БД созданы два пользователя с соответствующими правами. Администратор (login=admin; pass=foo) User (login=user; pass=foo);
 - использует БД типа SqlLite `app/Resources/db/app.db`;
-- работа с БД обеспечивается с помощью Doctrine(DBAL, ORM) `vendor/doctrine` и PHP ActiveRecord `vendor/library/AR`;
-- реализована возможность вывода данных по страницам с помощью библиотеки Pagerfanta `vendor/library/Pagerfanta`;
+- работа с БД обеспечивается с помощью Doctrine(DBAL, ORM) `vendor/doctrine` и PHP ActiveRecord `library/AR`;
+- реализована возможность вывода данных по страницам с помощью библиотеки Pagerfanta `library/Pagerfanta`;
 - используется шаблонизатор Twig `vendor/twig`;
 - для работы с почтой используется библиотека SwiftMailer `vendor/swiftmailer`;
 - добавлены сервисы такие как Zend-Filter, Zend-Json и др. `vendor/zendframework`;
