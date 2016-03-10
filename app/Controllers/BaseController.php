@@ -14,7 +14,7 @@ use Symfony\Component\Debug\Exception\FlattenException;
  *
  * @category Controller
  * @package  app\Controllers
- * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
  * @link     https://github.com/bsa-git/silex-mvc/
  */

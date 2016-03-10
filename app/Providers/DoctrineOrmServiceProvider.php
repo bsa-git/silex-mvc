@@ -15,7 +15,7 @@ use Doctrine\ORM\EntityManager;
  * 
  * @category Provider
  * @package  app\Providers
- * @author   Sergii Beskorovainyi <bsa2657@yandex.ru>
+ * @author   Sergei Beskorovainyi <bsa2657@yandex.ru>
  * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
  * @link     https://github.com/bsa-git/silex-mvc/
  * 
