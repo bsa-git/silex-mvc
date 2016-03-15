@@ -710,9 +710,9 @@ class String implements ComparableInterface {
     /**
      * Split the string into substrings
      * Returns an array of strings obtained from the decomposition of string
-     * Using separator as the delimiter.
-     * If the argument passed to limit, the array will contain a maximum of limit
-     * Elements with the last element containing the rest of string. 
+           * Using separator as the delimiter.
+           * If the argument passed to limit, the array will contain a maximum of limit
+           * Elements with the last element containing the rest of string.
      * 
      * @param string $separator
      * @param int $limit
@@ -926,7 +926,7 @@ class String implements ComparableInterface {
             return FALSE;
         }
     }
-    
+
     /**
      * Escapes a text for HTML.
      *
@@ -935,23 +935,46 @@ class String implements ComparableInterface {
      *
      * @return StrBox
      */
-    function escape($flags = ENT_COMPAT, $doubleEncode = true)
-    {
+    function escape($flags = ENT_COMPAT, $doubleEncode = true) {
         $str = htmlspecialchars($this->str, $flags, $this->encoding, $doubleEncode);
         return new self($str);
     }
-    
+
     /**
      * Unescapes a text for HTML.
      *
      * @param int    $flags        The flags (@see htmlspecialchars)
      * @return StrBox
      */
-    function unEscape($flags = ENT_COMPAT)
-    {
+    function unEscape($flags = ENT_COMPAT) {
         $str = htmlspecialchars_decode($this->str, $flags);
         return new self($str);
     }
+
+    /** Normalize the string for HTML attribute value
+     * @return StrBox 
+     */
+    function htmlValue() {
+        $str = str_replace('"', "&quot;", str_replace("'", '&#39;', str_replace('<', '&lt;', str_replace('>', "&gt;", str_replace('&', "&amp;", $this->str)))));
+        return new self($str);
+    }
+
+    /** Normalize the string for JavaScript string value
+     * @return StrBox 
+     */
+    function jsValue() {
+        $str = preg_replace('/\r?\n/', "\\n", str_replace('"', "\\\"", str_replace("'", "\\'", str_replace("\\", "\\\\", $this->str))));
+        return new self($str);
+    }
+
+    /** Replace repeated white spaces to single space
+     * @return StrBox 
+     */
+    function clearWhitespaces() {
+        $str = trim(preg_replace('/\s+/s', " ", $this->str));
+        return new self($str);
+    }
+
 }
 
 /**

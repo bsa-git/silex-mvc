@@ -19,7 +19,7 @@ Configuration options:
 
 The path to the configuration file - app/Resources/Сonfig/parameters.yml
 
-Основные значения:
+Basic values:
 
 debug: false                        # debugging (true, false)
 environment: production             # mode: (production, test)
