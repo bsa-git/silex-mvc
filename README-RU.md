@@ -34,8 +34,8 @@
 ### Предварительные требования
 
 - [PHP](http://php.net) version >= 5.4
-- веб сервер Apache2, Nginx или похожие
-- Composer
+- веб сервер [Apache2](https://httpd.apache.org/download.cgi), [Nginx](http://nginx.org/ru/) или похожие
+- [Composer](https://getcomposer.org/)
 
 ### Развертывание
 
