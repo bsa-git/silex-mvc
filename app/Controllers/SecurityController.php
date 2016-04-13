@@ -185,7 +185,7 @@ class SecurityController extends BaseController {
                 }
                 return $this->sendJson($result);
             } else {
-                // Create object NewPost and set values
+                // Create object $newUser and set values
                 $newUser = new User();
                 $newUser->setApp($this->app);
                 $form = $this->createForm(new RegForm(), $newUser);
