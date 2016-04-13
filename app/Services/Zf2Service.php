@@ -1,6 +1,6 @@
 <?php
 
-// app/Services/SysBox.php
+// app/Services/Zf2Service.php
 
 namespace Services;
 
