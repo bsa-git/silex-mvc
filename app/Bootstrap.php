@@ -248,6 +248,7 @@ class Bootstrap {
             $app->register(
                     new Silex\Provider\TwigServiceProvider(), array(
                 'twig.path' => array("{$app['basepath']}/app/Views"),
+                #Global form templates        
                 'twig.form.templates' => array("Form/bootstrap_3_horizontal_layout.html.twig"),
                 'twig.options' => array(
                     'cache' => "{$app['config']['cache_path']}/twig",
