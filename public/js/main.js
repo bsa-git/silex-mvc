@@ -1,5 +1,4 @@
 (function ($) {
-//(function () {    
     var lang = $('#language').html();
     requirejs.config({
         baseUrl: "/js",
@@ -64,7 +63,7 @@
         }
     });
 })(jQuery)
-//})()
+
 require(['app/app'], function (App) {
     window.app = new App();
 });

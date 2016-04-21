@@ -40,19 +40,17 @@
             <!-- Message Box -->
             {% include 'Include/msgbox.html.twig' %}
             <!-- Page Content -->
-            <div id="page_content">
-            {% block content %}{% endblock content %}
+            <div id="page_content">{% block content %}{% endblock content %}</div>
+            <!-- Footer Menu -->
+            {% include 'Include/footer.menu.html.twig' %}
+            <!-- Footer Privacy -->
+            {% include 'Include/footer.privacy.html.twig' %}
         </div>
-        <!-- Footer Menu -->
-        {% include 'Include/footer.menu.html.twig' %}
-        <!-- Footer Privacy -->
-        {% include 'Include/footer.privacy.html.twig' %}
-    </div>
-    <!-- /container -->
+        <!-- /container -->
 
-    <!-- scheme -->
-    <link href="{{ asset(['schemes/', app.scheme, '/css/style.css']|join) }}" rel="stylesheet" media="screen">
-    <!-- Include MyStyle -->
-    <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}" />
-</body>
+        <!-- scheme -->
+        <link href="{{ asset(['schemes/', app.scheme, '/css/style.css']|join) }}" rel="stylesheet" media="screen">
+        <!-- Include MyStyle -->
+        <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}" />
+    </body>
 </html>
