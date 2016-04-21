@@ -12,7 +12,7 @@ define(['jquery'], function ($) {
     var System = Class.extend({
         init: function () {
             this.settings = {
-                message_box: 'msg-box', // 'alert-box', 'alert-block-box'
+                message_box: 'msg-box', 
                 ttl_jstorage: 3600000   // 1h=3600000
             };
             //---------------
