@@ -1,5 +1,5 @@
 /**
- * Синтаксис:
+ * Syntax:
  * Class.extend(props)
  * Class.extend(props, staticProps)
  * Class.extend([mixins], props)
@@ -7,7 +7,7 @@
  */
 (function () {
 
-    window.Class = function () { /* вся магия - в Class.extend */
+    window.Class = function () { /* all magic - in Class.extend */
     };
 
 
@@ -15,32 +15,32 @@
 
         var mixins = [];
 
-        // если первый аргумент -- массив, то переназначить аргументы    
+        // if the first argument - an array, then reassign arguments    
         if ({}.toString.apply(arguments[0]) == "[object Array]") {
             mixins = arguments[0];
             props = arguments[1];
             staticProps = arguments[2];
         }
 
-        // эта функция будет возвращена как результат работы extend
+        // This function will be returned as a result of the extend
         function Constructor() {
             this.init && this.init.apply(this, arguments);
         }
 
-        // this -- это класс "перед точкой", для которого вызван extend (Animal.extend)
-        // наследуем от него:
+        // this - is a class "to the point", which called for extend (Animal.extend)
+        // inherit from him:
         Constructor.prototype = Class.inherit(this.prototype);
 
-        // constructor был затёрт вызовом inherit
+        // constructor was substituted by calling inherit
         Constructor.prototype.constructor = Constructor;
 
-        // добавим возможность наследовать дальше
+        // add to inherit more
         Constructor.extend = Class.extend;
 
-        // скопировать в Constructor статические свойства
+        // copied to the static properties Constructor
         copyWrappedProps(staticProps, Constructor, this);
 
-        // скопировать в Constructor.prototype свойства из примесей и props
+        // copy in Constructor.prototype properties of mixins and props
         for (var i = 0; i < mixins.length; i++) {
             copyWrappedProps(mixins[i], Constructor.prototype, this.prototype);
         }
@@ -50,26 +50,26 @@
     };
 
 
-    //---------- вспомогательные методы ----------
+    //---------- helper methods ----------
 
-    // fnTest -- регулярное выражение, 
-    // которое проверяет функцию на то, есть ли в её коде вызов _super
+    // fnTest -- regular expression that checks the function 
+    // of the fact whether there is a code in its call _super
     // 
-    // для его объявления мы проверяем, поддерживает ли функция преобразование
-    // в код вызовом toString: /xyz/.test(function() {xyz})
-    // в редких мобильных браузерах -- не поддерживает, поэтому регэксп будет /./
+    // for his announcement, we check whether the function supports the conversion 
+    // of the code calling the toString: /xyz/.test(function() {xyz})
+    // in rare mobile browsers - are not supported, so the result will be /./
     var fnTest = /xyz/.test(function () {
         xyz
     }) ? /\b_super\b/ : /./;
 
 
-    // копирует свойства из props в targetPropsObj
-    // третий аргумент -- это свойства родителя
+    // copies the properties of the props in targetPropsObj 
+    // third argument - a parent properties
     // 
-    // при копировании, если выясняется что свойство есть и в родителе тоже,
-    // и является функцией -- его вызов оборачивается в обёртку,
-    // которая ставит this._super на метод родителя, 
-    // затем вызывает его, затем возвращает this._super
+    // copying, if it is found out that the property exists in the parent too,
+    // and is a function - call it wrapped in a wrapper,
+    // which puts on the parent method this._super, 
+    // then calls it, then returns this._super
     function copyWrappedProps(props, targetPropsObj, parentPropsObj) {
         if (!props)
             return;
@@ -87,8 +87,8 @@
 
     }
 
-    // возвращает обёртку вокруг method, которая ставит this._super на родителя
-    // и возвращает его потом 
+    // returns a wrapper around method, which puts this._super to the parent 
+    // and then returns it
     function wrap(method, parentMethod) {
         return function () {
             var backup = this._super;
@@ -103,7 +103,7 @@
         }
     }
 
-    // эмуляция Object.create для старых IE
+    // Object.create emulation for old IE
     Class.inherit = Object.create || function (proto) {
         function F() {
         }
