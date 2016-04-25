@@ -37,9 +37,9 @@ define(['app/bb-todo/models/tasklist', 'app/bb-todo/views/appview'], function (T
         // ex. {Todo: [new Todo(), ... ,new Todo()]}
         RegRunOnLoad: function () {
 
-            // Получим параметры для создания обьекта
+            // Receive settings to create the object
             var params = BSA.ScriptParams['Todo'];
-            // Ф-ия создания обьектов по их параметрам
+            // The function to create objects of their parameters
             var createObject = function (param) {
                 var todo = BSA.ScriptInstances['Todo'];
                 if (todo) {
@@ -48,7 +48,7 @@ define(['app/bb-todo/models/tasklist', 'app/bb-todo/views/appview'], function (T
                     BSA.ScriptInstances['Todo'] = [new Todo(param)];
                 }
             };
-            // Создание обьектов
+            // Creating objects
             if (params) {
                 $.each(params, function (i, param) {
                     createObject(param);
