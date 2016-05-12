@@ -1,0 +1,306 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Загрузчик (Bootstrap.php) &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/silex-mvc/favicon.ico">-->
+    <link rel="stylesheet" href="/silex-mvc/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/silex-mvc/css/style.css?v=6">
+    <link rel="stylesheet" href="/silex-mvc/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/silex-mvc/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/silex-mvc/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/silex-mvc/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/silex-mvc/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/silex-mvc/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/silex-mvc/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/silex-mvc/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/silex-mvc/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/silex-mvc/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/silex-mvc/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/silex-mvc/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/silex-mvc/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/silex-mvc/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/silex-mvc/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/silex-mvc/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/silex-mvc/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/silex-mvc/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/silex-mvc/ru/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/silex-mvc/ru/">Главная</a>
+                        </li>
+                        <li >
+                            <a href="/silex-mvc/ru/getstarted/">Начало работы</a>
+                        </li>
+                        <li >
+                            <a href="/silex-mvc/ru/download/">Загрузить</a>
+                        </li>
+                        <li >
+                            <a href="/silex-mvc/ru/documentation/">Документация</a>
+                        </li>
+                        <li >
+                            <a href="/silex-mvc/ru/community/">Сообщество</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/silex-mvc/ru/getstarted/">Начало работы</a>
+                                                    </li>
+                                            <li ><a href="/silex-mvc/ru/documentation/basic-project/">Базовый проект</a>
+                                                    </li>
+                                            <li ><a href="/silex-mvc/ru/documentation/configuration/">Конфигурация</a>
+                                                    </li>
+                                            <li ><a href="/silex-mvc/ru/documentation/web-app">Веб приложение (app)</a>
+                                                            <ul class="nav">
+                                                                                <li  class="active" ><a href="/silex-mvc/ru/documentation/web-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/controllers/">Контроллеры</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/forms/">Формы</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/models/">Модели</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/services/">Сервисы</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/layouts/">Макеты</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/locale/">Локализация</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-app/security/">Безопасность</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/silex-mvc/ru/documentation/web-public">Веб приложение (public)</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-public/main/">Загрузчик (main.js)</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-public/locale/">Локализация</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-public/services/">Сервисы</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/silex-mvc/ru/documentation/console-app">Консольное приложение</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/silex-mvc/ru/documentation/console-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/console-app/configuration/">Конфигурация</a>
+                                                                                <li ><a href="/silex-mvc/ru/documentation/console-app/lifecycle/">Жизненный цикл</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Загрузчик (Bootstrap.php)</h1>
+            <p>Класс Загрузчика <strong>Bootstrap</strong> <code>app/Bootstrap.php</code> выполняет следующие методы:</p>
+
+<ul>
+<li><strong>Создание приложения</strong> <code>__construct()</code></li>
+</ul>
+
+<pre><code>// Create app
+$app = new Silex\Application();
+$this-&gt;app = $app;
+</code></pre>
+
+<ul>
+<li><strong>Создание обработчиков middleware</strong> <code>_iniMiddlewares</code></li>
+<li><strong>Конфигурация приложения</strong> <code>_iniConfig</code></li>
+<li><strong>Инициализация провайдеров</strong> <code>_iniProviders</code></li>
+<li><strong>Инициализация сервисов</strong> <code>_iniServices</code> и <code>_extendServices</code></li>
+<li><strong>Инициализация контроллеров</strong> <code>_iniControllers</code></li>
+<li><strong>Инициализация приложения</strong> <code>_iniApplication</code></li>
+</ul>
+
+<h2 id="%F0%A2%F0%BE%F0%B7%F0%B4%F0%B0%F0%BE%F0%B8%F0%B5-%F0%BE%F0%B1%F1%90%F0%B0%F0%B1%F0%BE%F1%82%F1%87%F0%B8%F0%BA%F0%BE%F0%B3-middleware">Создание обработчиков middleware</h2>
+
+<p>Создаются обработчики событий в разных точках цикла обработки запроса.</p>
+
+<ul>
+<li>В обработчике события, которое возникает до обработки маршрутизации и 
+обработки безопасности запроса от клиента, происходит преобразование 
+данных из <strong>Json</strong> формата в <strong>PHP</strong> массив, если такого типа данные 
+присутствуют в запросе.</li>
+<li>В обработчике события, которое возникает после обработки маршрутизации и 
+обработки безопасности запроса от клиента, происходит сохранение имени маршрута 
+и его параметров.</li>
+<li>В обработчике события, которое возникает после ответа клиенту на его запрос, 
+происходит сохранение информации о длительности цикла обработки запроса, 
+потребляемой при этом памяти и длительности отдельных этапов обработки запроса.</li>
+</ul>
+
+<h2 id="%F0%9A%F0%BE%F0%BE%F1%84%F0%B8%F0%B3%F1%83%F1%90%F0%B0%F1%86%F0%B8%F1%9F-%F0%BF%F1%90%F0%B8%F0%BB%F0%BE%F0%B6%F0%B5%F0%BE%F0%B8%F1%9F">Конфигурация приложения</h2>
+
+<p>Здесь определяется тип конфигурации.</p>
+
+<pre><code>// Set type configuration
+$app['yml_config'] = FALSE;
+</code></pre>
+
+<p>Конфигурация задается с помощью <code>yml</code> файлов или с помощью <code>ini</code> файла.</p>
+
+<p>Здесь устанавливаются значения основных параметров вашей конфигурации, 
+которые могут использоваться в других ваших конфигурациях. 
+Значения параметров можно получить через <code>$app['config']['parameters']</code>.</p>
+
+<p>Значения основных параметров:</p>
+
+<ul>
+<li><strong>Временная зона</strong> (timezone)</li>
+<li><strong>Язык локализации</strong> (locale)</li>
+<li><strong>Цветовая схема сайта</strong> (scheme)</li>
+<li><strong>Признак отладки</strong> (debug)</li>
+<li><strong>Окружающая среда</strong> (environment)</li>
+<li><strong>Параметры базы данных</strong> (db.driver, db.path, db.name, db.models.path, db.models.namespace, db.connection.production, db.connection.development, db.connection.test)</li>
+<li><strong>Email параметры</strong> (mail.host, mail.port,  mail.username,  mail.password)</li>
+<li><strong>PagerFanta параметры</strong> (pagerfanta.max_per_page, pagerfanta.proximity)</li>
+</ul>
+
+<h2 id="%F0%98%F0%BE%F0%B8%F1%86%F0%B8%F0%B0%F0%BB%F0%B8%F0%B7%F0%B0%F1%86%F0%B8%F1%9F-%F0%BF%F1%90%F0%BE%F0%B3%F0%B0%F0%B9%F0%B4%F0%B5%F1%90%F0%BE%F0%B3">Инициализация провайдеров</h2>
+
+<p>Инициализация провайдеров тоже зависит от типа конфигурации.
+Если <code>$app['yml_config'] = TRUE;</code> то провайдеры устанавливаются так как показано ниже.</p>
+
+<pre><code>if ($app['yml_config']) {
+    foreach ($app['config']['service_providers'] as $serviceProviderConfig) {
+        $app-&gt;register(
+                new $serviceProviderConfig['class'](
+                (!isset($serviceProviderConfig['construct_parameters'])) ?
+                        null : $serviceProviderConfig['construct_parameters']
+                ), (isset($serviceProviderConfig['parameters']) &amp;&amp;
+                null !== $serviceProviderConfig['parameters']) ?
+                        $serviceProviderConfig['parameters'] : array()
+        );
+    }
+}
+</code></pre>
+
+<p>Иначе провайдеры устанавливаются вручную.</p>
+
+<pre><code>...
+// Monolog
+$app-&gt;register(new Silex\Provider\MonologServiceProvider(), array(
+    'monolog.logfile' =&gt; "{$app['config']['log_path']}/application.log",
+    'monolog.name' =&gt; 'APPLICATION'
+));
+...
+</code></pre>
+
+<h2 id="%F0%98%F0%BE%F0%B8%F1%86%F0%B8%F0%B0%F0%BB%F0%B8%F0%B7%F0%B0%F1%86%F0%B8%F1%9F-%F1%83%F0%B5%F1%90%F0%B3%F0%B8%F1%83%F0%BE%F0%B3">Инициализация сервисов</h2>
+
+<p>С помощью класса <strong>MyService</strong> <code>app/Services/MyService.php</code> устанавливаются сервисы <code>app/Services/My</code>.</p>
+
+<p>Сюда входят следующие сервисы:</p>
+
+<ul>
+<li><strong>Работа с массивами</strong> (<code>ArrayBox.php</code>)</li>
+<li><strong>Работа с XML</strong> (<code>CrXml.php</code>)</li>
+<li><strong>Работа с HTTP</strong> (<code>Http.php</code>)</li>
+<li><strong>Работа с параметрами</strong> (<code>ParamBox.php</code>)</li>
+<li><strong>Работа со строками</strong> (<code>String.php</code>)</li>
+<li><strong>Общие функции</strong> (<code>System.php</code>)</li>
+</ul>
+
+<p>С помощью класса <strong>Zf2Service</strong> <code>app/Services/Zf2Service.php</code> устанавливаются сервисы из 
+Zend Framework 2  <code>vendor/zendframework</code>.</p>
+
+<p>Сюда входят следующие сервисы:</p>
+
+<ul>
+<li><a href="http://zf2.readthedocs.org/en/latest/modules/zend.filter.html">Zend-Filter</a></li>
+<li><a href="http://zf2.readthedocs.org/en/latest/modules/zend.json.introduction.html">Zend-Json</a></li>
+</ul>
+
+<p>С помощью метода <code>_extendServices</code> класса загрузчика <code>app/Bootstrap.php</code> 
+расширяется функционал некоторых сервисов таких как: <code>$app['translator']</code>, <code>$app['twig']</code>.</p>
+
+<h2 id="%F0%98%F0%BE%F0%B8%F1%86%F0%B8%F0%B0%F0%BB%F0%B8%F0%B7%F0%B0%F1%86%F0%B8%F1%9F-%F0%BA%F0%BE%F0%BE%F1%82%F1%90%F0%BE%F0%BB%F0%BB%F0%B5%F1%90%F0%BE%F0%B3">Инициализация контроллеров</h2>
+
+<p>Создание и инициализация контроллеров происходит с помощью метода <strong>_iniControllers</strong>.</p>
+
+<pre><code>/**
+ *  Initialization controllers
+ * 
+ * @param Application $app
+ */
+private function _iniControllers(Application $app) {
+
+    ...
+
+    // Load controllers
+    foreach ($app['config']['controllers'] as $controllerServiceName =&gt; $controllerClass) {
+        $app[$controllerServiceName] = $app-&gt;share(function () use ($app, $controllerClass) {
+            return new $controllerClass($app);
+        });
+        $controller = $app[$controllerServiceName];
+    }
+}
+</code></pre>
+
+<p>Список классов контроллеров находиться в файле <code>app/Resources/Config/app.ini</code>
+или  <code>app/Resources/Config/application.yml</code> в зависимости от выбора способа конфигурации 
+смотреть раздел <a href="/ru/documentation/configuration/">конфигурации</a>.</p>
+
+<h2 id="%F0%98%F0%BE%F0%B8%F1%86%F0%B8%F0%B0%F0%BB%F0%B8%F0%B7%F0%B0%F1%86%F0%B8%F1%9F-%F0%BF%F1%90%F0%B8%F0%BB%F0%BE%F0%B6%F0%B5%F0%BE%F0%B8%F1%9F">Инициализация приложения</h2>
+
+<p>Здесь создаются директории, необходимые для функционирования приложения.
+Это делается при первом запуске приложения.</p>
+
+<pre><code>// Create application paths
+$app['my']-&gt;get('config')-&gt;createAppPaths();
+</code></pre>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="Сайт создан с помощью Sculpin - статического генератора сайтов"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex разработчики"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony блог"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony сообщество" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Сергей Бескоровайный</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/silex-mvc/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/silex-mvc/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
