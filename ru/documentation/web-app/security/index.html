@@ -1,0 +1,281 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Безопасность &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/ru/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/ru/">Главная</a>
+                        </li>
+                        <li >
+                            <a href="/ru/getstarted/">Начало работы</a>
+                        </li>
+                        <li >
+                            <a href="/ru/download/">Загрузить</a>
+                        </li>
+                        <li >
+                            <a href="/ru/documentation/">Документация</a>
+                        </li>
+                        <li >
+                            <a href="/ru/community/">Сообщество</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/ru/getstarted/">Начало работы</a>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/basic-project/">Базовый проект</a>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/configuration/">Конфигурация</a>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/web-app">Веб приложение (app)</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/web-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/ru/documentation/web-app/controllers/">Контроллеры</a>
+                                                                                <li ><a href="/ru/documentation/web-app/forms/">Формы</a>
+                                                                                <li ><a href="/ru/documentation/web-app/models/">Модели</a>
+                                                                                <li ><a href="/ru/documentation/web-app/services/">Сервисы</a>
+                                                                                <li ><a href="/ru/documentation/web-app/layouts/">Макеты</a>
+                                                                                <li ><a href="/ru/documentation/web-app/locale/">Локализация</a>
+                                                                                <li  class="active" ><a href="/ru/documentation/web-app/security/">Безопасность</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/web-public">Веб приложение (public)</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/web-public/main/">Загрузчик (main.js)</a>
+                                                                                <li ><a href="/ru/documentation/web-public/locale/">Локализация</a>
+                                                                                <li ><a href="/ru/documentation/web-public/services/">Сервисы</a>
+                                                                                <li ><a href="/ru/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/console-app">Консольное приложение</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/console-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/ru/documentation/console-app/configuration/">Конфигурация</a>
+                                                                                <li ><a href="/ru/documentation/console-app/lifecycle/">Жизненный цикл</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Безопасность</h1>
+            <p>Для обеспечения безопасности приложения в <strong>Silex</strong> используется провайдер 
+<a href="http://silex.sensiolabs.org/doc/providers/security.html"><strong>SecurityServiceProvider</strong></a>, 
+который обеспечивает проверку подлинности, 
+авторизации и другие задачи безопасности. Этот провайдер устанавливает сервисы такие как 
+<code>security</code>, <code>security.token_storage</code>, <code>security.authentication_manager</code> и другие, которые
+используются для обеспечения безопасности приложения.</p>
+
+<p><strong>Silex</strong> использует **Symfony2 Security ** компонент. Подробности можно 
+посмотреть <a href="http://symfony.com/doc/current/components/security/index.html">здесь</a>.</p>
+
+<h2 id="%F0%9A%F0%BE%F0%BE%F1%84%F0%B8%F0%B3%F1%83%F1%90%F0%B0%F1%86%F0%B8%F1%9F">Конфигурация</h2>
+
+<p>Конфигурация провайдера задается в <code>app/Resources/Config/security.yml</code> файле.</p>
+
+<p>Пример приведен ниже:</p>
+
+<pre><code>service_providers:
+    security:
+        class: Providers\Security\MySecurityServiceProvider
+        construct_parameters:
+            security.role_hierarchy:
+                ROLE_ADMIN: [ 'ROLE_USER', 'ROLE_ALLOWED_TO_SWITCH']
+            # http://symfony.com/doc/2.3/cookbook/security/access_control.html
+            security.access_rules:
+                - [ '^/admin', 'ROLE_ADMIN' ]
+                - [ '^/test', 'ROLE_ADMIN' ]
+                - [ '^/tasks', 'ROLE_ADMIN' ]
+                - [ '^/account$', 'ROLE_USER' ]
+                - [ '^/blog/new$', 'ROLE_USER' ]
+                - [ '^/todo$', 'ROLE_USER' ]
+                - [ '^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY' ]
+            security.firewalls:
+                default:
+                    pattern:   ^/.*$
+                    # When securing only some parts of your website, 
+                    # the user information are not available in non-secured areas. 
+                    # To make the user accessible in such areas, 
+                    # enabled the anonymous authentication mechanism
+                    anonymous: true
+                    # http://example.com/somewhere?_switch_user=thomas
+                    # http://example.com/somewhere?_switch_user=_exit
+                    switch_user: true
+                    form:
+                        login_path: /login
+                        check_path: /login_check
+                        use_referer: true
+                    logout:
+                        logout_path: /logout
+                    users: ~
+</code></pre>
+
+<p>Здесь указаны роли пользователей, их иерархия, права доступа пользователей к ресурсам
+а также способ проверки подлинности пользователя.</p>
+
+<p>Если количество пользователей в приложении ограничено (например это ваш собственный сайт),
+то описание идентификационных данных пользователей (логин, пароль) могут быть 
+заданы в файле конфигурации <code>app/Resources/Config/security.yml</code>.</p>
+
+<p>Пример приведен ниже:</p>
+
+<pre><code>...
+users:
+    admin:
+        - ROLE_ADMIN
+        # raw password is foo
+        - 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==
+    user:
+        - ROLE_USER
+        # raw password is foo
+        - 5FZ2Z8QIkA7UTZ4BYkoC+GsReLf569mSKDsfods6LYQ8t+a8EW9oaircfMpmaLbPBh4FOBiiFyLfuZmTSUwzZg==   
+...
+</code></pre>
+
+<p>Если же количество пользователей может быть большим, как в нашем случае, то 
+необходимо в приложении определить пользовательский 
+<a href="http://silex.sensiolabs.org/doc/providers/security.html#defining-a-custom-user-provider"><strong>User Provider</strong></a> 
+для базы данных, которую вы используете. Этот провайдер будет сохранять данные новых 
+пользователей в базе данных.</p>
+
+<p>В нашем случае определены три <strong>User Providers</strong>:</p>
+
+<ol>
+<li><strong>DbalUserProvider</strong> <code>app/Providers/Security/DbalUserProvider.php</code> для <strong>Doctrine(DBAL)</strong></li>
+<li><strong>OrmUserProvider</strong> <code>app/Providers/Security/OrmUserProvider.php</code> для <strong>Doctrine(ORM)</strong></li>
+<li><strong>ArUserProvider</strong> <code>app/Providers/Security/ArUserProvider.php</code> для <strong>PHP ActiveRecord</strong></li>
+</ol>
+
+<p>Какой из них выбрать задается в классе <strong>MySecurityServiceProvider</strong> <code>app/Providers/Security/MySecurityServiceProvider.php</code>,
+который определяет класс <strong>Security</strong> в файле конфигурации <code>app/Resources/Config/security.yml</code>.</p>
+
+<pre><code>service_providers:
+    security:
+        class: Providers\Security\MySecurityServiceProvider
+...
+</code></pre>
+
+<h2 id="%F0%98%F1%83%F0%BF%F0%BE%F0%BB%F1%9C%F0%B7%F0%BE%F0%B3%F0%B0%F0%BE%F0%B8%F0%B5">Использование</h2>
+
+<p>Дополнительные функции для обеспечения безопасности приложения заданы в примеси
+<code>app/Controllers/Helper/SecurityTrait</code>.</p>
+
+<p>В нашем приложении проверка подлинности пользователя определяется с помощью 
+действия <code>loginAction</code> класса контроллера <strong>SecurityController</strong> <code>app/Controllers/SecurityController.php</code>
+с помощью вызова формы <code>app/Views/Controller/security/login.html.twig</code>.</p>
+
+<p>В форме проходят два уровня валидации: на клиентском уровне и серверном уровне.</p>
+
+<p>На клиентском уровне валидация проходит с помощью добавления сервиса <strong>FormValidation</strong>.</p>
+
+<p>Пример добавления сервиса с параметрами валидации можно посмотреть ниже:</p>
+
+<pre><code>...
+&lt;script type="text/javascript"&gt;
+    BSA.ScriptResources.push('FormValidation');
+    addScriptParams('FormValidation',
+            {
+                form: 'form[name="login"]',
+                rules: {
+                    _username: {
+                        required: true,
+                        minlength: 3
+                    },
+                    _password: {
+                        required: true,
+                        minlength: 3
+                    }
+                },
+                ...
+            });
+&lt;/script&gt;
+...
+</code></pre>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="Сайт создан с помощью Sculpin - статического генератора сайтов"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex разработчики"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony блог"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony сообщество" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Сергей Бескоровайный</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

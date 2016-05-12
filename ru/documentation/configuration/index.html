@@ -1,0 +1,242 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Конфигурация &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/ru/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/ru/">Главная</a>
+                        </li>
+                        <li >
+                            <a href="/ru/getstarted/">Начало работы</a>
+                        </li>
+                        <li >
+                            <a href="/ru/download/">Загрузить</a>
+                        </li>
+                        <li >
+                            <a href="/ru/documentation/">Документация</a>
+                        </li>
+                        <li >
+                            <a href="/ru/community/">Сообщество</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/ru/getstarted/">Начало работы</a>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/basic-project/">Базовый проект</a>
+                                                    </li>
+                                            <li class="active" ><a href="/ru/documentation/configuration/">Конфигурация</a>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/web-app">Веб приложение (app)</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/web-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/ru/documentation/web-app/controllers/">Контроллеры</a>
+                                                                                <li ><a href="/ru/documentation/web-app/forms/">Формы</a>
+                                                                                <li ><a href="/ru/documentation/web-app/models/">Модели</a>
+                                                                                <li ><a href="/ru/documentation/web-app/services/">Сервисы</a>
+                                                                                <li ><a href="/ru/documentation/web-app/layouts/">Макеты</a>
+                                                                                <li ><a href="/ru/documentation/web-app/locale/">Локализация</a>
+                                                                                <li ><a href="/ru/documentation/web-app/security/">Безопасность</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/web-public">Веб приложение (public)</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/web-public/main/">Загрузчик (main.js)</a>
+                                                                                <li ><a href="/ru/documentation/web-public/locale/">Локализация</a>
+                                                                                <li ><a href="/ru/documentation/web-public/services/">Сервисы</a>
+                                                                                <li ><a href="/ru/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/ru/documentation/console-app">Консольное приложение</a>
+                                                            <ul class="nav">
+                                                                                <li ><a href="/ru/documentation/console-app/bootstrap/">Загрузчик (Bootstrap.php)</a>
+                                                                                <li ><a href="/ru/documentation/console-app/configuration/">Конфигурация</a>
+                                                                                <li ><a href="/ru/documentation/console-app/lifecycle/">Жизненный цикл</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Конфигурация</h1>
+            <p>Для конфигурации <strong>Silex-MVC</strong> есть несколько вещей, которые нужно учитывать.</p>
+
+<p>Первое, <strong>Silex-MVC</strong> состоит из двух независимых приложений. Это
+<strong>Веб приложение</strong> и <strong>Консольное приложение</strong>. Эти приложения конфигурируются
+по разному, хотя у них есть общие файлы конфигурации.</p>
+
+<p>Второе, <strong>Веб приложение</strong> может конфигурироваться двумя способами с помощью
+<code>yml</code> файлов или с помощью <code>app.ini</code> файла. Выбор между способом конфигурации 
+осуществляется в методе <code>_iniConfig</code> в классе <strong>Bootstrap</strong> <code>/app/Bootstrap.php</code>.</p>
+
+<p>Конфигурация с помощью <code>app.ini</code> файла происходит быстрее.</p>
+
+<hr />
+
+<h2 id="%F0%A4%F0%B0%F0%B9%F0%BB%F1%8B-%F0%BA%F0%BE%F0%BE%F1%84%F0%B8%F0%B3%F1%83%F1%90%F0%B0%F1%86%F0%B8%F0%B8">Файлы конфигурации</h2>
+
+<p>Файлы конфигурации показаны ниже.</p>
+
+<pre><code>|-- app/
+    |-- Resources/              # Ресурсы
+        |-- Config/             # Файлы конфигурации
+            |-- Config.php      # `Config` класс
+            |-- app.ini         # Основные параметры конфигурации
+            |-- application.yml # Конфигурация для веб приложения
+            |-- config.yml      # Общая конфигурация используется как 
+                                # веб приложением так и консольным приложением
+            |-- console.yml     # Конфигурация для консольного приложения
+            |-- parameters.yml  # Основные параметры конфигурации
+            |-- security.yml    # Конфигурация аутентификации и авторизации пользователя
+</code></pre>
+
+<p>Если вы используете в ваших <code>yml</code> файлах конфигурации выражение <code>imports</code>, 
+то ваш конфиг будет рекурсивно объединен с конфигом указанным в выражении <code>imports</code>.</p>
+
+<h3 id="config.php">Config.php</h3>
+
+<p>Это <code>Config</code> класс - сервис с помощью которого можно получить основные параметры конфигурации
+через <code>$app['config']['parameters']</code>, можно также получить пути к основным рабочим директориям
+например к лог файлам, кеш файлам и другим. А также с помощью этого сервиса можно
+создать необходимые директории при первом открытии приложения.</p>
+
+<h3 id="parameters.yml-%F0%B8%F0%BB%F0%B8-app.ini">parameters.yml или app.ini</h3>
+
+<p>Здесь устанавливаются значения основных параметров вашей конфигурации, 
+которые могут использоваться в других ваших конфигурациях. 
+Значения параметров можно получить через <code>$app['config']['parameters']</code>.</p>
+
+<p>Выбор между способом конфигурации осуществляется в методе <code>_iniConfig</code> в классе <strong>Bootstrap</strong> <code>/app/Bootstrap.php</code>.</p>
+
+<p>Значения основных параметров:</p>
+
+<ul>
+<li><strong>Временная зона</strong> (timezone)</li>
+<li><strong>Язык локализации</strong> (locale)</li>
+<li><strong>Цветовая схема сайта</strong> (scheme)</li>
+<li><strong>Режим отладки</strong> (debug)</li>
+<li><strong>Окружающая среда</strong> (environment)</li>
+<li><strong>Директория хранения данных</strong> для консольного приложения (data_dir)</li>
+<li><strong>Адрес хоста</strong> для локального тестирования (url_test)</li>
+<li><strong>UBKI параметры</strong> (ubki_login, ubki_pass, ubki_test_login, ubki_test_pass)</li>
+<li><strong>Параметры базы данных</strong> (db.driver, db.path, db.name, db.models.path, db.models.namespace, db.connection.production, db.connection.development, db.connection.test)</li>
+<li><strong>Email параметры</strong> (mail.host, mail.port,  mail.username,  mail.password)</li>
+<li><strong>PagerFanta параметры</strong> (pagerfanta.max_per_page, pagerfanta.proximity)</li>
+</ul>
+
+<h3 id="config.yml">config.yml</h3>
+
+<p>Общая конфигурация используется как веб приложением так и консольным приложением.
+Разместите данные о ваших общих сервисах в секции <code>service_providers</code>.</p>
+
+<pre><code> service_providers:
+    ...
+    swiftmailer:
+        class: Silex\Provider\SwiftmailerServiceProvider
+        parameters:
+            swiftmailer.options:
+                host: %mail.host%
+                port: %mail.port%
+                username: %mail.username%
+                password: %mail.password%
+                encryption: %mail.encryption%
+                auth_mode: %mail.auth_mode%
+...
+</code></pre>
+
+<h3 id="console.yml-%F0%B8%F0%BB%F0%B8-application.yml">console.yml или application.yml</h3>
+
+<p>Конфигурации соответственно применяются для консольного или веб приложений.</p>
+
+<h3 id="security.yml">security.yml</h3>
+
+<p>Здесь устанавливаются значения способа аутентификации пользователя и его авторизации.
+С подробностями можно познакомиться <a href="http://silex.sensiolabs.org/doc/providers/security.html">здесь</a>.</p>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="Сайт создан с помощью Sculpin - статического генератора сайтов"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex разработчики"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony блог"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony сообщество" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Сергей Бескоровайный</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

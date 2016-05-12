@@ -1,0 +1,308 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Get Started &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/">About</a>
+                        </li>
+                        <li  class="active">
+                            <a href="/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="/community/">Community</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li class="active" ><a href="/getstarted/">Get Started</a>
+                                                    </li>
+                                            <li ><a href="/documentation/basic-project/">Basic Project</a>
+                                                    </li>
+                                            <li ><a href="/documentation/configuration/">Configuration</a>
+                                                    </li>
+                                            <li ><a href="/documentation/web-app">Web application (app)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/web-app/controllers/">Controllers</a>
+                                                                            <li ><a href="/documentation/web-app/forms/">Forms</a>
+                                                                            <li ><a href="/documentation/web-app/models/">Models</a>
+                                                                            <li ><a href="/documentation/web-app/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-app/layouts/">Layouts</a>
+                                                                            <li ><a href="/documentation/web-app/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-app/security/">Security</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/web-public">Web application (public)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-public/main/">Loader (main.js)</a>
+                                                                            <li ><a href="/documentation/web-public/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-public/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/console-app">Console application</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/console-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/console-app/configuration/">Configuration</a>
+                                                                            <li ><a href="/documentation/console-app/lifecycle/">Life Cycle</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Get Started</h1>
+            <h2 id="welcome-to-silex-mvc%21">Welcome to Silex-MVC!</h2>
+
+<p>This application is a teaching example of a design pattern <strong>MVC</strong> based on the 
+<strong>SILEX</strong> (the <strong>PHP</strong> micro-framework based on the <strong>Symfony2 Components</strong>).
+The purpose of this application is to show the use of some capabilities 
+<strong>SILEX</strong> micro-framework, and the use of other technologies.
+Installation examples are for <strong>Windows</strong> and web server <strong>Nginx</strong>.</p>
+
+<p>To start working with this application you need to perform some steps:</p>
+
+<ol>
+<li>Must be met preliminary requirements</li>
+<li>Download and install <code>Silex-MVC</code></li>
+<li>Configure a local web server, to the entry point was <code>public/index.php</code></li>
+<li>Open site in a browser</li>
+</ol>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+<li><a href="http://php.net">PHP</a> version >= 5.4</li>
+<li>Web server <a href="https://httpd.apache.org/download.cgi">Apache2</a>, <a href="http://nginx.org/ru/">Nginx</a> or similar</li>
+<li>Installed <a href="https://getcomposer.org/">Composer</a></li>
+</ul>
+
+<h2 id="download-and-install-silex-mvc">Download and install Silex-MVC</h2>
+
+<p>Go to <a href="https://github.com/bsa-git/silex-mvc"><strong>GitHub</strong></a> with our project. 
+Clone or download the project to the appropriate folder (for example <code>c:/NginxServer/html/silex-mvc</code>).
+Go to the folder where the application was installed and run from a console command <code>composer install</code></p>
+
+<p>For the operation of the application you need to create a database with the appropriate data.
+To do this, from the console run command file <code>app/Console/scripts/orm/schema_create.bat</code>.</p>
+
+<h2 id="configure-web-server">Configure web server</h2>
+
+<p>Install, if necessary, the appropriate permissions to write to the <code>path/to/project/var</code></p>
+
+<p>Depending on the type of possible different configurations of web server.</p>
+
+<p>For example, for the server <code>Nginx</code> possible this configuration file <code>nginx.conf</code>:</p>
+
+<pre><code>worker_processes 1;
+
+error_log logs/error.log;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include mime.types;
+    default_type application/octet-stream;
+    sendfile on;
+    keepalive_timeout 65;
+    gzip on;
+
+    # File size for upload
+    client_max_body_size 1024m;
+    client_body_timeout 120s; 
+    client_body_buffer_size 128k;
+
+    upstream backend {
+        server 127.0.0.1:9000;
+    }
+
+    server {
+        listen      8080;
+        server_name localhost;
+        root        html/;
+
+        location / {
+            index   index.html index.php;
+        }
+
+        location ~ \.php$ {
+            include       fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        }
+    }
+
+    server {
+        listen          8080;
+        server_name     ~^(?&lt;domain&gt;.+);
+        gzip            on;
+        ssi             off;
+
+        root  html/$domain/public;
+
+        location    @phpfcgi {
+            internal;        
+            fastcgi_buffers 16 16k;
+            include fastcgi_params;
+            fastcgi_param    REQUEST_URI   $request_uri;
+            fastcgi_param    SCRIPT_NAME    /index.php;
+            fastcgi_param    SCRIPT_FILENAME $document_root/index.php;
+        }
+
+        location     ~ \.(php|php/.*)$ {
+            fastcgi_buffers 16 16k;
+            include fastcgi_params;
+            fastcgi_param    SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+        }
+    }
+}
+</code></pre>
+
+<p>If you have a server <code>Apache</code>, it is possible to<code>httpd.conf</code> create a virtual host, such as:</p>
+
+<pre><code>NameVirtualHost *:8080
+
+# localhost
+&lt;VirtualHost *:8080&gt;
+ServerName localhost
+DocumentRoot "C:/Xampp/htdocs"
+&lt;/VirtualHost&gt;
+
+# silex-mvc
+&lt;VirtualHost *:8080&gt;
+    ServerName silex-mvc
+    DocumentRoot "C:/Xampp/htdocs/silex-mvc/public"
+    ServerAdmin webmaster@read.local
+    &lt;Directory "C:/Xampp/htdocs/silex-mvc/public" &gt;
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>The <code>Apache</code> server must support mode <code>mod_rewrite</code>.</p>
+
+<p>You should also make sure that <code>Apache</code> configured to support <code>.htaccess</code> files.</p>
+
+<p>File of <code>.htaccess</code> must be in the <code>public/</code> folder. The contents of the file <code>.htaccess</code> may look so:</p>
+
+<pre><code>RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+</code></pre>
+
+<p>For <strong>Windows</strong> in the file <code>c:\Windows\System32\drivers\etc\hosts</code> necessary to prescribe</p>
+
+<pre><code>127.0.0.1       silex-mvc
+</code></pre>
+
+<p>If you are using a proxy, it is necessary in the parameters of the proxy server in the section 
+<code>Do not use proxy server for addresses beginning with</code> to prescribe our address</p>
+
+<pre><code>...;silex-mvc
+</code></pre>
+
+<h2 id="open-site-in-a-browser">Open site in a browser</h2>
+
+<p>Make sure that the web server is running. Enter in your browser for example this address: <code>http://silex-mvc:8080/</code></p>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="The site is created using Sculpin Static Site Generator"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex contributors"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony blog"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony community" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Sergei Beskorovainyi</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

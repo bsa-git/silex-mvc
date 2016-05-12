@@ -1,0 +1,396 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Basic Project &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/">About</a>
+                        </li>
+                        <li >
+                            <a href="/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="/community/">Community</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/getstarted/">Get Started</a>
+                                                    </li>
+                                            <li class="active" ><a href="/documentation/basic-project/">Basic Project</a>
+                                                    </li>
+                                            <li ><a href="/documentation/configuration/">Configuration</a>
+                                                    </li>
+                                            <li ><a href="/documentation/web-app">Web application (app)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/web-app/controllers/">Controllers</a>
+                                                                            <li ><a href="/documentation/web-app/forms/">Forms</a>
+                                                                            <li ><a href="/documentation/web-app/models/">Models</a>
+                                                                            <li ><a href="/documentation/web-app/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-app/layouts/">Layouts</a>
+                                                                            <li ><a href="/documentation/web-app/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-app/security/">Security</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/web-public">Web application (public)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-public/main/">Loader (main.js)</a>
+                                                                            <li ><a href="/documentation/web-public/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-public/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/console-app">Console application</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/console-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/console-app/configuration/">Configuration</a>
+                                                                            <li ><a href="/documentation/console-app/lifecycle/">Life Cycle</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Basic Project</h1>
+            <p><strong>Silex-MVC</strong> project has the file structure is shown below.</p>
+
+<pre><code>|-- app/
+|  |-- Console/         # Console application
+|  |-- Controllers/     # Controllers
+|  |-- Forms/           # Forms
+|  |-- Models/          # Models (AR, DBAL, ORM)
+|  |-- Providers/       # Providers
+|  |-- Resources/       # Resources (configuration, database localization)
+|  |-- Services/        # Services (additional classes)
+|  |-- Views/           # Displaying data
+|  `-- Bootstrap.php    # Boot loader class
+|     
+|-- data/               # Data (cache, logs)
+|-- library/            # Libraries (AR, Pagerfanta)
+|-- public/
+|  |-- css/             # Cascading styles
+|  |-- fonts/           # Fonts
+|  |-- img/             # Images
+|  |-- js/              # Java Scripts 
+|  |-- schemes/         # Schemes
+|  |-- .htaccess
+|  |-- favicon.ico
+|  `-- index.php        # Entrance to application
+|-- vendor/             # External libraries
+|-- LICENSE.md
+|-- README.md
+|-- README-RU.md
+|-- composer.json
+`-- composer.lock    
+</code></pre>
+
+<p><strong>Silex-MVC</strong> consists of two independent applications. This is <strong>Web application</strong> 
+and <strong>Console application</strong>. These applications are configured differently, although
+they have a common configuration files and shared libraries.</p>
+
+<hr />
+
+<h2 id="structure-of-web-application-app">Structure of web application (app)</h2>
+
+<p>The application has the following file structure.</p>
+
+<pre><code>|-- app/
+    |-- Console/         # Console application
+    |-- Controllers/     # Controllers
+    |-- Forms/           # Forms
+    |-- Models/          # Models (AR, DBAL, ORM)
+    |-- Providers/       # Providers
+    |-- Resources/       # Resources (configuration, database localization)
+    |-- Services/        # Services (additional classes)
+    |-- Views/           # Displaying data
+    `-- Bootstrap.php    # Boot loader class
+</code></pre>
+
+<h3 id="loader-bootstrap.php-for-web-application">Loader (Bootstrap.php) for web application</h3>
+
+<p>Execution sequence web applications.</p>
+
+<pre><code>Request --&gt; index.php --&gt; Bootstrap.php --&gt; Controller --&gt; Response
+</code></pre>
+
+<p>The loader performs the following tasks:</p>
+
+<ul>
+<li><strong>Creating an application</strong></li>
+</ul>
+
+<pre><code>// Create app
+$app = new Silex\Application();
+$this-&gt;app = $app;
+</code></pre>
+
+<ul>
+<li><strong>Creating handlers</strong> <code>middleware</code></li>
+<li><strong>Initialization profiler</strong></li>
+<li><strong>Initialize the application configuration</strong></li>
+<li><strong>Initialization providers</strong></li>
+<li><strong>Initialization services</strong></li>
+<li><strong>Initialization controllers</strong></li>
+<li><strong>Initialization of the application itself</strong></li>
+</ul>
+
+<h3 id="controllers">Controllers</h3>
+
+<p>Used to process requests from the client and solve a series of tasks:</p>
+
+<ul>
+<li><strong>Handling errors</strong> (<code>app/Controllers/ErrorController.php</code>)</li>
+<li><strong>Common tasks</strong>: change the language, change the color scheme, license, readme (<code>app/Controllers/IndexController.php</code>)</li>
+<li><strong>Management blog</strong> (<code>app/Controllers/BlogController.php</code>)</li>
+<li><strong>Registration</strong>, <strong>authentication</strong> and <strong>authorization</strong> users (<code>app/Controllers/SecurityController.php</code>)</li>
+<li><strong>Task list management</strong> (<code>app/Controllers/TodoController.php</code>)</li>
+<li><strong>Testing the service</strong> <a href="http://ubki.ua/ru">UBKI</a> (<code>app/Controllers/UbkiController.php</code>)</li>
+<li><strong>Demonstrating some of the capabilities</strong> (<code>app/Controllers/TestController.php</code>)</li>
+</ul>
+
+<p>All these controllers inherit from common class <code>app/Controllers/BaseController.php</code>, 
+that defines methods common to all the controller.</p>
+
+<h3 id="forms">Forms</h3>
+
+<p>Silex uses <code>Symfony 2</code> <a href="http://symfony.com/doc/current/components/form/index.html">components</a> 
+that facilitate the creation, display, and validation of forms.</p>
+
+<pre><code>|-- app/
+    |-- Forms/          # Forms
+      |-- Constraints/  # Rules form validation
+      |-- PostForm.php  # Form for adding/editing user posts
+      `-- RegForm.php   # Form for the registration of a new user
+</code></pre>
+
+<h3 id="models">Models</h3>
+
+<p>A set of classes, which enables operation with a database.
+For testing and verification is implemented three technologies work with database:</p>
+
+<ul>
+<li><strong>Doctrine(<a href="http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/index.html">DBAL</a>)</strong> <code>vendor/doctrine</code></li>
+<li><strong>Doctrine(<a href="http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/index.html">ORM</a>)</strong> <code>vendor/doctrine</code></li>
+<li><strong>PHP <a href="http://www.phpactiverecord.org/">ActiveRecord</a></strong> <code>library/AR</code></li>
+</ul>
+
+<h3 id="providers">Providers</h3>
+
+<p>Providers <code>app/Providers</code> allow the developer to reuse part of the application 
+in other parts of the application. 
+<strong>Silex</strong> provides two types of interfaces: 
+<code>ServiceProviderInterface</code> and <code>ControllerProviderInterface</code>.</p>
+
+<p>Providers that are used in this application, ensure operation with
+database, application configured, building models and other actions...</p>
+
+<h3 id="resources">Resources</h3>
+
+<p>They are used to store configuration files, database and also serve to localize application.</p>
+
+<pre><code>|-- app/
+    |-- Resources/          # Resources
+        |-- Config/         # Configuration files
+        |-- db/             # Database `SqlLite` (`app.db`)
+        |-- fakedata/       # Data to populate the database when creating applications
+        |-- translations/   # Files for localization of application
+</code></pre>
+
+<h3 id="services">Services</h3>
+
+<p>Silex is not only a framework, it is also a service container. 
+It does this by extending <a href="http://pimple.sensiolabs.org/">Pimple</a> 
+which provides a very simple service container.</p>
+
+<p>Our application contains different kinds of services <code>app/Services/My</code>: to work with arrays, strings, 
+XML, HTTP, Markdown. And services: Zend-Filter, Zend-Json 
+and other <code>vendor/zendframework</code>.</p>
+
+<pre><code>|-- app/
+    |-- Services/           # Services
+        |-- My/             # Services for working with XML, HTTP, strings, arrays, and other...
+        |-- MyService.php   # The base class for adding services
+        `-- Zf2Service.php  # Class to add `Zend` services
+</code></pre>
+
+<h3 id="displaying-data">Displaying data</h3>
+
+<p>The application uses a template <a href="http://twig.sensiolabs.org/">Twig</a></p>
+
+<pre><code>|-- app/
+    |-- Views/          # Displaying data
+        |-- Controller/ # Display when accessing the controller
+        |-- Form/       # Displaying the form
+        |-- Include/    # Some of the views
+        `-- Layout/     # Layout
+</code></pre>
+
+<p><strong>Twig</strong> - modern template engine for PHP</p>
+
+<p>Twig as the templating syntax somewhat similar to Smarty and XSLT is not inferior in flexibility.</p>
+
+<p>Its main features:</p>
+
+<ul>
+<li><strong>Fast</strong>: compiles templates in PHP code.</li>
+<li><strong>Secure</strong>:  has a "sandbox" mode to test the questionable code templates. 
+This allows the use Twig as template language for applications
+where users can change the design templates.</li>
+<li><strong>Flexible</strong>: It is based on the plastic parser. 
+This allows developers to define their own tags and filters, to create your DSL.</li>
+</ul>
+
+<h2 id="structure-of-web-application-public">Structure of web application (public)</h2>
+
+<p>Public data have the following file structure.</p>
+
+<pre><code>|-- public/
+|  |-- css/             # Cascading styles
+|  |-- fonts/           # Fonts
+|  |-- img/             # Images
+|  |-- js/              # Java Scripts 
+|  |-- schemes/         # Schemes
+|  |-- .htaccess
+|  |-- favicon.ico
+|  `-- index.php        # Entrance to application
+</code></pre>
+
+<p>The entry point to the application is file - <code>index.php</code>.</p>
+
+<h3 id="java-scripts">Java Scripts</h3>
+
+<p>This is a set of libraries, frameworks and services at the client level.</p>
+
+<pre><code>|-- public/
+   |-- js/                  # Java Scripts 
+        |-- app/            
+        |   |-- bb-todo/    # Components implement the test example `ToDo` 
+                            # based framework `Backbone`
+        |   |-- services/   # Services: `Datepicker`, `FormValidation`, `MaskInput`, `Highlight`
+        |   |-- app.js      # `App` class 
+        |   |-- lang.js     # `Lang` class
+        |   `-- system.js   # `System` class
+        |
+        |-- lib/            # Libraries
+        `-- main.js         # Initialization Requirejs
+</code></pre>
+
+<hr />
+
+<h2 id="structure-of-console-application">Structure of console application</h2>
+
+<p>Console application uses <a href="http://symfony.com/doc/current/components/console/index.html">components</a> 
+that facilitate the creation of user-friendly command-line interface.</p>
+
+<pre><code>|-- app/
+    |-- Console/        # Console application
+      |-- Commands/     # Command set to work with the database, and others.
+      |-- Views/        # The text data using the template `Twig`
+      |-- scripts/      # A set of command files
+      |-- Bootstrap.php # Boot loader class
+      `-- index.php     # Entrance to console application
+</code></pre>
+
+<p>Console application performs the following sequence of operations.</p>
+
+<pre><code>script.bat --&gt; index.php --&gt; Bootstrap.php --&gt; Command(s) --&gt; Output
+</code></pre>
+
+<p>The configuration file <code>app/Resources/Config/parameters.yml</code> 
+is used to configure the console application, as well as <code>app/Resources/Config/console.yml</code>, 
+which inherits configuration settings from a file <code>app/Resources/Config/config.yml</code>.</p>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="The site is created using Sculpin Static Site Generator"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex contributors"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony blog"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony community" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Sergei Beskorovainyi</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Loader (main.js) &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/">About</a>
+                        </li>
+                        <li >
+                            <a href="/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="/community/">Community</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/getstarted/">Get Started</a>
+                                                    </li>
+                                            <li ><a href="/documentation/basic-project/">Basic Project</a>
+                                                    </li>
+                                            <li ><a href="/documentation/configuration/">Configuration</a>
+                                                    </li>
+                                            <li ><a href="/documentation/web-app">Web application (app)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/web-app/controllers/">Controllers</a>
+                                                                            <li ><a href="/documentation/web-app/forms/">Forms</a>
+                                                                            <li ><a href="/documentation/web-app/models/">Models</a>
+                                                                            <li ><a href="/documentation/web-app/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-app/layouts/">Layouts</a>
+                                                                            <li ><a href="/documentation/web-app/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-app/security/">Security</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/web-public">Web application (public)</a>
+                                                            <ul class="nav">
+                                                                            <li  class="active" ><a href="/documentation/web-public/main/">Loader (main.js)</a>
+                                                                            <li ><a href="/documentation/web-public/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-public/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/console-app">Console application</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/console-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/console-app/configuration/">Configuration</a>
+                                                                            <li ><a href="/documentation/console-app/lifecycle/">Life Cycle</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Loader (main.js)</h1>
+            <p>Download the client side of the application starts with the file download <code>public/js/main.js</code>.
+File <code>public/js/main.js</code> is the entry point to the library
+<a href="http://requirejs.org/"><strong>RequireJS</strong></a> <code>public/js/requirejs/require.js</code>,</p>
+
+<p>Sample code is shown below:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    ...
+    &lt;!-- Require --&gt;
+    &lt;script type="text/javascript" data-main="/js/main" src="/js/lib/requirejs/require.js"&gt;&lt;/script&gt;
+    ...
+&lt;/head&gt;
+&lt;body&gt;
+    ...
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><a href="http://requirejs.org/"><strong>RequireJS</strong></a> – is one of the most popular file/module loaders. 
+When you create a large component projects without (or analogs thereof) can not do, 
+because it solves the main problem of such applications:</p>
+
+<ul>
+<li><strong>Dependencies</strong> between modules</li>
+<li><strong>Clogging</strong> of the global scope</li>
+</ul>
+
+<h2 id="dependencies-between-modules">Dependencies between modules</h2>
+
+<p>Configuring of dependencies between modules is done in the file <code>public/js/main.js</code>.</p>
+
+<p>An example of such a code dependencies can be shown here:</p>
+
+<pre><code>(function ($) {
+    ...
+    requirejs.config({
+        baseUrl: "/js",
+        paths: {
+            ...
+            bootstrap: 'lib/bootstrap/bootstrap.min',
+            respond: 'lib/bootstrap/respond.min', // bootstrap for old vers
+            html5shiv: 'lib/bootstrap/html5shiv.min', // bootstrap for old vers
+            jquery: 'lib/jquery/jquery.min',
+            underscore: 'lib/underscore/underscore-min',
+            storage: 'lib/jstorage/jstorage',
+            backbone: 'lib/backbone/backbone-min',
+            ExtendClass: 'lib/Extend.class',
+            ...
+        },
+        shim: {
+            'jquery': {
+                exports: '$'
+            },
+            'bootstrap': {
+                deps: ['jquery', 'respond', 'html5shiv']
+            },
+            'underscore': {
+                exports: '_'
+            },
+            'backbone': {
+                deps: ['underscore', 'jquery'],
+                exports: 'Backbone'
+            },
+            'app/app': {
+                deps: ['ExtendClass', 'bootstrap', 'underscore', 'storage']
+            },
+            ...
+        }
+    });
+})(jQuery)
+</code></pre>
+
+<h2 id="app-class">App Class</h2>
+
+<p>In file <code>public/js/main.js</code>, we create an object of class <strong>App</strong> <code>public/js/app/app.js</code>.</p>
+
+<pre><code>...
+require(['app/app'], function (App) {
+    window.app = new App();
+});
+</code></pre>
+
+<p>In class <strong>App</strong> creates a class object localization <strong>Land</strong> <code>public/js/app/land.js</code>
+and the object of common system functions of the class <strong>System</strong> <code>public/js/app/system.js</code>.
+And create and register objects with their parameters on the basis of service classes,
+set for the current page application site.</p>
+
+<pre><code>...
+// Create System object
+this.sys = new System();
+// Create Lang(language) object
+this.lb = new Lang(this.sys);
+
+// Add script resources 
+if (undefined !== window.BSA) {
+    _.each(BSA.ScriptResources, function (resource) {
+        require([resource], function (res) {
+            // Create resource object 
+            if (res &amp;&amp; res.RegRunOnLoad) {
+                res.RegRunOnLoad();
+            }
+        });
+    });
+}
+...
+</code></pre>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="The site is created using Sculpin Static Site Generator"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex contributors"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony blog"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony community" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Sergei Beskorovainyi</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

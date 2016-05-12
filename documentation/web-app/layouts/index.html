@@ -1,0 +1,263 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#5b7c89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Layouts &mdash; Silex-MVC</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--<link rel="icon" href="/favicon.ico">-->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=6">
+    <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/components/highlightjs/styles/github.css" />
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/silex/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/silex/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/silex/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/silex/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/silex/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/silex/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/silex/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/silex/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/silex/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/silex/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/silex/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/silex/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/silex/favicon-16x16.png">
+    <link rel="manifest" href="/images/silex/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/silex/ms-icon-144x144.png">
+    
+</head>
+<body>
+    <a class="fork-me-on-github" href="https://github.com/bsa-git/silex-mvc/" target="_blank"><img src="/assets/right-red@2x.png" alt="Fork me on GitHub"></a>
+    <header class="site">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="site-mascot" title="Silex-MVC"></div>
+                    <a class="navbar-brand" href="/">Silex-MVC</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/">About</a>
+                        </li>
+                        <li >
+                            <a href="/getstarted/">Get Started</a>
+                        </li>
+                        <li >
+                            <a href="/download/">Download</a>
+                        </li>
+                        <li >
+                            <a href="/documentation/">Documentation</a>
+                        </li>
+                        <li >
+                            <a href="/community/">Community</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <section class="content">
+        <div class="container">
+                <div class="row">
+        <div class="col-sm-3">
+            <div class="sculpin-sidebar">
+                <ul class="nav">
+                                            <li ><a href="/getstarted/">Get Started</a>
+                                                    </li>
+                                            <li ><a href="/documentation/basic-project/">Basic Project</a>
+                                                    </li>
+                                            <li ><a href="/documentation/configuration/">Configuration</a>
+                                                    </li>
+                                            <li ><a href="/documentation/web-app">Web application (app)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/web-app/controllers/">Controllers</a>
+                                                                            <li ><a href="/documentation/web-app/forms/">Forms</a>
+                                                                            <li ><a href="/documentation/web-app/models/">Models</a>
+                                                                            <li ><a href="/documentation/web-app/services/">Services</a>
+                                                                            <li  class="active" ><a href="/documentation/web-app/layouts/">Layouts</a>
+                                                                            <li ><a href="/documentation/web-app/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-app/security/">Security</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/web-public">Web application (public)</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/web-public/main/">Loader (main.js)</a>
+                                                                            <li ><a href="/documentation/web-public/locale/">Localization</a>
+                                                                            <li ><a href="/documentation/web-public/services/">Services</a>
+                                                                            <li ><a href="/documentation/web-public/backbone/">Backbone</a>
+                                                                    </ul>
+                                                    </li>
+                                            <li ><a href="/documentation/console-app">Console application</a>
+                                                            <ul class="nav">
+                                                                            <li ><a href="/documentation/console-app/bootstrap/">Loader (Bootstrap.php)</a>
+                                                                            <li ><a href="/documentation/console-app/configuration/">Configuration</a>
+                                                                            <li ><a href="/documentation/console-app/lifecycle/">Life Cycle</a>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>Layouts</h1>
+            <p>In our application, we use the template <strong>Twig</strong>.</p>
+
+<p>All of our templates are here <code>app/Views</code>.</p>
+
+<p>Assigning templates:</p>
+
+<ul>
+<li>View of user data when accessing the controller action <code>app/Views/Controller/</code></li>
+<li>Appearance form <code>app/Views/Form/</code></li>
+<li>Insert a single piece of data in the layout <code>app/Views/Include/</code></li>
+<li>Layouts to display the site's content <code>app/Views/Layout/</code></li>
+</ul>
+
+<hr />
+
+<h2 id="twig-is-a-modern-template-engine-for-php">Twig is a modern template engine for PHP</h2>
+
+<ul>
+<li><strong>Fast</strong>: Twig compiles templates down to plain optimized PHP code. 
+The overhead compared to regular PHP code was reduced to the very minimum.</li>
+<li><strong>Secure</strong>:  Twig has a sandbox mode to evaluate untrusted template code. 
+This allows Twig to be used as a template language for applications where 
+users may modify the template design.</li>
+<li><strong>Flexible</strong>: Twig is powered by a flexible lexer and parser. 
+This allows the developer to define its own custom tags and filters, and create its own DSL.</li>
+</ul>
+
+<h2 id="why-yet-another-template-engine%3F">Why yet another template engine?</h2>
+
+<p>When it comes to template engines in PHP, many people will tell you that PHP 
+itself is a template engine. But even if PHP started its life as a template language, 
+it did not evolve like one in the recent years. As a matter of fact, it doesn't 
+support many features modern template engines should have nowadays:</p>
+
+<ul>
+<li><strong>Concise</strong>: The PHP language is verbose and becomes ridiculously verbose 
+when it comes to output escaping:</li>
+</ul>
+
+<pre><code>&lt;?php echo $var ?&gt;
+&lt;?php echo htmlspecialchars($var, ENT_QUOTES, 'UTF-8') ?&gt;
+</code></pre>
+
+<p>In comparison, Twig has a very concise syntax, which make templates more readable:</p>
+
+<pre><code>{ { var } }
+{ { var|escape } }
+{ { var|e } }         { # shortcut to escape a variable # }
+</code></pre>
+
+<ul>
+<li><strong>Template oriented syntax</strong>: Twig has shortcuts for common patterns, 
+like having a default text displayed when you iterate over an empty array:</li>
+</ul>
+
+<pre><code>{ % for user in users % }
+    * { { user.name } }
+{ % else %}
+    No users have been found.
+{ % endfor % }
+</code></pre>
+
+<ul>
+<li><strong>Full Featured</strong>: Twig supports everything you need to build powerful templates 
+with ease: multiple inheritance, blocks, automatic output-escaping, and much more:</li>
+</ul>
+
+<pre><code>{ % extends "layout.html" % }
+
+{ % block content % }
+    Content of the page...
+{ % endblock % }
+</code></pre>
+
+<ul>
+<li><p><strong>Easy to learn</strong>: The syntax is easy to learn and has been optimized to allow 
+web designers to get their job done fast without getting in their way.</p></li>
+<li><p><strong>Extensibility</strong>: Twig is flexible enough for all your needs, even the most 
+complex ones. Thanks to an open architecture, you can implement your own language 
+constructs (tags, filters, functions, and even operators) to create your very own DSL.</p></li>
+<li><p><strong>Unit tested</strong>: Twig is fully unit-tested. The library is stable and ready to 
+be used in large projects.</p></li>
+<li><p><strong>Documented</strong>: Twig is fully documented, with a dedicated online book, and 
+of course a full API documentation.</p></li>
+<li><p><strong>Secure</strong>: When it comes to security, Twig has some unique features:</p>
+
+<ul>
+<li><em>Automatic output escaping</em>: To be on the safe side, you can enable 
+automatic output escaping globally or for a block of code:</li>
+</ul>
+
+<pre><code>{ % autoescape true % }
+    { { var } }
+    { { var|raw } }     { # var won't be escaped # }
+    { { var|escape } }  { # var won't be doubled-escaped # }
+{ % endautoescape % }
+</code></pre>
+
+<ul>
+<li><em>Sandboxing</em>: Twig can evaluate any template in a sandbox environment where 
+the user has access to a limited set of tags, filters, and object methods 
+defined by the developer. Sandboxing can be enabled globally or locally for 
+just some templates:</li>
+</ul>
+
+<pre><code>{ { include('page.html', sandboxed = true) } }
+</code></pre></li>
+<li><p><strong>Clean Error Messages</strong>: Whenever you have a syntax problem within a template, 
+Twig outputs a helpful message with the filename and the line number where the 
+problem occurred. It eases the debugging a lot.</p></li>
+<li><p><strong>Fast</strong>: One of the goals of Twig is to be as fast as possible. To achieve the 
+best speed possible, Twig compiles templates down to plain optimized PHP code. 
+The overhead compared to regular PHP code was reduced to the very minimum.</p></li>
+</ul>
+        </div>
+    </div>
+        </div>
+    </section>
+    <footer class="site">
+        <div class="container">
+                            <div class="mascot">
+                    <a class="ir" href="https://sculpin.io/" target="_blank" title="The site is created using Sculpin Static Site Generator"></a>
+                </div>
+                <div class="social">
+                    <ul>
+                        <li>
+                            <a href="http://silex.sensiolabs.org/contributors" target="_blank" title="Silex contributors"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/blog/" target="_blank" title="Symfony blog"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                        </li>
+                        <li>
+                            <a href="http://symfony.com/community" target="_blank" title="Symfony community" ><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    &copy;2016 <a href="https://github.com/bsa-git/" target="_blank">Sergei Beskorovainyi</a>
+                    (<a href="mailto:bsa2657@jandex.ru?subject=Silex-MVC">Email</a>)
+                </div>
+                    </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')</script>
+    <script defer src="/components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
