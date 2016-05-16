@@ -84,6 +84,7 @@ next: Next
 help: help
 select_scheme: select scheme
 select_language: select language
+documentation: documentation
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Please enter your name"

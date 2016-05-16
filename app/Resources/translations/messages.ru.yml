@@ -84,6 +84,7 @@ next: Следующая
 help: помощь
 select_scheme: выбрать схему
 select_language: выбрать язык
+documentation: документация
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Пожалуйста, введите свое имя"

@@ -27,6 +27,8 @@ Main features of the application:
 - client-side services are used: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`.
 - `ToDo` implemented application (for the local or server storage) to show the work of the framework Backbone `public/js/app/bb-todo`.
 
+## [Learn more...](http://bsa-git.github.io/silex-mvc)
+
 ## Installing
 
 ### Prerequisites
