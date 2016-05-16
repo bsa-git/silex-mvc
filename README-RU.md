@@ -28,6 +28,7 @@
 - на стороне клиента используются сервисы: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`;
 - для примера работы фреймворка Backbone реализовано приложение `ToDo` для локального или серверного хранилищ данных `public/js/app/bb-todo`.
 
+## [Узнать больше...](http://bsa-git.github.io/silex-mvc/ru/)
 
 ## Инсталяция
 
