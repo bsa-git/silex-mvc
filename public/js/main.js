@@ -6,15 +6,11 @@
             sugar: "lib/sugarjs/sugar-full.min", // Sugar is a library that extends native Javascript objects
             css: "lib/requirejs/css.min", //requirejs plugin for load css
             text: "lib/requirejs/text", //requirejs plugin for load text
-            bootstrap: 'lib/bootstrap/bootstrap.min',
-            respond: 'lib/bootstrap/respond.min', // bootstrap for old vers
-            html5shiv: 'lib/bootstrap/html5shiv.min', // bootstrap for old vers
             jquery: 'lib/jquery/jquery.min',
-            underscore: 'lib/underscore/underscore-min',
+            underscore: 'lib/underscore/underscore',
             storage: 'lib/jstorage/jstorage',
             json: 'lib/json/json2',
             backbone: 'lib/backbone/backbone-min',
-            //backbone: 'lib/backbone/backbone',
             ExtendClass: 'lib/Extend.class',
             Highlight: 'app/services/Highlight.class',
             FormValidation: 'app/services/FormValidation.class',
@@ -24,10 +20,7 @@
         },
         shim: {
             'jquery': {
-                exports: '$'
-            },
-            'bootstrap': {
-                deps: ['jquery', 'respond', 'html5shiv']
+                exports: '$',
             },
             'underscore': {
                 exports: '_'
@@ -43,7 +36,7 @@
                 deps: ['json', 'jquery']
             },
             'app/app': {
-                deps: ['ExtendClass', 'bootstrap', 'underscore', 'storage']
+                deps: ['ExtendClass', 'underscore', 'storage']
             },
             'FormValidation': {
                 deps: ['lib/jquery-validation/jquery.validate', 'lib/jquery-validation/additional-methods', 'lib/jquery-validation/localization/messages_' + lang]

@@ -12,7 +12,7 @@
     <div class="jumbotron">
         <h1 class="exotic"> Hello {{ app.user.username|capitalize }}!</h1>
         <p class="lead">You're browsing to path "{{ app.request.pathInfo }}".</p>
-        <p><a href="/blog/new" class="btn btn-success" role="button"><span class="glyphicon glyphicon-plus"></span> {{ 'add_post'|trans|capitalize }}...</a></p>
+        <p><a href="/blog/new" class="btn btn-success" role="button"><i class="fa fa-plus" aria-hidden="true"></i> {{ 'add_post'|trans|capitalize }}...</a></p>
     </div>
 
     {% if posts|length %}
@@ -28,8 +28,8 @@
                     {{ post.body }}
                 </div>
                 <div class="panel-footer">
-                    <a href="/blog/edit/{{ post.id }}" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span> {{ 'edit'|trans|capitalize }}</a>
-                    <a href="/blog/delete/{{ post.id }}" class="btn btn-danger delete-post" role="button"><span class="glyphicon glyphicon-trash"></span> {{ 'delete'|trans|capitalize }}</a>
+                    <a href="/blog/edit/{{ post.id }}" class="btn btn-primary" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> {{ 'edit'|trans|capitalize }}</a>
+                    <a href="/blog/delete/{{ post.id }}" class="btn btn-danger delete-post" role="button"><i class="fa fa-btn fa-trash"></i> {{ 'delete'|trans|capitalize }}</a>
                 </div>
             </div>
         {% endfor %}

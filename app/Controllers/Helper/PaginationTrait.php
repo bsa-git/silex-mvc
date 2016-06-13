@@ -67,9 +67,9 @@ trait PaginationTrait {
         $app = $this->app;
         $params_default = array(
             'proximity' => $app['config']['parameters']['pagerfanta.proximity'],
-            'prev_message' => "<span class=\"glyphicon glyphicon-chevron-left\"></span> {$app['translator']->trans('previous')}", 
-            'next_message' => "{$app['translator']->trans('next')} <span class=\"glyphicon glyphicon-chevron-right\"></span>"
-        );
+            'prev_message' => "<i class=\"fa fa-chevron-left\" aria-hidden=\"true\"></i> {$app['translator']->trans('previous')}", 
+            'next_message' => "{$app['translator']->trans('next')} <i class=\"fa fa-chevron-right\" aria-hidden=\"true\"></i>"
+        );    
         $params = array_replace($params_default, $params);    
         //-----------------
         $view = new View\TwitterBootstrap3View();

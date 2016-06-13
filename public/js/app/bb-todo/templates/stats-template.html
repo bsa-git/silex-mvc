@@ -1,4 +1,4 @@
 <% if (done) { %>
-    <a id="clear-completed" class="btn btn-primary active" role="button"><span class="glyphicon glyphicon-trash"></span> {{ app.lb.trans('clear').capitalize() }} {{ done }} {{ done == 1 ? app.lb.trans('completed') : app.lb.trans('finalized') }} {{ done == 1 ? app.lb.trans('task') : app.lb.trans('tasks') }}</a>
+    <a id="clear-completed" class="btn btn-primary active" role="button"><i class="fa fa-btn fa-trash"></i> {{ app.lb.trans('clear').capitalize() }} {{ done }} {{ done == 1 ? app.lb.trans('completed') : app.lb.trans('finalized') }} {{ done == 1 ? app.lb.trans('task') : app.lb.trans('tasks') }}</a>
 <% } %>
 <div class="todo-count lead"><b>{{ remaining == 1 ? app.lb.trans('task').capitalize() : app.lb.trans('tasks').capitalize() }}: {{ remaining }}</b></div>

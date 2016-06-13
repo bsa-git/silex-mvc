@@ -9,15 +9,22 @@
             <link rel="shortcut icon" href="{{ asset('img/assets/ico/favicon.ico') }}">
             <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
             <title>{% block title %}{% endblock %}</title>
+
             <!-- Bootstrap -->
-            <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-            <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+            <!-- Awesome fonts -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+            
             <!-- Google fonts -->
             <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
             <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
 
             <!-- jQuery -->
             <script type="text/javascript" src="{{ asset('js/lib/jquery/jquery.min.js') }}"></script>
+            <!-- bootstrap -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            
             <!-- Require -->
             <script type="text/javascript" data-main="{{ asset('js/main') }}" src="{{ asset('js/lib/requirejs/require.js') }}"></script>
             <!--[if IE]>
