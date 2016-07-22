@@ -16,18 +16,9 @@ define(['app/system', 'app/lang'], function (System, Lang) {
                 this.sys = new System();
                 // Create Lang(language) object
                 this.lb = new Lang(this.sys);
-                
-                // Add script resources 
-                if (undefined !== window.BSA) {
-                    _.each(BSA.ScriptResources, function (resource) {
-                        require([resource], function (res) {
-                            // Create resource object 
-                            if (res && res.RegRunOnLoad) {
-                                res.RegRunOnLoad();
-                            }
-                        });
-                    });
-                }
+
+                // Create resources
+                this.createResources();
             }
             catch (ex) {
                 if (ex instanceof Error) {
@@ -38,6 +29,37 @@ define(['app/system', 'app/lang'], function (System, Lang) {
                         alert(message);
                     }
                 }
+            }
+        },
+        createResources: function () {
+            // Add script resources 
+            if (undefined !== window.BSA) {
+                $.each(BSA.ScriptResources, function (i, resName) {    
+                    require([resName], function (resClass) {
+
+                        // Receive settings to create the object
+                        var params = BSA.ScriptParams[resName];
+                        // The function to create objects of their parameters
+                        var createObject = function (param) {
+                            var resObjects = BSA.ScriptInstances[resName];
+                            if (resObjects) {
+                                resObjects.push(new resClass(param));
+                            } else {
+                                BSA.ScriptInstances[resName] = [new resClass(param)];
+                            }
+                        };
+                        // Creating objects
+                        if (params) {
+                            $.each(params, function (i, param) {
+                                createObject(param);
+                            });
+                        } else {
+                            createObject();
+                        }
+
+
+                    });
+                });
             }
         }
     });

@@ -24,9 +24,10 @@
 - для работы с почтой используется библиотека SwiftMailer `vendor/swiftmailer`;
 - добавлены сервисы такие как Zend-Filter, Zend-Json и др. `vendor/zendframework`;
 - так же добавлены сервисы для работы с массивами, строками, XML, HTTP, Markdown `app/Services/My`;
-- на стороне клиента используются библиотеки : jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`;
+- на стороне клиента используются библиотеки : jQuery, Bootstrap 3, RequireJS, Backbone, Vue `public/js/lib`;
 - на стороне клиента используются сервисы: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`;
-- для примера работы фреймворка Backbone реализовано приложение `ToDo` для локального или серверного хранилищ данных `public/js/app/bb-todo`.
+- для примера работы фреймворка Backbone.js реализовано приложение `ToDo` для локального или серверного хранилищ данных `public/js/app/bb-todo`;
+- для примера работы фреймворка Vue.js реализовано приложение `ToDo` для локального хранилища данных `public/js/app/vue-todo`.
 
 ## [Узнать больше...](http://bsa-git.github.io/silex-mvc/ru/)
 

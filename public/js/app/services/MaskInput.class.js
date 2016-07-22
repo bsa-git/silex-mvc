@@ -87,32 +87,6 @@ define(['jquery'], function ($) {
                 });
             }
         }
-    }, {
-        // The static class method, executed when loading the browser window
-        // objects are class instances of holding up in the list of instances
-        // ex. {MaskInput: [new MaskInput(), ... ,new MaskInput()]}
-        RegRunOnLoad: function () {
-
-            // Receive settings to create the object
-            var params = BSA.ScriptParams['MaskInput'];
-            // The function to create objects of their parameters
-            var createObject = function (param) {
-                var maskInput = BSA.ScriptInstances['MaskInput'];
-                if (maskInput) {
-                    maskInput.push(new MaskInput(param));
-                } else {
-                    BSA.ScriptInstances['MaskInput'] = [new MaskInput(param)];
-                }
-            };
-            // Creating objects
-            if (params) {
-                $.each(params, function (i, param) {
-                    createObject(param);
-                });
-            } else {
-                createObject();
-            }
-        }
     });
     return MaskInput;
 });

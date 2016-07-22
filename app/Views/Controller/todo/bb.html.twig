@@ -1,0 +1,28 @@
+{# app/Views/Controller/todo/index.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('TodoBackbone');
+        addScriptParams('TodoBackbone',
+                {
+                    storage: 'server',// local || server
+                    serverStorage: {
+                        urlRoot: '/tasks',
+                        emulateHTTP: true
+                    }
+                });
+    </script>
+{% endblock head %}
+
+{% block page_name %}Backbone.js - TodoMVC{% endblock page_name %}
+
+{% block content %}
+    <!-- Todo App -->
+    {% include 'Controller/todo/inc/bb/todo_app.html.twig' %}
+{% endblock content %}
+

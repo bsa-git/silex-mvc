@@ -86,6 +86,7 @@ help: помощь
 select_scheme: выбрать схему
 select_language: выбрать язык
 documentation: документация
+examples_todos_lists_various_frameworks: Примеры ToDos списков для разных фреймворков
 
 #--- VALIDATE ---#
 valid_please_enter_your_firstname: "Пожалуйста, введите свое имя"

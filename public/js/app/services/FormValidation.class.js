@@ -242,32 +242,6 @@ define(['jquery'], function ($) {
             });
             return this.iniMessages(messages);
         }
-    }, {
-        // The static class method, executed when loading the browser window
-        // objects are class instances of holding up in the list of instances
-        // ex. {FormValidation: [new FormValidation(), ... ,new FormValidation()]}
-        RegRunOnLoad: function () {
-
-            // Get the parameters to create the object
-            var params = BSA.ScriptParams['FormValidation'];
-            // Function of creating object
-            var createObject = function (param) {
-                var form_validation = BSA.ScriptInstances['FormValidation'];
-                if (form_validation) {
-                    form_validation.push(new FormValidation(param));
-                } else {
-                    BSA.ScriptInstances['FormValidation'] = [new FormValidation(param)];
-                }
-            };
-            // Сreating objects
-            if (params) {
-                $.each(params, function (i, param) {
-                    createObject(param);
-                });
-            } else {
-                createObject();
-            }
-        }
     });
     return FormValidation;
 });

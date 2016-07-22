@@ -48,6 +48,12 @@ class TestController extends BaseController {
         $this->app->get('/test/todo', function () use ($self) {
             return $self->todoAction();
         })->bind('test_todo');
+        $this->app->get('/test/backbone', function () use ($self) {
+            return $self->backboneAction();
+        })->bind('test_backbone');
+        $this->app->get('/test/vue', function () use ($self) {
+            return $self->vueAction();
+        })->bind('test_vue');
         $this->app->get('/test/dump', function () use ($self) {
             return $self->dumpAction();
         })->bind('test_dump');
@@ -118,7 +124,7 @@ class TestController extends BaseController {
 
     /**
      * Action - test/todo
-     * Show todo application
+     * Show todo application list
      * 
      * @return string
      */
@@ -127,6 +133,38 @@ class TestController extends BaseController {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);
             return $this->forwardToRoute("todo");
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+    
+    /**
+     * Action - test/backbone
+     * Show todo application for backbone.js
+     * 
+     * @return string
+     */
+    public function backboneAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            return $this->forwardToRoute("todo_bb");
+        } catch (\Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+    
+    /**
+     * Action - test/vue
+     * Show todo application for vue.js
+     * 
+     * @return string
+     */
+    public function vueAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            return $this->forwardToRoute("todo_vue");
         } catch (\Exception $exc) {
             return $this->showError($exc);
         }

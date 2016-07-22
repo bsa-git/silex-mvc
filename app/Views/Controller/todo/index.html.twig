@@ -4,25 +4,16 @@
 {% block title %}{{ controller|capitalize }}{% endblock title %}
 {% block head %}
     {{ parent() }}
-    <!-- Add Resources (required) -->
-    {% include 'Include/add.resources.html.twig' %}
-    <script type="text/javascript">
-        BSA.ScriptResources.push('Todo');
-        addScriptParams('Todo',
-                {
-                    storage: 'server',// local || server
-                    serverStorage: {
-                        urlRoot: '/tasks',
-                        emulateHTTP: true
-                    }
-                });
-    </script>
 {% endblock head %}
 
 {% block page_name %}{{ controller|capitalize }}{% endblock page_name %}
 
 {% block content %}
-    <!-- Todo App -->
-    {% include 'Controller/todo/inc/index/todo_app.html.twig' %}
+    <h3>{{ 'examples_todos_lists_various_frameworks'|trans|capitalize }} </h3>
+    <ul>
+        <li><a href="/todo/bb">TodoMVC for Backbone</a></li>
+        <li><a href="/todo/vue">TodoMVC for Vue</a></li>    
+    </ul>
+    
 {% endblock content %}
 

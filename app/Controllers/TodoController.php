@@ -39,6 +39,12 @@ class TodoController extends BaseController {
         $this->app->get('/todo', function () use ($self) {
             return $self->indexAction();
         })->bind('todo');
+        $this->app->get('/todo/bb', function () use ($self) {
+            return $self->bbAction();
+        })->bind('todo_bb');
+        $this->app->get('/todo/vue', function () use ($self) {
+            return $self->vueAction();
+        })->bind('todo_vue');
         $this->app->post('/tasks', function () use ($self) {
             return $self->createAction();
         })->bind('task_create');
@@ -58,10 +64,43 @@ class TodoController extends BaseController {
 
     /**
      * Action - todo/index
+     * show list todos
      * 
      * @return string
      */
     public function indexAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            return $this->showView();
+        } catch (Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+    
+    /**
+     * Action - todo/bb
+     * show list todos for Backbone
+     * 
+     * @return string
+     */
+    public function bbAction() {
+        try {
+            // Initialization
+            $this->init(__CLASS__ . "/" . __FUNCTION__);
+            return $this->showView();
+        } catch (Exception $exc) {
+            return $this->showError($exc);
+        }
+    }
+    
+    /**
+     * Action - todo/vue
+     * show list todos for Vue
+     * 
+     * @return string
+     */
+    public function vueAction() {
         try {
             // Initialization
             $this->init(__CLASS__ . "/" . __FUNCTION__);

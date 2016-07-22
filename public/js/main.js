@@ -11,12 +11,15 @@
             storage: 'lib/jstorage/jstorage',
             json: 'lib/json/json2',
             backbone: 'lib/backbone/backbone-min',
+            vue: 'lib/vue/dist/vue',
+            router: 'lib/director/build/director',
             ExtendClass: 'lib/Extend.class',
             Highlight: 'app/services/Highlight.class',
             FormValidation: 'app/services/FormValidation.class',
             Datepicker: 'app/services/Datepicker.class',
             MaskInput: 'app/services/MaskInput.class',
-            Todo: 'app/bb-todo/todo'
+            TodoBackbone: 'app/bb-todo/todo',
+            TodoVue: 'app/vue-todo/todo'
         },
         shim: {
             'jquery': {
@@ -35,6 +38,9 @@
             'storage': {
                 deps: ['json', 'jquery']
             },
+            'router': {
+                exports: 'Router'
+            },
             'app/app': {
                 deps: ['ExtendClass', 'underscore', 'storage']
             },
@@ -50,8 +56,11 @@
             'Highlight': {
                 deps: ['css!lib/highlight/css/github.css', 'lib/highlight/highlight.pack']
             },
-            'Todo': {
+            'TodoBackbone': {
                 deps: ['css!app/bb-todo/css/style.css', 'backbone', 'lib/backbone/backbone.localStorage', 'lib/sugarjs/sugar-str.min']
+            },
+            'TodoVue': {
+                deps: ['css!app/vue-todo/css/style.css']
             }
         }
     });

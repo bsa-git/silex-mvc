@@ -36,32 +36,6 @@ define(['jquery'], function ($) {
 
             }
         }
-    }, {
-        // The static class method, executed when loading the browser window
-        // objects are class instances of holding up in the list of instances
-        // ex. {Highlight: [new Highlight(), ... ,new Highlight()]}
-        RegRunOnLoad: function () {
-
-            // Receive settings to create the object
-            var params = BSA.ScriptParams['Highlight'];
-            // The function to create objects of their parameters
-            var createObject = function (param) {
-                var highlight = BSA.ScriptInstances['Highlight'];
-                if (highlight) {
-                    highlight.push(new Highlight(param));
-                } else {
-                    BSA.ScriptInstances['Highlight'] = [new Highlight(param)];
-                }
-            };
-            // Creating objects
-            if (params) {
-                $.each(params, function (i, param) {
-                    createObject(param);
-                });
-            } else {
-                createObject();
-            }
-        }
     });
     return Highlight;
 

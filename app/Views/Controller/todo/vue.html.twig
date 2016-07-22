@@ -1,0 +1,20 @@
+{# app/Views/Controller/todo/vue.html.twig #}
+{% extends "Layout/base.html.twig" %}
+
+{% block title %}{{ controller|capitalize }}{% endblock title %}
+{% block head %}
+    {{ parent() }}
+    <!-- Add Resources (required) -->
+    {% include 'Include/add.resources.html.twig' %}
+    <script type="text/javascript">
+        BSA.ScriptResources.push('TodoVue');
+    </script>
+{% endblock head %}
+
+{% block page_name %}Vue.js - TodoMVC{% endblock page_name %}
+
+{% block content %}
+    <!-- Todo App -->
+    {% include 'Controller/todo/inc/vue/todo_app.html.twig' %}
+{% endblock content %}
+

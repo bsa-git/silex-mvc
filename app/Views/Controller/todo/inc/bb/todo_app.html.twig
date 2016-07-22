@@ -1,0 +1,38 @@
+{# app/Views/Controller/todo/inc/bb/todo_app.html.twig #}
+<div id="todoapp" style="display: none">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>{{ 'task_list'|trans|capitalize }}</h1>
+            <div class="form-group">
+                <div class="col-sm-6">
+                    <input type="text" id="new-todo" class="form-control" value="" placeholder="{{ 'what_must_be_done'|trans|capitalize }}?">
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <section id="main-todo">
+                <input id="toggle-all" type="checkbox">
+                <label for="toggle-all">{{ 'mark_all_as_completed'|trans|capitalize }}</label>
+                <ul id="todo-list"></ul>
+            </section>
+        </div>
+        <div class="panel-footer">
+            <footer>
+                <a id="clear-completed" class="btn btn-primary">{{ 'clear_completed'|trans|capitalize }}</a>
+                <div id="todo-count"></div>
+            </footer>
+        </div>
+    </div>
+
+    <div id="instructions">
+        {{ 'double_click_to_edit_task'|trans|capitalize }}.
+    </div>
+
+    <div id="credits">
+        {{ 'developer'|trans|capitalize }}:
+        <br />
+        <a href="http://jgn.me/">J&eacute;r&ocirc;me Gravel-Niquet</a>.
+        <br />{{ 'you_can_download_with'|trans|capitalize }}: <a href="http://addyosmani.github.com/todomvc">TodoMVC</a>.
+    </div>
+</div>
+

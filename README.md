@@ -23,9 +23,10 @@ Main features of the application:
 - library of SwiftMailer is used for email `vendor/swiftmailer`. 
 - added services such as Zend-Filter, Zend-Json and others `vendor/zendframework`.
 - added services for working with arrays, strings, XML, HTTP, Markdown `app/Services/My`.
-- on the client side using the library: jQuery, Bootstrap 3, RequireJS, Backbone `public/js/lib`.
+- on the client side using the library: jQuery, Bootstrap 3, RequireJS, Backbone, Vue `public/js/lib`.
 - client-side services are used: Datepicker, FormValidation, MaskInput, Highlight `public/js/app/services`.
-- `ToDo` implemented application (for the local or server storage) to show the work of the framework Backbone `public/js/app/bb-todo`.
+- `ToDo` implemented application (for the local or server storage) to show the work of the framework Backbone.js `public/js/app/bb-todo`.
+- `ToDo` implemented application (for the local storage) to show the work of the framework Vue.js `public/js/app/vue-todo`.
 
 ## [Learn more...](http://bsa-git.github.io/silex-mvc)
 

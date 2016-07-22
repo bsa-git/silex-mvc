@@ -9,7 +9,7 @@ define(['app/bb-todo/models/tasklist', 'app/bb-todo/views/appview'], function (T
      * @license  MIT <http://www.opensource.org/licenses/mit-license.php>
      * @link     https://github.com/bsa-git/silex-mvc/
      */
-    var Todo = Class.extend({
+    var TodoBackbone = Class.extend({
         init: function (params) {
             try {
                 
@@ -31,33 +31,7 @@ define(['app/bb-todo/models/tasklist', 'app/bb-todo/views/appview'], function (T
 
             }
         }
-    }, {
-        // The static class method, executed when loading the browser window
-        // objects are class instances of holding up in the list of instances
-        // ex. {Todo: [new Todo(), ... ,new Todo()]}
-        RegRunOnLoad: function () {
-
-            // Receive settings to create the object
-            var params = BSA.ScriptParams['Todo'];
-            // The function to create objects of their parameters
-            var createObject = function (param) {
-                var todo = BSA.ScriptInstances['Todo'];
-                if (todo) {
-                    todo.push(new Todo(param));
-                } else {
-                    BSA.ScriptInstances['Todo'] = [new Todo(param)];
-                }
-            };
-            // Creating objects
-            if (params) {
-                $.each(params, function (i, param) {
-                    createObject(param);
-                });
-            } else {
-                createObject();
-            }
-        }
     });
-    return Todo;
+    return TodoBackbone;
 
 });
