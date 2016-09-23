@@ -21,9 +21,6 @@ service_providers:
     active_record:
         class: Providers\ActiveRecordServiceProvider     
     
-    quick_form2:
-        class: Providers\QuickForm2ServiceProvider
-
     http_cache:
         class: Silex\Provider\HttpCacheServiceProvider
         parameters:
