@@ -1,22 +1,22 @@
 parameters:
     log_level:  DEBUG
-    timezone: Europe/Kiev
+    timezone: UTC
     locale: en
     #--- schemes: "black-white-gray", "black-white-green" ---
     scheme: "black-white-gray"
     #--- Debug: true, false ---
-    debug: true
+    debug: false
     #--- Environment: production, test, development ---
-    environment: test 
+    environment: production 
     #--- Directory data for console ---
     data_dir:  "c:/tmp"
     #--- HOST url for local testing ---
-    url_test: "http://localhost:8888"
+    url_test: "http://silex-mvc/"
     #--- UBKI parameters ---
     ubki_login: "ubkiuser"
     ubki_pass: "ubkipass"
-    ubki_test_login: "partest"
-    ubki_test_pass: "test38%"
+    ubki_test_login: "ubkiuser_test"
+    ubki_test_pass: "ubkipass_test"
     #--- Database parameters ---
     db.driver: pdo_sqlite
     db.path: "/app/Resources/db/app.db"
@@ -27,12 +27,12 @@ parameters:
     db.connection.development: "sqlite://../app/Resources/db/app.db"
     db.connection.test: "sqlite://../app/Resources/db/app.db"
     #--- Developer mail ---
-    developer_mail: "bsa2657@yandex.ru"
+    developer_mail: "dev@mail.com"
     #--- Email parameters ---
-    mail.host: mail.azot.local
+    mail.host: mail.host.local
     mail.port: 25
-    mail.username: m5-asutp
-    mail.password: B$A3837m5
+    mail.username: username-mail
+    mail.password: password-mail
     # ('tls', 'ssl', or null)
     mail.encryption: null
     # ('plain', 'login', 'cram-md5', or null)
@@ -42,5 +42,13 @@ parameters:
     #--- PagerFanta ---
     pagerfanta.max_per_page: 2
     pagerfanta.proximity: 3
+    
+controllers:
+    Controller.Blog: Controllers\BlogController
+    Controller.Index: Controllers\IndexController
+    Controller.Security: Controllers\SecurityController
+    Controller.Test: Controllers\TestController
+    Controller.Todo: Controllers\TodoController
+    Controller.Ubki: Controllers\UbkiController    
     
     

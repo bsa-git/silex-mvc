@@ -147,12 +147,10 @@ class YamlConfigServiceProvider implements ServiceProviderInterface {
         $app['config'] = $app->share(
                 function () use ($app, $self) {
             if (!isset($app['config.parameters'])) {
-                $app['config.parameters'] = 'parameters.yml';
+                $fileConfig = is_file(BASEPATH . '/env.yml') ? BASEPATH . '/env.yml' : $app['config.dir'] . '/parameters.yml';
+                $app['config.parameters'] = $fileConfig;
             }
-            $self->_configSettings = $self->parse(
-                    $app['config.dir'] . '/' .
-                    $app['config.parameters']
-            );
+            $self->_configSettings = $self->parse($app['config.parameters']);
 
             $self->setYamlPatameters();
 

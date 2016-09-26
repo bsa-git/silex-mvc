@@ -10,6 +10,7 @@ use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 use Symfony\Component\Stopwatch\Stopwatch;
 use Symfony\Component\Translation\Loader as Loader;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class - Bootstrap
@@ -184,7 +185,8 @@ class Bootstrap {
                 $params['base_path'] = BASEPATH;
                 $params['log_path'] = BASEPATH . "/data/logs";
                 $params['cache_path'] = BASEPATH . "/data/cache";
-                $data = parse_ini_file(BASEPATH . '/app/Resources/Config/app.ini', true);
+                $fileConfig = is_file(BASEPATH . '/env.yml') ? BASEPATH . '/env.yml' : BASEPATH . '/app/Resources/Config/parameters.yml';
+                $data = Yaml::parse(file_get_contents($fileConfig));
                 foreach ($data['parameters'] as $key => $value) {
                     $params['parameters'][$key] = $this->_formatIniValue($value);
                 }

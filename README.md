@@ -81,6 +81,12 @@ the config will be merged recursively allows partial specific configs.
 The security firewalls and access control config. All information about it's available
 [here](http://silex.sensiolabs.org/doc/providers/security.html).
 
-### app.ini
-To increase performance, a web application can be configured
-using `ini` file.
+### env.yml
+It is often helpful to have different configuration values based on the environment 
+the application is running in. For example, you may wish to use a different cache 
+driver locally than you do on your production server.
+
+For this task you can create a file `env.yml` with specific
+settings and place it in the root of your application. The file `env.yml` will replace
+the values of existing file `parameters.yml`.
+
