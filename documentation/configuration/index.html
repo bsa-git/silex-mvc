@@ -120,11 +120,11 @@
 It is <strong>Web Application</strong> and <strong>Console Application</strong>. These applications are configured
 differently, although they have a common configuration files.</p>
 
-<p>Second, <strong>Web Application</strong>  can be configured in two ways via <code>Yml</code> files or using <code>app.ini</code> file.
+<p>Second, <strong>Web Application</strong>  can be configured in two ways via <code>Yml</code> files or set configuration in the program code.
 The choice between the configuration process is carried out in the method
 <code>_iniConfig</code> in class <strong>Bootstrap</strong> <code>/app/Bootstrap.php</code>.</p>
 
-<p>Configuration via <code>app.ini</code> file faster.</p>
+<p>The configuration in the program code is faster.</p>
 
 <hr />
 
@@ -136,7 +136,6 @@ The choice between the configuration process is carried out in the method
     |-- Resources/              # Resources
         |-- Config/             # Configuration files
             |-- Config.php      # `Config` class
-            |-- app.ini         # The basic configuration settings
             |-- application.yml # Configuration for Web applications
             |-- config.yml      # General configuration is used as 
                                 # a web application as well as console application 
@@ -155,14 +154,11 @@ via <code>$app['config']['parameters']</code>. With this class can also get the 
 for example to log files, cache files and other. As well as using this service can be
 create the necessary directories when you first open the application.</p>
 
-<h3 id="parameters.yml-or-app.ini">parameters.yml or app.ini</h3>
+<h3 id="parameters.yml">parameters.yml</h3>
 
 <p>Here set values of the main parameters of your configuration,
 which can be used in other your configurations.
 The parameters can be accessed through <code>$app['config']['parameters']</code>.</p>
-
-<p>The choice between the configuration process is carried out in the method
-<code>_iniConfig</code> in class <strong>Bootstrap</strong> <code>/app/Bootstrap.php</code>.</p>
 
 <p>The values of the basic parameters:</p>
 
@@ -208,6 +204,16 @@ Place the information about your services in common section <code>service_provid
 
 <p>There are set values method of user authentication and authorization.
 The details can be found <a href="http://silex.sensiolabs.org/doc/providers/security.html">here</a>.</p>
+
+<h3 id="env.yml">env.yml</h3>
+
+<p>It is often helpful to have different configuration values based on the environment 
+the application is running in. For example, you may wish to use a different cache 
+driver locally than you do on your production server.</p>
+
+<p>For this task you can create a file <code>env.yml</code> with specific
+settings and place it in the root of your application. The file <code>env.yml</code> will replace
+the values of existing file <code>parameters.yml</code>.</p>
         </div>
     </div>
         </div>
