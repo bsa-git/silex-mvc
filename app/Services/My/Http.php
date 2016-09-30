@@ -295,32 +295,21 @@ class Http {
         //---------------------
         $data = (is_array($this->_data)) ? http_build_query($this->_data) : $this->_data;
 
-        // Define whether the $url debugging
-        $debug = $this->isDebugUrl($url);
-
-        if ($debug) {
-            $timeout_on_connect = 5;
-            $timeout_on_response = 5;
-        } else {
-            $timeout_on_connect = 120;
-            $timeout_on_response = 120;
-        }
-
         $defaults = array(
             CURLOPT_RETURNTRANSFER => true, // return web page 
             CURLOPT_HEADER => false, // don't return headers 
             CURLOPT_FOLLOWLOCATION => true, // follow redirects 
             CURLOPT_ENCODING => "", // handle all encodings 
-            CURLOPT_USERAGENT => "spider", // who am i 
+            CURLOPT_USERAGENT => "", // who am i 
             CURLOPT_AUTOREFERER => true, // set referer on redirect 
-            CURLOPT_CONNECTTIMEOUT => $timeout_on_connect, // timeout on connect 
-            CURLOPT_TIMEOUT => $timeout_on_response, // timeout on response 
+            CURLOPT_CONNECTTIMEOUT => 120, // timeout on connect 
+            CURLOPT_TIMEOUT => 120, // timeout on response 
             CURLOPT_MAXREDIRS => 10, // stop after 10 redirects 
             CURLOPT_POST => 1, // i am sending post data 
             CURLOPT_POSTFIELDS => $data, // this are my post vars 
             CURLOPT_SSL_VERIFYHOST => false, // don't verify ssl 
             CURLOPT_SSL_VERIFYPEER => false, // 
-            CURLOPT_VERBOSE => $debug,
+            CURLOPT_VERBOSE => false,
             CURLOPT_PROXY => "", // proxy.azot.local:3128
             CURLOPT_PROXYUSERPWD => "", // m5-iasup:m234ASUP
             CURLOPT_HEADERFUNCTION => array($this, '_setHeader')// this is a callback inside an object 
@@ -372,23 +361,12 @@ class Http {
 
         $url = $url . (strpos($url, '?') === FALSE ? '?' : '') . $data;
 
-        // Define whether the $url debugging
-        $debug = $this->isDebugUrl($url);
-
-        if ($debug) {
-            $timeout_on_connect = 3;
-            $timeout_on_response = 3;
-        } else {
-            $timeout_on_connect = 120;
-            $timeout_on_response = 120;
-        }
-
         $defaults = array(
             CURLOPT_URL => $url,
             CURLOPT_HEADER => 0,
             CURLOPT_RETURNTRANSFER => TRUE,
             CURLOPT_TIMEOUT => 120,
-            CURLOPT_VERBOSE => $debug
+            CURLOPT_VERBOSE => FALSE
         );
 
         $ch = curl_init();

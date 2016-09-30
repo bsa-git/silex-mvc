@@ -40,6 +40,7 @@ class DataCommand extends \Console\Commands\BaseCommand {
 
         $models = $this->app['models'];
         $http = $this->app["my"]->get('http');
+        $parameters = $this->app['config']['parameters'];
         $results = array();
         //-----------------
 
@@ -49,7 +50,7 @@ class DataCommand extends \Console\Commands\BaseCommand {
             $this->init($input);
 
             // Get test url
-            $url_test = $login = $this->app['config']['parameters']['url_test'];
+            $url_test = $parameters['url_test'];
 
             if ($this->opts['environment'] == 'production') {
                 if ($this->app['debug']) {
@@ -84,7 +85,9 @@ class DataCommand extends \Console\Commands\BaseCommand {
                     "Accept: text/xml",
                     "Content­Encoding: gzip",
                     "Content-length: " . strlen($xmlData),
-                )
+                ),
+                CURLOPT_PROXY => $parameters['proxy']? "{$parameters['proxy.host']}:{$parameters['proxy.port']}":'',
+                CURLOPT_PROXYUSERPWD => $parameters['proxy']? "{$parameters['proxy.user']}:{$parameters['proxy.pass']}":'',
             );
             
             // Create HttpBox object

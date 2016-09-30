@@ -39,6 +39,7 @@ class AuthCommand extends \Console\Commands\BaseCommand {
     protected function execute(InputInterface $input, OutputInterface $output) {
         $models = $this->app['models'];
         $http = $this->app["my"]->get('http');
+        $parameters = $this->app['config']['parameters'];
         $results = array();
         //----------------
 
@@ -47,7 +48,7 @@ class AuthCommand extends \Console\Commands\BaseCommand {
             $this->init($input);
 
             // Get the test url
-            $url_test = $login = $this->app['config']['parameters']['url_test'];
+            $url_test = $parameters['url_test'];;
 
             if ($this->opts['environment'] == 'production') {
                 if ($this->app['debug']) {
@@ -74,7 +75,9 @@ class AuthCommand extends \Console\Commands\BaseCommand {
 
             // Set options
             $options = array(
-                CURLOPT_USERAGENT => ''
+//                CURLOPT_VERBOSE => $this->app['debug'], // TRUE To display more information.
+                CURLOPT_PROXY => $parameters['proxy']? "{$parameters['proxy.host']}:{$parameters['proxy.port']}":'',
+                CURLOPT_PROXYUSERPWD => $parameters['proxy']? "{$parameters['proxy.user']}:{$parameters['proxy.pass']}":'',
             );
             
             // Send post request

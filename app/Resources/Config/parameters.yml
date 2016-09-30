@@ -1,5 +1,6 @@
 parameters:
     log_level:  DEBUG
+    #--- TimeZone: UTC, Europe/Kiev...
     timezone: UTC
     locale: en
     #--- schemes: "black-white-gray", "black-white-green" ---
@@ -11,7 +12,7 @@ parameters:
     #--- Directory data for console ---
     data_dir:  "c:/tmp"
     #--- HOST url for local testing ---
-    url_test: "http://silex-mvc/"
+    url_test: "http://localhost:8888"
     #--- UBKI parameters ---
     ubki_login: "ubkiuser"
     ubki_pass: "ubkipass"
@@ -31,8 +32,8 @@ parameters:
     #--- Email parameters ---
     mail.host: mail.host.local
     mail.port: 25
-    mail.username: username-mail
-    mail.password: password-mail
+    mail.username: ""
+    mail.password: ""
     # ('tls', 'ssl', or null)
     mail.encryption: null
     # ('plain', 'login', 'cram-md5', or null)
@@ -42,6 +43,12 @@ parameters:
     #--- PagerFanta ---
     pagerfanta.max_per_page: 2
     pagerfanta.proximity: 3
+    #--- Proxy parameters
+    proxy: false
+    proxy.host: ""
+    proxy.port: 3128
+    proxy.user: ""
+    proxy.pass: ""
     
 controllers:
     Controller.Blog: Controllers\BlogController
